@@ -22,7 +22,7 @@ pip install youtube-dl tldr
 HISTSIZE=10000
 HISTFILESIZE=20000
 ```
-### Add shortcut "Alt+:" [to iterate through arguments](https://medium.com/r/?url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F4009412%2Fhow-to-use-arguments-from-previous-command%2F55069846%2355069846)
+### Add shortcut "Alt+:" [to iterate through arguments](https://stackoverflow.com/questions/4009412/how-to-use-arguments-from-previous-command/55069846#55069846)
 ```bash
 autoload -Uz copy-earlier-word
 zle -N copy-earlier-word
