@@ -11,11 +11,11 @@ pip install youtube-dl tldr
 ```
 
 ## Web installs
-- docker     # https://download.docker.com
-- VSCode 	   # https://code.visualstudio.com/
-- chrome 	   # https://www.chrome.com/
-- syncthing  # https://apt.syncthing.net/
-- Zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+- docker: https://download.docker.com
+- VSCode: https://code.visualstudio.com/
+- chrome: https://www.chrome.com/
+- syncthing: https://apt.syncthing.net/
+- Zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 ## Edit ~/.zshrc
 ### Change history-size
