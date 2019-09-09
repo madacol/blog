@@ -6,7 +6,8 @@ sudo apt update && sudo apt upgrade -y
 ## Install Packages
 ```bash
 sudo apt-get install python-pip p7zip-full smplayer cmus speedtest-cli zsh curl wget git git-gui filezilla pavucontrol ufw servefile nmap
-pip install youtube-dl
+
+pip install youtube-dl tldr
 ```
 
 ## Web installs
