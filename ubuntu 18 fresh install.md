@@ -5,9 +5,10 @@ sudo apt update && sudo apt upgrade -y
 
 ## Install Packages
 ```bash
-sudo apt-get install python-pip p7zip-full smplayer cmus speedtest-cli zsh curl wget git git-gui filezilla pavucontrol ufw servefile nmap
+sudo apt-get install python3-pip zsh curl wget git
+sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol ufw servefile nmap fail2ban gimp most colordiff mosh gconf-editor byobu
 
-pip install youtube-dl tldr
+pip3 install youtube-dl tldr
 ```
 
 ## Web installs
@@ -18,11 +19,6 @@ pip install youtube-dl tldr
 - Zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 ## Edit ~/.zshrc
-### Change history-size
-```bash
-HISTSIZE=10000
-HISTFILESIZE=20000
-```
 ### Add shortcut "Alt+:" [to iterate through arguments](https://stackoverflow.com/questions/4009412/how-to-use-arguments-from-previous-command/55069846#55069846)
 ```bash
 autoload -Uz copy-earlier-word
