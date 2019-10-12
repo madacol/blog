@@ -6,7 +6,7 @@ sudo apt update && sudo apt upgrade -y
 ## Install Packages
 ```bash
 sudo apt-get install python3-pip zsh curl wget git
-sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor byobu
+sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor
 
 pip3 install youtube-dl tldr
 ```
