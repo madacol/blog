@@ -11,6 +11,9 @@ sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pa
 pip3 install youtube-dl tldr
 ```
 
+## External Repositories
+- Antimicro `sudo add-apt-repository ppa:mdeguzis/libregeek && sudo apt update`
+
 ## Web installs
 - docker: https://download.docker.com
 - VSCode: https://code.visualstudio.com/
