@@ -14,7 +14,7 @@ Let's consider the last command to be:
 
 
  - **Cut commands** (relative to cursor's position)
-  - <kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word
+   - <kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word
   - <kbd>Alt</kbd>+<kbd>d</kbd>: cuts next word
   - <kbd>Ctrl</kbd>+<kbd>k</kbd>: cuts everything after
   - <kbd>Ctrl</kbd>+<kbd>u</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>w</kbd>: cuts everything before
