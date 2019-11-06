@@ -1,15 +1,3 @@
-#TL;DR
-
-<kbd>Alt</kbd>+<kbd>0</kbd>+<kbd>.</kbd>: inserts last command without the arguments
-
----
-
-Tested on Ubuntu 18.04 with the default binding settings *(i.e Emacs key bindings)*
-
----
-
-# You can combine keyboard shortcuts
-
 Let's consider the last command to be:
 
     mv foo bar
