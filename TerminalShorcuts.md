@@ -15,11 +15,11 @@ Let's consider the last command to be:
 
  - **Cut commands** (relative to cursor's position)
    - <kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word
-  - <kbd>Alt</kbd>+<kbd>d</kbd>: cuts next word
-  - <kbd>Ctrl</kbd>+<kbd>k</kbd>: cuts everything after
-  - <kbd>Ctrl</kbd>+<kbd>u</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>w</kbd>: cuts everything before
-  - **zsh:** <kbd>Ctrl</kbd>+<kbd>u</kbd>: cuts the entire command *(In bash you can combine <kbd>Ctrl</kbd>+<kbd>u</kbd> , <kbd>Ctrl</kbd>+<kbd>k</kbd>)*
-  - <kbd>Ctrl</kbd>+<kbd>y</kbd>: paste characters previously cut with any **Cut command**. *In bash You can chain **cut commands**, and <kbd>Ctrl</kbd>+<kbd>y</kbd> will paste them all.*
+   - <kbd>Alt</kbd>+<kbd>d</kbd>: cuts next word
+   - <kbd>Ctrl</kbd>+<kbd>k</kbd>: cuts everything after
+   - <kbd>Ctrl</kbd>+<kbd>u</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>w</kbd>: cuts everything before
+   - **zsh:** <kbd>Ctrl</kbd>+<kbd>u</kbd>: cuts the entire command *(In bash you can combine <kbd>Ctrl</kbd>+<kbd>u</kbd> , <kbd>Ctrl</kbd>+<kbd>k</kbd>)*
+   - <kbd>Ctrl</kbd>+<kbd>y</kbd>: paste characters previously cut with any **Cut command**. *In bash You can chain **cut commands**, and <kbd>Ctrl</kbd>+<kbd>y</kbd> will paste them all.*
  - <kbd>Ctrl</kbd>+<kbd>_</kbd>: undo last edit *(very useful when exceeding <kbd>Ctrl</kbd>+<kbd>w</kbd>)*
  - <kbd>Ctrl</kbd>+<kbd>left</kbd>: move to last word
  - <kbd>Ctrl</kbd>+<kbd>right</kbd>: move to next word
