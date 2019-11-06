@@ -1,4 +1,5 @@
 #TL;DR
+
 <kbd>Alt</kbd>+<kbd>0</kbd>+<kbd>.</kbd>: inserts last command without the arguments
 
 ---
