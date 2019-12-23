@@ -12,7 +12,21 @@ pip3 install youtube-dl tldr
 ```
 
 ## External Repositories
-- Antimicro `sudo add-apt-repository ppa:mdeguzis/libregeek && sudo apt update`
+
+### Antimicro
+```bash
+sudo add-apt-repository ppa:mdeguzis/libregeek
+```
+As of today, a bionic package is still not available, but the artful works!.
+
+`sudo nano /etc/apt/sources.list.d/mdeguzis-ubuntu-libregeek-bionic.list` Replace `bionic` with `artful`
+```bash
+sudo apt update
+sudo apt install antimicro
+```
+
+https://github.com/AntiMicro/antimicro/issues
+https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6e
 
 ## Web installs
 - docker: https://download.docker.com
