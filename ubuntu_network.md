@@ -14,6 +14,8 @@ nmcli device show
 
 `unmanaged` means **NetworkManager** will not manage that device.
 
+### Documentation: https://help.ubuntu.com/community/NetworkManager
+
 ---
 
 # Netplan
@@ -37,3 +39,5 @@ To see your list of devices, run `ip addr`.
 Finally apply the new configurations
 
     sudo netplan apply
+
+### Documentation: https://netplan.io/reference#examples
