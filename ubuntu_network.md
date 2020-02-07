@@ -8,13 +8,11 @@
 ```bash
 # Run one by one to see if anything is useful
 nmcli device
-
 nmcli
-
 nmcli device show
 ```
 
-if your network device says `unmanaged`, it means **NetworkManager** will not try to use that device to connect.
+`unmanaged` means **NetworkManager** will not manage that device.
 
 ---
 
