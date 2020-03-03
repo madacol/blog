@@ -26,6 +26,10 @@ sudo apt install antimicro
 ```
 Put config file https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6e in `~/.config/antimicro`
 
+### SinkSwitcher
+
+https://github.com/madacol/sinkSwitcher
+
 ## Web installs
 - docker: https://download.docker.com
 - VSCode: https://code.visualstudio.com/
