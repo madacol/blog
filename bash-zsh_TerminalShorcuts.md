@@ -8,9 +8,12 @@ Let's consider the last command to be:
 
 ## Some useful shortcuts:
 
- - <kbd>Alt</kbd>+<kbd>.</kbd>: insert last argument from last command *(repeat to go back in history)*
- - <kbd>Alt</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth last argument from last command *(repeat to go back in history)*
- - <kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> , <kbd>Alt</kbd>+<kbd>.</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>#</kbd>+<kbd>.</kbd>: insert #nth first argument from last command *(repeat to go back in history)*
+ - **Select previous arguments**
+   - <kbd>Alt</kbd>+<kbd>.</kbd>: insert last argument from last command.
+   - <kbd>Alt</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth last argument from last command.
+   - <kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> , <kbd>Alt</kbd>+<kbd>.</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>#</kbd>+<kbd>.</kbd>: insert #nth first argument from last command.
+   
+   *In Linux you can repeat commands to go back in history*
 
 
  - **Cut commands** (relative to cursor's position)
