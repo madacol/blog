@@ -9,6 +9,17 @@
 
 *In Linux you can repeat commands to go back in history*
 
+### Example:
+
+Last command is:
+
+    mv foo bar
+
+  - <kbd>Alt</kbd>+<kbd>0</kbd>+<kbd>.</kbd>: insert first argument of last command = `mv`
+  - <kbd>Alt</kbd>+<kbd>2</kbd>+<kbd>.</kbd>: insert last 2nd argument of last command = `foo`
+  - <kbd>up</kbd> , <kbd>Ctrl</kbd>+<kbd>w</kbd>: last command without the last word = `mv foo`
+
+
 ## Cut/Paste commands
 *(relative to cursor's position)*
   - <kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word
