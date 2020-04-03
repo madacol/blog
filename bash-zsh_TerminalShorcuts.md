@@ -1,3 +1,41 @@
+# Shortcuts
+
+*For Ubuntu's default keybinding settings (i.e Emacs keybindings)*
+
+## Insert previous arguments
+  - <kbd>Alt</kbd>+<kbd>.</kbd>: insert last argument from last command.
+  - <kbd>Alt</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth last argument from last command.
+  - <kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> , <kbd>Alt</kbd>+<kbd>.</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>#</kbd>+<kbd>.</kbd>: insert #nth first argument from last command.
+
+*In Linux you can repeat commands to go back in history*
+
+## Cut/Paste commands
+*(relative to cursor's position)*
+  - <kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word
+  - <kbd>Alt</kbd>+<kbd>d</kbd>: cuts next word
+  - <kbd>Ctrl</kbd>+<kbd>k</kbd>: cuts everything after
+  - <kbd>Ctrl</kbd>+<kbd>u</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>w</kbd>: cuts everything before
+  - **zsh:** <kbd>Ctrl</kbd>+<kbd>u</kbd>: cuts the entire command *(In bash you can combine <kbd>Ctrl</kbd>+<kbd>u</kbd> , <kbd>Ctrl</kbd>+<kbd>k</kbd>)*
+  - <kbd>Ctrl</kbd>+<kbd>y</kbd>: paste characters previously cut with any **Cut command**. *In bash you can chain **cut commands**, and <kbd>Ctrl</kbd>+<kbd>y</kbd> will paste them all.*
+
+
+## Move cursor
+  - <kbd>Ctrl</kbd>+<kbd>left</kbd>: move to last word
+  - <kbd>Ctrl</kbd>+<kbd>right</kbd>: move to next word
+  - <kbd>home</kbd> or <kbd>Ctrl</kbd>+<kbd>a</kbd>: move to start of command
+  - <kbd>end</kbd> or <kbd>Ctrl</kbd>+<kbd>e</kbd>: move to end of command
+
+
+## Other
+  - <kbd>Ctrl</kbd>+<kbd>_</kbd>: undo last edit *(very useful when exceeding <kbd>Ctrl</kbd>+<kbd>w</kbd>)*
+
+# To see all shortcuts available
+  - **bash:** `bind -lp`
+  - **zsh:** `bindkey -L`
+
+# Other examples
+
+## Common usecases
 Let's consider the last command to be:
 
     mv foo bar
@@ -6,34 +44,7 @@ Let's consider the last command to be:
 
 <kbd>Alt</kbd>+<kbd>0</kbd>+<kbd>.</kbd>: first argument of last command = `mv`
 
-## Some useful shortcuts:
-
- - **Select previous arguments**
-   - <kbd>Alt</kbd>+<kbd>.</kbd>: insert last argument from last command.
-   - <kbd>Alt</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth last argument from last command.
-   - <kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> , <kbd>Alt</kbd>+<kbd>.</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>#</kbd>+<kbd>.</kbd>: insert #nth first argument from last command.
-   
-   *In Linux you can repeat commands to go back in history*
-
-
- - **Cut commands** (relative to cursor's position)
-   - <kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word
-   - <kbd>Alt</kbd>+<kbd>d</kbd>: cuts next word
-   - <kbd>Ctrl</kbd>+<kbd>k</kbd>: cuts everything after
-   - <kbd>Ctrl</kbd>+<kbd>u</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>w</kbd>: cuts everything before
-   - **zsh:** <kbd>Ctrl</kbd>+<kbd>u</kbd>: cuts the entire command *(In bash you can combine <kbd>Ctrl</kbd>+<kbd>u</kbd> , <kbd>Ctrl</kbd>+<kbd>k</kbd>)*
-   - <kbd>Ctrl</kbd>+<kbd>y</kbd>: paste characters previously cut with any **Cut command**. *In bash you can chain **cut commands**, and <kbd>Ctrl</kbd>+<kbd>y</kbd> will paste them all.*
- - <kbd>Ctrl</kbd>+<kbd>_</kbd>: undo last edit *(very useful when exceeding <kbd>Ctrl</kbd>+<kbd>w</kbd>)*
- - <kbd>Ctrl</kbd>+<kbd>left</kbd>: move to last word
- - <kbd>Ctrl</kbd>+<kbd>right</kbd>: move to next word
- - <kbd>home</kbd> or <kbd>Ctrl</kbd>+<kbd>a</kbd>: move to start of command
- - <kbd>end</kbd> or <kbd>Ctrl</kbd>+<kbd>e</kbd>: move to end of command
-
-### To see all shortcuts available
-- **bash:** `bind -lp`
-- **zsh:** `bindkey -L`
-
-## Unfortunately there are some limitations
+# Limitations
  "words" only includes `a-zA-Z` characters, so any symbol character will stop word-shortcuts.
 
 So if last argument was a url and you want to erase it with <kbd>Ctrl</kbd>+<kbd>w</kbd> it will be a pain.
