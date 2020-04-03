@@ -44,6 +44,33 @@ Last command is:
   - **bash:** `bind -lp`
   - **zsh:** `bindkey -L`
 
+# Custom shortcuts
+## Iterate through the arguments in a previous command
+*only works in zsh, and probably only Linux*
+
+run or add this to your `~/.zshrc`
+
+    autoload -Uz copy-earlier-word
+    zle -N copy-earlier-word
+    bindkey "^[:" copy-earlier-word
+
+Now use <kbd>Alt</kbd>+<kbd>.</kbd> to go as back as you want, then use <kbd>Alt</kbd>+<kbd>:</kbd> to iterate through the arguments
+
+### Example:
+Last command is
+
+    echo 1 2 3 4 5
+
+- <kbd>Alt</kbd>+<kbd>.</kbd>: `5`
+- <kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>: `4`
+- <kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>: `3`
+- <kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>: `2`
+- <kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>: `1`
+- <kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>: `echo`
+
+source: https://stackoverflow.com/a/34861762/3163120
+
+
 # Other examples
 
 ## Common usecases
