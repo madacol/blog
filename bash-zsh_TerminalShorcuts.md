@@ -45,14 +45,20 @@ Last command is:
   - **zsh:** `bindkey -L`
 
 # Custom shortcuts
-## Iterate through the arguments in a previous command
+## Iterate through arguments
 *only works in zsh, and probably only Linux*
 
-run or add this to your `~/.zshrc`
+### Description
+Insert any argument of a previous command by iterating one by one until selection
+
+### Setup Instructions
+run this:
 
     autoload -Uz copy-earlier-word
     zle -N copy-earlier-word
     bindkey "^[:" copy-earlier-word
+
+*(to make this permanent, add it to your `~/.zshrc` and restart shell)*
 
 Now use <kbd>Alt</kbd>+<kbd>.</kbd> to go as back as you want, then use <kbd>Alt</kbd>+<kbd>:</kbd> to iterate through the arguments
 
