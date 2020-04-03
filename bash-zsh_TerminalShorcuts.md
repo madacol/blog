@@ -5,7 +5,7 @@
 ## Insert previous arguments
   - <kbd>Alt</kbd>+<kbd>.</kbd>: insert last argument from last command.
   - <kbd>Alt</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth last argument from last command.
-  - <kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> , <kbd>Alt</kbd>+<kbd>.</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>#</kbd>+<kbd>.</kbd>: insert #nth first argument from last command.
+  - <kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> , <kbd>Alt</kbd>+<kbd>.</kbd>, **zsh:** <kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth first argument from last command.
 
 *In Linux you can repeat commands to go back in history*
 
