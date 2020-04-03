@@ -40,7 +40,7 @@ Last command is:
 ## Other
   - <kbd>Ctrl</kbd>+<kbd>_</kbd>: undo last edit *(very useful when exceeding <kbd>Ctrl</kbd>+<kbd>w</kbd>)*
 
-# To see all shortcuts available
+## To see all shortcuts available
   - **bash:** `bind -lp`
   - **zsh:** `bindkey -L`
 
