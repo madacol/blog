@@ -11,7 +11,7 @@ Tutorial to fast install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) i
 # Install Termux
 https://termux.com/
 
-# Open Termux and run this:
+# Open Termux and run one of these:
 
 ## Install and configure youtube-dl
 
