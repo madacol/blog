@@ -1,6 +1,8 @@
 [//]: # "Ctrl+K,V o Ctrl+Shift+V - Para ver vista previa en VSCode"
 
-Tutorial to fast install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) in android and configure it to download any url shared to it. Based on https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/
+Tutorial to fast install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) in android and configure it to download any url shared to it.
+
+*Based on https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/*
 
 # Quick Install
 
@@ -9,7 +11,7 @@ https://termux.com/
 
 ## Open Termux and run this:
 
-### Install youtube-dl
+### Install and configure youtube-dl
 
     termux-setup-storage &&
     apt update && apt upgrade && apt install python ffmpeg && pip install youtube-dl &&
