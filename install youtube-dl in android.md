@@ -12,6 +12,7 @@ https://termux.com/
 ### Install youtube-dl
 
     termux-setup-storage &&
+    apt update && apt upgrade && apt install python ffmpeg && pip install youtube-dl &&
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(uploader)s/%(title)s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
@@ -19,8 +20,7 @@ https://termux.com/
     echo "#!/bin/bash
     url=$1
     youtube-dl $url" > ~/bin/termux-url-opener &&
-    chmod +x ~/bin/termux-url-opener &&
-    apt update && apt upgrade && apt install python ffmpeg && pip install youtube-dl
+    chmod +x ~/bin/termux-url-opener
 
 ### Extras (install nano, and add special keys to keyboard)
     mkdir ~/.termux
@@ -32,6 +32,7 @@ https://termux.com/
 
 ### All-In-One (youtube-dl + extras)
     termux-setup-storage &&
+    apt update && apt upgrade && apt install nano python ffmpeg && pip install youtube-dl &&
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(uploader)s/%(title)s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
@@ -44,5 +45,4 @@ https://termux.com/
     echo "extra-keys = [ \
         ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', '-'], \
         ['TAB','CTRL', 'ALT', 'LEFT', 'DOWN', 'RIGHT', 'PGDN', '~'] \
-    ]" > ~/.termux/termux.properties &&
-    apt update && apt upgrade && apt install nano python ffmpeg && pip install youtube-dl
+    ]" > ~/.termux/termux.properties
