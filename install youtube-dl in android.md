@@ -20,10 +20,10 @@ https://termux.com/
     termux-setup-storage &&
     # Install youtube-dl
     apt update && apt upgrade && apt install python ffmpeg dialog && pip install youtube-dl &&
-    # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{uploader}/{filename}`
+    # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
-    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(uploader)s/%(title)s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
+    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title)s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
     # Configure to open shared URLs with `youtube-dl {url}`
     mkdir ~/bin &&
     echo '#!/bin/bash
@@ -54,6 +54,7 @@ https://termux.com/
 
 ```bash
     # Add special keys to keyboard
+    # source: https://wiki.termux.com/wiki/Touch_Keyboard#Extra_Keys_Row(s)
     mkdir ~/.termux
     echo "extra-keys = [ \
         ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', '-'], \
