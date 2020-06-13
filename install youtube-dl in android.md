@@ -19,16 +19,34 @@ https://termux.com/
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade && apt install python ffmpeg && pip install youtube-dl &&
+    apt update && apt upgrade && apt install python ffmpeg dialog && pip install youtube-dl &&
     # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{uploader}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(uploader)s/%(title)s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
     # Configure to open shared URLs with `youtube-dl {url}`
     mkdir ~/bin &&
-    echo "#!/bin/bash
-    url=$1
-    youtube-dl $url" > ~/bin/termux-url-opener &&
+    echo '#!/bin/bash
+        URL=$1
+        HEIGHT=15
+        WIDTH=40
+        CHOICE_HEIGHT=4
+
+        CHOICE=$(dialog \
+            --menu "Que desea descargar?" \
+            $HEIGHT $WIDTH $CHOICE_HEIGHT \
+            Video "" \
+            Audio "" \
+            2>&1 >/dev/tty)
+
+        case $CHOICE in
+            Video)
+                youtube-dl $URL
+                ;;
+            Audio)
+                youtube-dl -x $URL
+                ;;
+        esac' > ~/bin/termux-url-opener &&
     chmod +x ~/bin/termux-url-opener
 ```
 
