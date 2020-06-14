@@ -23,7 +23,7 @@ https://termux.com/
     # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
-    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title)s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
+    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
     # Configure to open shared URLs with `youtube-dl {url}`
     mkdir ~/bin &&
     echo '#!/bin/bash
