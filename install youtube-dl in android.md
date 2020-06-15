@@ -27,7 +27,7 @@ After sharing to termux, a dialog will appear so you can choose to download vide
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade && apt install python ffmpeg dialog && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install python ffmpeg dialog && pip install youtube-dl &&
     # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
@@ -66,7 +66,7 @@ This will always download video. But if you always want just audio, replace `you
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade && apt install python ffmpeg && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install python ffmpeg && pip install youtube-dl &&
     # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
@@ -87,7 +87,7 @@ This will only install youtube-dl in termux, you need to run it manually from th
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade && apt install python ffmpeg && pip install youtube-dl
+    apt update && apt upgrade -y && apt install python ffmpeg && pip install youtube-dl
 ```
 
 
@@ -111,7 +111,7 @@ Youtube-dl + sharing + dialog + Termux extras
 
 ```bash
     termux-setup-storage &&
-    apt update && apt upgrade && apt install nano python ffmpeg && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install nano python ffmpeg && pip install youtube-dl &&
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
