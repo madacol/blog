@@ -13,11 +13,11 @@ https://termux.com/
 
 # Open Termux and run one of these:
 
-1. [Youtube-dl + sharing + dialog **(Recommended)**](#Youtube-dl-+-sharing-+-dialog-**(Recommended)**)
-2. [Youtube-dl + sharing](#Youtube-dl-+-sharing)
-3. [Youtube-dl](#Youtube-dl)
-4. [Termux extras](#Termux-extras)
-5. [All-In-One](#All-In-One)
+1. [Youtube-dl + sharing + dialog **(Recommended)**](#youtube-dl--sharing--dialog-recommended)
+2. [Youtube-dl + sharing](#youtube-dl--sharing)
+3. [Youtube-dl](#youtube-dl)
+4. [Termux extras](#termux-extras)
+5. [All-In-One](#all-in-one)
 
 ## Youtube-dl + sharing + dialog **(Recommended)**
 
