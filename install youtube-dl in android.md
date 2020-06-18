@@ -21,7 +21,7 @@ https://termux.com/
 
 ## Youtube-dl + sharing + dialog **(Recommended)**
 
-After sharing to termux, a dialog will appear so you can choose to download video or just audio
+After sharing a URL to termux, a dialog will appear so you can choose to download video or just audio
 
 ```bash
     # Ask for storage permission
@@ -60,7 +60,7 @@ After sharing to termux, a dialog will appear so you can choose to download vide
 
 ## Youtube-dl + sharing
 
-This will always download video. But if you always want just audio, replace `youtube-dl $url` with `youtube-dl -x $url`
+Afeter sharing URL to termux this will automatically download the video. But if you always want just audio, replace `youtube-dl $url` with `youtube-dl -x $url`
 
 ```bash
     # Ask for storage permission
@@ -81,7 +81,7 @@ This will always download video. But if you always want just audio, replace `you
 
 ## Youtube-dl
 
-This will only install youtube-dl in termux, you need to run it manually from the terminal, e.g `youtube-dl https://youtu.be/blahblahblah`
+This will only install youtube-dl in termux, sharing a URL to Termux will not work, you'll need to run the command manually from the terminal, e.g `youtube-dl https://youtu.be/blahblahblah`
 
 ```bash
     # Ask for storage permission
