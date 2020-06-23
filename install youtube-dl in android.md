@@ -60,7 +60,7 @@ After sharing a URL to termux, a dialog will appear so you can choose to downloa
 
 ## Youtube-dl + sharing
 
-Afeter sharing URL to termux this will automatically download the video. But if you always want just audio, replace `youtube-dl $url` with `youtube-dl -x $url`
+After sharing URL to termux this will automatically download the video. But if you always want just audio, replace `youtube-dl $url` with `youtube-dl -x $url`
 
 ```bash
     # Ask for storage permission
