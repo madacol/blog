@@ -27,7 +27,7 @@ After sharing a URL to termux, a dialog will appear so you can choose to downloa
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade -y && apt install python ffmpeg dialog && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install -y python ffmpeg dialog && pip install youtube-dl &&
     # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
@@ -66,7 +66,7 @@ After sharing URL to termux this will automatically download the video. But if y
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade -y && apt install python ffmpeg && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install -y python ffmpeg && pip install youtube-dl &&
     # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
@@ -87,7 +87,7 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
     # Ask for storage permission
     termux-setup-storage &&
     # Install youtube-dl
-    apt update && apt upgrade -y && apt install python ffmpeg && pip install youtube-dl
+    apt update && apt upgrade -y && apt install -y python ffmpeg && pip install youtube-dl
 ```
 
 
@@ -102,7 +102,7 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
         ['TAB','CTRL', 'ALT', 'LEFT', 'DOWN', 'RIGHT', 'PGDN', '~'] \
     ]" > ~/.termux/termux.properties
     # Install nano
-    apt install nano
+    apt install -y nano
 ```
 
 ## All-In-One
@@ -111,7 +111,7 @@ Youtube-dl + sharing + dialog + Termux extras
 
 ```bash
     termux-setup-storage &&
-    apt update && apt upgrade -y && apt install nano python ffmpeg && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install -y nano python ffmpeg && pip install youtube-dl &&
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
