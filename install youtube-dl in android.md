@@ -33,7 +33,7 @@ After sharing a URL to termux, a dialog will appear so you can choose to downloa
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
     # Configure to open shared URLs with `youtube-dl {url}`
-    mkdir ~/bin &&
+    mkdir -p ~/bin &&
     echo '#!/bin/bash
         URL=$1
         HEIGHT=15
@@ -72,7 +72,7 @@ After sharing URL to termux this will automatically download the video. But if y
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
     # Configure to open shared URLs with `youtube-dl {url}`
-    mkdir ~/bin &&
+    mkdir -p ~/bin &&
     echo "#!/bin/bash
     url=$1
     youtube-dl $url" > ~/bin/termux-url-opener &&
@@ -96,7 +96,7 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
 ```bash
     # Add special keys to keyboard
     # source: https://wiki.termux.com/wiki/Touch_Keyboard#Extra_Keys_Row(s)
-    mkdir ~/.termux
+    mkdir -p ~/.termux
     echo "extra-keys = [ \
         ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', '-'], \
         ['TAB','CTRL', 'ALT', 'LEFT', 'DOWN', 'RIGHT', 'PGDN', '~'] \
@@ -115,7 +115,7 @@ Youtube-dl + sharing + dialog + Termux extras
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
-    mkdir ~/bin &&
+    mkdir -p ~/bin &&
     echo '#!/bin/bash
         URL=$1
         HEIGHT=15
@@ -138,7 +138,7 @@ Youtube-dl + sharing + dialog + Termux extras
                 ;;
         esac' > ~/bin/termux-url-opener &&
     chmod +x ~/bin/termux-url-opener &&
-    mkdir ~/.termux &&
+    mkdir -p ~/.termux &&
     echo "extra-keys = [ \
         ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', '-'], \
         ['TAB','CTRL', 'ALT', 'LEFT', 'DOWN', 'RIGHT', 'PGDN', '~'] \
