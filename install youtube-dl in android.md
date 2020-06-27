@@ -21,8 +21,6 @@ https://termux.com/
 
 ## Youtube-dl + sharing + dialog **(Recommended)**
 
-After sharing a URL to termux, a dialog will appear so you can choose to download video or just audio
-
 ```bash
     # Ask for storage permission
     termux-setup-storage &&
@@ -58,9 +56,21 @@ After sharing a URL to termux, a dialog will appear so you can choose to downloa
     chmod +x ~/bin/termux-url-opener
 ```
 
+- Paste the script above 🖢 in the Termux console and press <kbd>Enter</kbd>
+- A prompt to enable storage will appear, press <kbd>y</kbd> then <kbd>Enter</kbd>
+- That's all!, just wait for it to finish upgrading/installing
+
+### Usage:
+
+Share an URL to termux, a dialog will ask you to choose if download **video** or just **audio**
+
 ## Youtube-dl + sharing
 
-After sharing URL to termux this will automatically download the video. But if you always want just audio, replace `youtube-dl $url` with `youtube-dl -x $url`
+### Usage:
+
+Share URL to termux, this will automatically download the video.
+
+But if you always want to download just audio, replace `youtube-dl $url` with `youtube-dl -x $url` in the script below 🖣
 
 ```bash
     # Ask for storage permission
