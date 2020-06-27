@@ -28,7 +28,7 @@ After sharing a URL to termux, a dialog will appear so you can choose to downloa
     termux-setup-storage &&
     # Install youtube-dl
     apt update && apt upgrade -y && apt install -y python ffmpeg dialog && pip install youtube-dl &&
-    # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
+    # Configure to download videos in `Download/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
@@ -67,7 +67,7 @@ After sharing URL to termux this will automatically download the video. But if y
     termux-setup-storage &&
     # Install youtube-dl
     apt update && apt upgrade -y && apt install -y python ffmpeg && pip install youtube-dl &&
-    # Configure to download videos in `Downloads/{URL's provider (e.g. Youtube)}/{filename}`
+    # Configure to download videos in `Download/{URL's provider (e.g. Youtube)}/{filename}`
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
