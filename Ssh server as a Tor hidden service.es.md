@@ -37,7 +37,7 @@ Deberia arrojarte algo así: `riludi2kstjwmlzn.onion`
 # Conectarse al servidor ssh con la direccion .onion
 
 ```bash
-torify ssh ... # solo reemplazar el dominio/ip por la direccion .onion`
+torify ssh ... # reemplazar el dominio/ip por la direccion .onion`
 ```
 
 
