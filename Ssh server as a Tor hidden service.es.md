@@ -59,3 +59,7 @@ Ingresar configuracion:
 Ahora puedes conectarte así:
 
     torify ssh serverTor
+
+## Mas informacion
+
+<https://community.torproject.org/onion-services/setup/>
