@@ -38,7 +38,7 @@ END
 
 Al ejecutar ese procedimiento almacenado, se abre una transacción, se ejecuta la **Consulta 1**, y al intentar la **Consulta 2** falla.
 
-Hay un problema aquí, la transacción no se deshace, sino que queda abierta, osea, tiene cambios hechos de la **Consulta 1**, pero no se han hecho permanentes en la BD (`COMMIT`), ni tampoco se han devuelto los cambios (`ROLLBACK`). Y puede ocurrir cualquiera de los dos escenarios. Por ejemplo si se cierra la conexión, la BD ejecuta un `ROLLBACK` y si se ejecuta cualquiera de estas consultas https://dev.mysql.com/doc/refman/8.0/en/implicit-commit.html se genera un `COMMIT` implicitamente.
+Hay un problema aquí, la transacción no se deshace, sino que queda abierta, osea, tiene cambios hechos de la **Consulta 1**, pero no se han hecho permanentes en la BD (`COMMIT`), ni tampoco se han devuelto los cambios (`ROLLBACK`). Y puede ocurrir cualquiera de los dos escenarios. Por ejemplo si se cierra la conexión, la BD ejecuta un `ROLLBACK` y si se ejecuta cualquiera de estas consultas <https://dev.mysql.com/doc/refman/8.0/en/implicit-commit.html> se genera un `COMMIT` implicitamente.
 
 Si en este estado de la BD se hace un `SELECT` para verificar si en la BD se hicieron los cambios de la **Consulta 1**, se va a obtener distintas respuestas dependiendo de si el `SELECT` se ejecuta desde la misma conexión/sesión o no.
 
@@ -77,7 +77,7 @@ Esto sirve para que cualquier otra consulta que quiera leer o modificar los elem
 
 Los `SELECT` normales no generan ningun bloqueo, para eso existen el `SELECT ... FOR SHARE` y el `SELECT ... FOR UPDATE`.
 
-En términos simples el **FOR SHARE** bloquea los elementos seleccionados para que otra consulta no pueda escribir sobre ellos hasta que se cierre la transacción, y el **FOR UPDATE** adicionalmente impide que tampoco puedan leerlos (igual que los `INSERT`, `UPDATE` o `DELETE`). Mas información https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html
+En términos simples el **FOR SHARE** bloquea los elementos seleccionados para que otra consulta no pueda escribir sobre ellos hasta que se cierre la transacción, y el **FOR UPDATE** adicionalmente impide que tampoco puedan leerlos (igual que los `INSERT`, `UPDATE` o `DELETE`). Mas información <https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html>
 
 ### Recomendaciones
 

@@ -1,17 +1,18 @@
-*copiado sin verguenza alguna de https://www.techrepublic.com/article/how-to-run-an-ssh-connection-through-tor/*
+# Configurar a un servicio onion
+
+*copiado sin verguenza alguna de <https://www.techrepublic.com/article/how-to-run-an-ssh-connection-through-tor/>*
 
 ---
 
-# Instalar Tor
+## Instalar Tor
 
 Instalar Tor en el cliente y en el servidor:
 
     sudo apt-get install tor -y
 
-# Configurar Tor
+## Configurar Tor
 
 1. En el servidor vamos a editar el archivo de configuración de tor `/etc/tor/torrc`:
-
 
         sudo nano /etc/tor/torrc
 
@@ -26,7 +27,7 @@ Instalar Tor en el cliente y en el servidor:
 
         sudo systemctl restart tor
 
-# Obtener la direccion .onion
+## Obtener la direccion .onion
 
 Estará en el archivo `hostname` en la carpeta configurada anteriormente `/var/lib/tor/ssh/`
 
@@ -34,18 +35,15 @@ Estará en el archivo `hostname` en la carpeta configurada anteriormente `/var/l
 
 Deberia arrojarte algo así: `riludi2kstjwmlzn.onion`
 
-# Conectarse al servidor ssh con la direccion .onion
+## Conectarse al servidor ssh con la direccion .onion
 
-```bash
-torify ssh ... # reemplazar el dominio/ip por la direccion .onion`
-```
-
+    torify ssh ... # reemplazar el dominio/ip por la direccion .onion`
 
 Por ejemplo:
 
     torify ssh jack@riludi2kstjwmlzn.onion
 
-## Opcional
+### Opcional
 
 Para no tener que recordar la direccion **.onion** puedes configurar los parámetros de conexión en el archivo `~/.ssh/config`
 
@@ -57,7 +55,6 @@ Ingresar configuracion:
         User jack
         HostName riludi2kstjwmlzn.onion
         Port 22
-
 
 Ahora puedes conectarte así:
 

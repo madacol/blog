@@ -1,17 +1,18 @@
 [//]: # "Ctrl+K,V o Ctrl+Shift+V - Para ver vista previa en VSCode"
 
-Tutorial to install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) in android via [termux](https://termux.com/), and configure it to download links shared from another app.
+# Tutorial to install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) in android
 
-*Based on https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/*
+Based on <https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/>
 
-# Usage
+## Usage
 
 Click **Share**, select **Termux**, choose video or audio, and that's it!, it will be saved to `Downloads/{Provider}/` e.g `Downloads/Youtube/`
 
-# Install Termux
-https://termux.com/
+## Install Termux
 
-# Open Termux and run one of these:
+<https://termux.com/>
+
+## Open Termux and run one of these
 
 1. [Youtube-dl + sharing + dialog **(Recommended)**](#youtube-dl--sharing--dialog-recommended)
 2. [Youtube-dl + sharing](#youtube-dl--sharing)
@@ -19,7 +20,7 @@ https://termux.com/
 4. [Termux extras](#termux-extras)
 5. [All-In-One](#all-in-one)
 
-## Youtube-dl + sharing + dialog **(Recommended)**
+### Youtube-dl + sharing + dialog **(Recommended)**
 
 ```bash
     # Ask for storage permission
@@ -60,13 +61,13 @@ https://termux.com/
 - A prompt to enable storage will appear, press <kbd>y</kbd> then <kbd>Enter</kbd>
 - That's all!, just wait for it to finish upgrading/installing
 
-### Usage:
+#### Usage
 
 Share an URL to termux, a dialog will ask you to choose if download **video** or just **audio**
 
-## Youtube-dl + sharing
+### Youtube-dl + sharing
 
-### Usage:
+#### Usage
 
 Share URL to termux, this will automatically download the video.
 
@@ -89,7 +90,7 @@ But if you always want to download just audio, replace `youtube-dl $url` with `y
     chmod +x ~/bin/termux-url-opener
 ```
 
-## Youtube-dl
+### Youtube-dl
 
 This will only install youtube-dl in termux, sharing a URL to Termux will not work, you'll need to run the command manually from the terminal, e.g `youtube-dl https://youtu.be/blahblahblah`
 
@@ -100,8 +101,7 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
     apt update && apt upgrade -y && apt install -y python ffmpeg && pip install youtube-dl
 ```
 
-
-## Termux extras
+### Termux extras
 
 ```bash
     # Add special keys to keyboard
@@ -115,7 +115,7 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
     apt install -y nano
 ```
 
-## All-In-One
+### All-In-One
 
 Youtube-dl + sharing + dialog + Termux extras
 
