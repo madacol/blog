@@ -1,0 +1,8 @@
+{
+    "autoSnippet.snippets": [
+        {
+            "pattern": "**/*.md",
+            "snippet": "note"
+        }
+    ]
+}

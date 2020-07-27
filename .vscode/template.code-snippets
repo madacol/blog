@@ -1,0 +1,12 @@
+{
+	"note": {
+		"scope": "markdown",
+		"prefix": "note",
+		"body": [
+			"# ${TM_FILENAME_BASE}",
+			"",
+			""
+		],
+		"description": "Set title"
+	}
+}
