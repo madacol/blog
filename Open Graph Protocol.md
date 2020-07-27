@@ -20,9 +20,9 @@ Works by defining `<meta/>` tags like `<meta property="og:{}" content="{}" />`
 </html>
 ```
 
-## Official documentation
+## Further reading
 
-<https://ogp.me/>
+- [Official documentation](https://ogp.me/)
 
 ## Why learned this
 
