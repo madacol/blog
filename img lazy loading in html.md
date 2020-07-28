@@ -10,6 +10,6 @@ This will load the image when scrolling is near the viewport, using the [Interse
 
 - <https://web.dev/native-lazy-loading>
 
-## Why learned this
+## What led to learning this
 
 - Accidentally: a rabbit hole that started at [Jason Crawford's github](https://github.com/jasoncrawford) and ended at <https://github.com/owid/owid-grapher/pull/422>

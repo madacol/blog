@@ -24,6 +24,6 @@ Works by defining `<meta/>` tags like `<meta property="og:{}" content="{}" />`
 
 - [Official documentation](https://ogp.me/)
 
-## Why learned this
+## What led to learning this
 
 - I Linked to [[Bolivar Paralelo]] in [[My LinkedIn]] and the preview was garbage
