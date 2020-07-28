@@ -5,12 +5,13 @@
 		"body": [
 			"# ${TM_FILENAME_BASE}",
 			"",
+			"$1",
+			"",
 			"## What led to learning this",
 			"",
-			"- ",
+			"- $2",
 			"",
 			"",
 		],
-		"description": "Set title"
 	}
 }
