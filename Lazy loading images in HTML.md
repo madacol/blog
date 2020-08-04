@@ -1,4 +1,4 @@
-# img lazy loading in html
+# Lazy loading images in HTML
 
 To implement [[Lazy Loading]] to an `<img ... >` tag, add the attrbitue `loading=lazy`
 
