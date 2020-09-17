@@ -56,6 +56,16 @@ zle -N copy-earlier-word
 bindkey "^[:" copy-earlier-word
 ```
 
+### Aliases
+
+```bash
+alias lr="ls -hartl"
+alias youtube-dl720='youtube-dl -f "bestvideo[height<=720]+bestaudio/best[height<=720]"'
+alias python=python3
+alias ipython=ipython3
+function mkcd () { mkdir -p "$@" && cd "$@"; }
+```
+
 ### Enable most
 
 ```bash
