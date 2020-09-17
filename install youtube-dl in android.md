@@ -48,9 +48,11 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
 
         case $CHOICE in
             Video)
+                echo "Downloading video from $URL"
                 youtube-dl $URL
                 ;;
             Audio)
+                echo "Downloading audio from $URL"
                 youtube-dl -x $URL
                 ;;
         esac' > ~/bin/termux-url-opener &&
