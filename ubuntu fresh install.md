@@ -72,6 +72,14 @@ function mkcd () { mkdir -p "$@" && cd "$@"; }
 export PAGER=most
 ```
 
+### Enable zsh plugins
+
+```bash
+plugins=(git zsh-syntax-highlighting)
+plugins=(autoswitch_virtualenv $plugins)
+```
+**Note:** Probably need to install them first
+
 ## Gnome extensions
 
 - Caffeine <https://extensions.gnome.org/extension/517/caffeine/>
