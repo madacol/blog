@@ -64,9 +64,8 @@ export PAGER=most
 
 ## Gnome extensions
 
-- Caffeine
+- Caffeine <https://extensions.gnome.org/extension/517/caffeine/>
 - Dash to dock <https://extensions.gnome.org/extension/307/dash-to-dock/> `sudo apt remove gnome-shell-extension-ubuntu-dock` <https://github.com/micheleg/dash-to-dock/issues/643>
-- suspend button NetSpeed <https://extensions.gnome.org/extension/104/netspeed/>
 - NetSpeed <https://extensions.gnome.org/extension/104/netspeed/>
 
 ## Custom shortcuts
