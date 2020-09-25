@@ -1,8 +1,10 @@
 # Lazy loading images in HTML
 
-To implement [[Lazy Loading]] to an `<img ... >` tag, add the attrbitue `loading=lazy`
+To implement [[Lazy Loading]] to an `<img ... >` tag, add the attribute `loading=lazy`
 
-    <img loading=lazy ... >
+```html
+<img loading=lazy ... >
+```
 
 This will load the image when scrolling is near the viewport, using the [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver)
 
