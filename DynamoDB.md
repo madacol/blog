@@ -17,4 +17,4 @@ It's a [[NoSQL]] [[Database]] from [[AWS]]
 
 ## What led to learning this
 
-- Podcast: Full Stack Radio: 139: Alex DeBrie - DynamoDB for Relational Database Diehards <https://fullstackradio.com/episodes/139-20f6bb42>
+- Podcast: [Full Stack Radio: 139: Alex DeBrie - DynamoDB for Relational Database Diehards](https://fullstackradio.com/episodes/139-20f6bb42)
