@@ -17,7 +17,7 @@ QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ
 ```
 Note the filename is just the hash, the original filename is lost.
 
-*Haven't researched if there's an easy way to persist the filename*
+*IPNS seems to solve the filename problem, need to research on how to use it*
 
 
 ## What led to learning this
