@@ -21,7 +21,7 @@ El peso de una transaccion no solo depende de la cantidad de entradas y salidas,
 - 3...  (Segwit envuelto en un script, para hacerlo compatible con la clásica)
 - bc1...    (Segwit nativo)
 
-El primero es el mas ineficiente (el que pesa mas en una transaccion), # Bitcoiny el último es el mas eficiente.
+El primero es el mas ineficiente (el que pesa mas en una transaccion), y el último es el mas eficiente.
 Ya todos los servicios se han adaptado al mas eficiente, asi que asegurate de que la wallet que uses tenga direcciones que empiecen por **bc1...**
 
 ## Wallets centralizadas vs descentralizadas
