@@ -10,7 +10,8 @@ added QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ file.md
  37.62 KiB / 37.62 KiB [===========================] 100.00%
 ```
 4. Start server with `ipfs daemon`
-5. Download file from any device `ipfs get /ipfs/QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ` <-- that's the hash returned from previous command
+5. **Missing step**, server seems to need an open port (not firewalled)
+6. Download file from any device `ipfs get /ipfs/QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ` <-- that's the hash returned from previous command
 ```bash
 $ ls
 QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ
