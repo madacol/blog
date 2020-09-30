@@ -11,7 +11,7 @@ added QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ file.md
 ```
 4. Start server with `ipfs daemon`
 5. **Missing step**, server seems to need an open port (not firewalled)
-6. Download file from any device `ipfs get /ipfs/QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ` <-- that's the hash returned from previous command
+6. Download file from any device `ipfs get /ipfs/QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ` <-- that's the hash returned from **step 3**
 ```bash
 $ ls
 QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ
