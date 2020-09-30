@@ -1,3 +1,7 @@
+---
+tags: knowledge, web
+---
+
 # Open Graph Protocol
 
 This is a standard that uses websites to tell external websites how a link preview should look

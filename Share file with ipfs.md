@@ -1,3 +1,7 @@
+---
+tags: tutorial, ipfs
+---
+
 # Share file with ipfs
 
 **Warning:** Only tested serving the file, not downloading it

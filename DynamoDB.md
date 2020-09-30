@@ -1,3 +1,7 @@
+---
+tags: knowledge, database, nosql
+---
+
 # DynamoDB
 
 It's a [[NoSQL]] [[Database]] from [[AWS]]

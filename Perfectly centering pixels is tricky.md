@@ -1,3 +1,7 @@
+---
+tags: knowledge, frontend, from-podcast
+---
+
 # Perfectly centering pixels is tricky
 
 To perfectly center a container (like a `<div>`) inside another container, both containers' sizes must have the same parity, in other words, both sizes must be either even or odd, in the direction of centering.
