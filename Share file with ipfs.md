@@ -9,21 +9,24 @@ tags: tutorial, ipfs
 1. [Install ipfs](https://ipfs.io/#install)
 2. Initiate ipfs main folder `ipfs init`, not sure why but this is required for following commands
 3. Serve a file `ipfs add {filepath}`. It should return something like this
-```bash
-added QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ file.md
- 37.62 KiB / 37.62 KiB [===========================] 100.00%
-```
+
+    ```bash
+    added QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ file.md
+    37.62 KiB / 37.62 KiB [===========================] 100.00%
+    ```
+
 4. Start server with `ipfs daemon`
 5. **Missing step**, server seems to need an open port (not firewalled)
 6. Download file from any device `ipfs get /ipfs/QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ` <-- that's the hash returned from **step 3**
-```bash
-$ ls
-QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ
-```
-Note the filename is just the hash, the original filename is lost.
 
-*IPNS seems to solve the filename problem, need to research on how to use it*
+    ```bash
+    $ ls
+    QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ
+    ```
 
+Notice the filename is just the hash, the original filename is lost.\
+
+**Note:** *IPNS seems to solve the filename problem, need to research on how to use it*
 
 ## What led to learning this
 
