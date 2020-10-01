@@ -27,5 +27,5 @@ Note the filename is just the hash, the original filename is lost.
 
 ## What led to learning this
 
-- [Random news of ipfs in HN](https://blog.ipfs.io/2020-09-24-go-ipfs-0-7-0/). It just reminded me I've never tried it out.\
+[Random news of ipfs in HN](https://blog.ipfs.io/2020-09-24-go-ipfs-0-7-0/). It just reminded me I've never tried it out.\
 And in recent months I've had difficulty sharing files p2p

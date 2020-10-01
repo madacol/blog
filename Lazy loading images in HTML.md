@@ -18,4 +18,4 @@ This will load the image when scrolling is near the viewport, using the [Interse
 
 ## What led to learning this
 
-- Accidentally: a rabbit hole that started at [Jason Crawford's github](https://github.com/jasoncrawford) and ended at an [issue in the owid-grapher repo](https://github.com/owid/owid-grapher/pull/422)
+Accidentally: a rabbit hole that started at [Jason Crawford's github](https://github.com/jasoncrawford) and ended at an [issue in the owid-grapher repo](https://github.com/owid/owid-grapher/pull/422)

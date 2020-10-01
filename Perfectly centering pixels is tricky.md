@@ -12,4 +12,4 @@ Font makes things trickier. Let's suppose you want to center vertically a text i
 
 ## What led to learning this
 
-- Podcast: [Full Stack Radio: 135: Lessons Learned Building Tailwind UI](https://fullstackradio.com/episodes/135-e8c69ea6)
+Podcast: [Full Stack Radio: 135: Lessons Learned Building Tailwind UI](https://fullstackradio.com/episodes/135-e8c69ea6)

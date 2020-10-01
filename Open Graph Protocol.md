@@ -30,4 +30,4 @@ Works by defining `<meta/>` tags like `<meta property="og:{}" content="{}" />`
 
 ## What led to learning this
 
-- I Linked to [Bolivar Paralelo](https://bolivarparalelo.com/) in my [LinkedIn](https://www.linkedin.com/in/madacol/) and the preview was garbage
+I Linked to [Bolivar Paralelo](https://bolivarparalelo.com/) in my [LinkedIn](https://www.linkedin.com/in/madacol/) and the preview was garbage
