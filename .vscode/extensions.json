@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "svsool.markdown-memo",
+        "yzhang.markdown-all-in-one",
+        "telesoho.vscode-markdown-paste-image",
+        "davidanson.vscode-markdownlint",
+        "gruntfuggly.auto-snippet",
+    ]
+}

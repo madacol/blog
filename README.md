@@ -4,6 +4,8 @@ To read notes properly use VSCode with following extensions
 
 ## Vscode extensions
 
+***Note:** VSCode should recommend you to install them all when you open this project*
+
 - [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) `ext install yzhang.markdown-all-in-one`
 - [Markdown Paste](https://marketplace.visualstudio.com/items?itemName=telesoho.vscode-markdown-paste-image) `ext install telesoho.vscode-markdown-paste-image`
