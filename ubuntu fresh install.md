@@ -66,6 +66,21 @@ alias ipython=ipython3
 function mkcd () { mkdir -p "$@" && cd "$@"; }
 ```
 
+### Lazy-load nvm
+
+```bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . $NVM_DIR/nvm.sh --no-use;  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . $NVM_DIR/bash_completion;  # This loads nvm bash_completion
+__nvm_load_node () {
+  unalias node npm npx;
+  nvm use 2> /dev/null || nvm use default;
+}
+alias node='__nvm_load_node; node $@'
+alias npm='__nvm_load_node; npm $@'
+alias npx='__nvm_load_node; npx $@'
+```
+
 ### Enable most
 
 ```bash
