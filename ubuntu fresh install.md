@@ -75,8 +75,7 @@ export PAGER=most
 ### Enable zsh plugins
 
 ```bash
-plugins=(git zsh-syntax-highlighting)
-plugins=(autoswitch_virtualenv $plugins)
+plugins=(git zsh-syntax-highlighting autoswitch_virtualenv)
 ```
 **Note:** Probably need to install them first
 
