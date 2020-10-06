@@ -46,9 +46,56 @@ Put config file <https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6
 - syncthing: <https://apt.syncthing.net/>
 - Zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md>
 
-## Edit ~/.zshrc
+## Shells
 
-### Add shortcut "Alt+:" [to iterate through arguments](https://stackoverflow.com/questions/4009412/how-to-use-arguments-from-previous-command/55069846#55069846)
+### Fish
+
+#### Functions
+
+- nvm
+
+Install bass, then configure these functions
+
+   - **__nvm_load.fish**
+     ```fish
+     function __nvm_load
+       functions -e __nvm_load node npm npx
+       bass source ~/.nvm/nvm.sh --no-use ';' nvm use 2> /dev/null '||' nvm use default
+     end
+     ```
+   - **nvm.fish**
+     ```fish
+     function nvm
+       functions -e __nvm_load node npm npx
+       bass source ~/.nvm/nvm.sh --no-use ';' source ~/.nvm/bash_completion ';' nvm $argv
+     end
+     ```
+   - **npx.fish**
+     ```fish
+     function npx
+       __nvm_load
+       npx $argv
+     end
+     ```
+   - **npm.fish**
+     ```fish
+     function npm
+       __nvm_load
+       npm $argv
+     end
+     ```
+   - **node.fish**
+     ```fish
+     function node
+       __nvm_load
+       node $argv
+     end
+     ```
+
+
+### Zsh - Edit ~/.zshrc
+
+#### Add shortcut "Alt+:" [to iterate through arguments](https://stackoverflow.com/questions/4009412/how-to-use-arguments-from-previous-command/55069846#55069846)
 
 ```bash
 autoload -Uz copy-earlier-word
@@ -56,7 +103,7 @@ zle -N copy-earlier-word
 bindkey "^[:" copy-earlier-word
 ```
 
-### Aliases
+#### Aliases
 
 ```bash
 alias lr="ls -hartl"
@@ -66,7 +113,7 @@ alias ipython=ipython3
 function mkcd () { mkdir -p "$@" && cd "$@"; }
 ```
 
-### Lazy-load nvm
+#### Lazy-load nvm
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
@@ -81,13 +128,13 @@ alias npm='__nvm_load_node; npm $@'
 alias npx='__nvm_load_node; npx $@'
 ```
 
-### Enable most
+#### Enable most
 
 ```bash
 export PAGER=most
 ```
 
-### Enable zsh plugins
+#### Enable zsh plugins
 
 ```bash
 plugins=(git zsh-syntax-highlighting autoswitch_virtualenv)
