@@ -40,7 +40,7 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
         CHOICE_HEIGHT=4
 
         CHOICE=$(dialog \
-            --menu "Que desea descargar?" \
+            --menu "What would you like to download?" \
             $HEIGHT $WIDTH $CHOICE_HEIGHT \
             Video "" \
             Audio "" \
