@@ -52,7 +52,7 @@ tags: tutorial, android, ssh, firefox, termux, proxy
     ssh-keygen -t ecdsa -f ~/.ssh/id_ecdsa &&
     # Set a password for the private key
     # Get public key
-    echo -e '\nCopy the following public key:'
+    echo -e '\nCopy the following public key:' &&
     cat ~/.ssh/id_ecdsa.pub
     ```
 
