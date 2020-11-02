@@ -46,6 +46,7 @@ tags: tutorial, android, ssh, firefox, termux, proxy
     # Ask for storage permission
     termux-setup-storage &&
     # Install openssh
+    apt update && apt upgrade -y &&
     apt install -y openssh &&
     # Generate an SSH key
     ssh-keygen -t ecdsa -f ~/.ssh/id_ecdsa &&
