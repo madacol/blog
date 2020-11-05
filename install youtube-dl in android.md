@@ -14,6 +14,7 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
 
 ## Open Termux and run one of these
 
+<!-- no toc -->
 1. [Youtube-dl + sharing + dialog **(Recommended)**](#youtube-dl--sharing--dialog-recommended)
 2. [Youtube-dl + sharing](#youtube-dl--sharing)
 3. [Youtube-dl](#youtube-dl)
