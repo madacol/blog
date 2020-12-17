@@ -54,44 +54,52 @@ Put config file <https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6
 
 - nvm
 
-Install bass, then configure these functions
+  Install bass, then configure these functions
 
-   - **__nvm_load.fish**
+  - **__nvm_load.fish**
+
      ```fish
      function __nvm_load
        functions -e __nvm_load node npm npx
        bass source ~/.nvm/nvm.sh --no-use ';' nvm use 2> /dev/null '||' nvm use default
      end
      ```
-   - **nvm.fish**
-     ```fish
-     function nvm
-       functions -e __nvm_load node npm npx
-       bass source ~/.nvm/nvm.sh --no-use ';' source ~/.nvm/bash_completion ';' nvm $argv
-     end
-     ```
-   - **npx.fish**
-     ```fish
-     function npx
-       __nvm_load
-       npx $argv
-     end
-     ```
-   - **npm.fish**
-     ```fish
-     function npm
-       __nvm_load
-       npm $argv
-     end
-     ```
-   - **node.fish**
-     ```fish
-     function node
-       __nvm_load
-       node $argv
-     end
-     ```
 
+  - **nvm.fish**
+
+  ```fish
+  function nvm
+    functions -e __nvm_load node npm npx
+    bass source ~/.nvm/nvm.sh --no-use ';' source ~/.nvm/bash_completion ';' nvm $argv
+  end
+  ```
+
+  - **npx.fish**
+
+  ```fish
+  function npx
+    __nvm_load
+    npx $argv
+  end
+  ```
+
+  - **npm.fish**
+
+  ```fish
+  function npm
+    __nvm_load
+    npm $argv
+  end
+  ```
+
+  - **node.fish**
+
+  ```fish
+  function node
+    __nvm_load
+    node $argv
+  end
+  ```
 
 ### Zsh - Edit ~/.zshrc
 
@@ -145,6 +153,7 @@ export PAGER=most
 ```bash
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ```
+
 **Note:** Probably need to install them first
 
 ## Gnome extensions
