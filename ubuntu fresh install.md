@@ -10,7 +10,7 @@ sudo apt update && sudo apt upgrade -y
 
 ```bash
 sudo apt-get install python3-pip zsh curl wget git
-sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor ncdu qcalc jq tor fonts-noto nautilus-actions filemanager-actions &
+sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol paprefs ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor ncdu qcalc jq tor fonts-noto nautilus-actions filemanager-actions thunderbird chrome-gnome-shell gnome-tweaks &
 
 pip3 install youtube-dl tldr
 ```
@@ -95,6 +95,12 @@ Install bass, then configure these functions
 
 ### Zsh - Edit ~/.zshrc
 
+#### Add `~/.local/bin` to PATH
+
+```bash
+export PATH=$HOME/.local/bin:$PATH
+```
+
 #### Add shortcut "Alt+:" [to iterate through arguments](https://stackoverflow.com/questions/4009412/how-to-use-arguments-from-previous-command/55069846#55069846)
 
 ```bash
@@ -137,7 +143,7 @@ export PAGER=most
 #### Enable zsh plugins
 
 ```bash
-plugins=(git zsh-syntax-highlighting autoswitch_virtualenv)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ```
 **Note:** Probably need to install them first
 
