@@ -1,4 +1,4 @@
-# Ubuntu install guide
+# Ubuntu fresh setup guide
 
 ## Update & Upgrade
 
