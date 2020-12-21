@@ -131,15 +131,18 @@ function mkcd () { mkdir -p "$@" && cd "$@"; }
 
 ```bash
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . $NVM_DIR/nvm.sh --no-use;  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . $NVM_DIR/bash_completion;  # This loads nvm bash_completion
-__nvm_load_node () {
+[ -s "$NVM_DIR/nvm.sh" ] && . $NVM_DIR/nvm.sh --no-use;
+[ -s "$NVM_DIR/bash_completion" ] && . $NVM_DIR/bash_completion;
+function __nvm_load_node () {
   unalias node npm npx;
   nvm use 2> /dev/null || nvm use default;
+  command=$1;
+  shift 1;
+  $command $@;
 }
-alias node='__nvm_load_node; node $@'
-alias npm='__nvm_load_node; npm $@'
-alias npx='__nvm_load_node; npx $@'
+alias node='__nvm_load_node node $@'
+alias npm='__nvm_load_node npm $@'
+alias npx='__nvm_load_node npx $@'
 ```
 
 #### Enable most
