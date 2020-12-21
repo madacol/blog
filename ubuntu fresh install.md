@@ -10,7 +10,7 @@ sudo apt update && sudo apt upgrade -y
 
 ```bash
 sudo apt-get install python3-pip zsh curl wget git
-sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol paprefs ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor ncdu qcalc jq tor fonts-noto nautilus-actions filemanager-actions thunderbird chrome-gnome-shell gnome-tweaks &
+sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol paprefs ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor ncdu qcalc jq tor fonts-noto nautilus-actions filemanager-actions thunderbird chrome-gnome-shell gnome-tweaks smartmontools &
 
 pip3 install youtube-dl tldr
 ```
