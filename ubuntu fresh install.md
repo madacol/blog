@@ -166,7 +166,11 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 ## Dconf
 
-- `org.gnome.shell.extensions.dash-to-dock` = **`cycle-windows`** # so scroll-wheel cycle through apps in the launcher
+### Built-in dash-to-dock extension
+
+- `org.gnome.shell.extensions.dash-to-dock.click-action` = **`cycle-windows`**
+- `org.gnome.shell.extensions.dash-to-dock.scroll-action` = **`cycle-windows`**
+- `org.gnome.shell.extensions.dash-to-dock.show-windows-preview` = **`false`**
 
 ## Custom shortcuts
 
