@@ -163,6 +163,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 - Caffeine <https://extensions.gnome.org/extension/517/caffeine/>
 - NetSpeed <https://extensions.gnome.org/extension/104/netspeed/>
+- EasyScreenCast <https://extensions.gnome.org/extension/690/easyscreencast/>
 
 ## Dconf
 
