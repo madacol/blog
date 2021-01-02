@@ -9,8 +9,8 @@ sudo apt update && sudo apt upgrade -y
 ## Install Packages
 
 ```bash
-sudo apt-get install python3-pip zsh curl wget git
-sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol paprefs ufw servefile nmap fail2ban gimp most colordiff mosh dconf-editor ncdu qcalc jq tor fonts-noto nautilus-actions filemanager-actions thunderbird chrome-gnome-shell gnome-tweaks smartmontools &
+sudo apt-get install python3-pip zsh curl wget git dconf-editor
+sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol paprefs ufw servefile nmap fail2ban gimp most colordiff mosh ncdu qalculate-gtk jq tor fonts-noto nautilus-actions filemanager-actions thunderbird chrome-gnome-shell gnome-tweaks smartmontools &
 
 pip3 install youtube-dl tldr
 ```
@@ -177,6 +177,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 - `systemctl suspend`
 - Cmus <https://medium.com/@madacol/configure-cmus-music-player-on-the-terminal-in-ubuntu-3c513d2d2cd0>
+- `qalculate`
 
 ## StartUp
 
