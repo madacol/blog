@@ -1,8 +1,8 @@
 # Knowledge
 
-To read notes properly use VSCode with following extensions
+To read notes properly use the Vscode extension [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
 
-## Vscode extensions
+## Vscode extensions for editing
 
 ***Note:** VSCode should recommend you to install them all when you open this project*
 
