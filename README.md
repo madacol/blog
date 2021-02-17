@@ -1,6 +1,12 @@
 # Knowledge
 
-To read notes properly use the Vscode extension [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
+I'm still experimenting with this, but I will eventually make a blog based on these articles.
+
+I have more tutorials / explanations here https://github.com/madacol/docs. I will merged them in this repo someday
+
+# Usage
+
+To read notes properly use Vscode with this extension [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
 
 ## Vscode extensions for editing
 
