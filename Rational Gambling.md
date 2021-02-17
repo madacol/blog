@@ -1,6 +1,8 @@
 ---
-tags: probability, expected value, math, blog, investment, gambling
+tags: probability, expected value, math, blog, investment, gambling, draft
 ---
+
+*WARNING: this is work-in-progress, and has many disconnected trains of thought*
 
 # How to gamble rationally
 

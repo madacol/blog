@@ -1,6 +1,8 @@
 ---
-tags: me, values
+tags: me, values, draft
 ---
+
+*WARNING: this is work-in-progress, and has many disconnected trains of thought*
 
 # Core values
 
