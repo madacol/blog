@@ -18,7 +18,7 @@ Theoretically, these values do not depend on any truth about the world we live i
 
 Values that are a consequence of my **core values** and the way the physical world works
 
-- Maximize other people's value, as long as they don't conflict with a common shared values
+- Maximize people's values, as long as they don't conflict with a common shared values
 
     As a society have we ever defined these **shared values** in a cristal clear way?.\
     I'm not sure what the differences are among countries.\
