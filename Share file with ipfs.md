@@ -24,9 +24,12 @@ tags: tutorial, ipfs
     QmdsEVLRXioANssEVLRXYioANsGtANsGtRXYioANsGtAWZ
     ```
 
-Notice the filename is just the hash, the original filename is lost.\
+Notice the filename is just the hash, the original filename is lost.
 
 **Note:** *IPNS seems to solve the filename problem, need to research on how to use it*
+
+## Troubleshoot
+<https://github.com/ipfs/go-ipfs/blob/master/docs/file-transfer.md>
 
 ## What led to learning this
 
