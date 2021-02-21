@@ -124,7 +124,7 @@ Youtube-dl + sharing + dialog + Termux extras
 
 ```bash
     termux-setup-storage &&
-    apt update && apt upgrade -y && apt install -y nano python ffmpeg && pip install youtube-dl &&
+    apt update && apt upgrade -y && apt install -y nano python ffmpeg dialog && pip install youtube-dl &&
     mkdir -p ~/.config/youtube-dl &&
     echo "# Default Output Directory and Pattern
     -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
