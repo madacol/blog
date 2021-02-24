@@ -2,8 +2,6 @@
 
 I'm still experimenting with this, but I will eventually make a blog based on these articles.
 
-I have more tutorials / explanations here https://github.com/madacol/docs. I will merged them in this repo someday
-
 # Usage
 
 You can read this in github in the meantime, but wiki-links will only render properly while editing in Vscode with this extension [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
