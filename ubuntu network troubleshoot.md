@@ -1,3 +1,7 @@
+---
+tags: tutorial, ubuntu, ubuntu 18, ubuntu 20, network, troubleshoot, english
+---
+
 # NetworkManager
 
 - `nm-applet` to run old GUI and activate `Enable Networking`.

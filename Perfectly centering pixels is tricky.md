@@ -1,5 +1,5 @@
 ---
-tags: knowledge, frontend, from-podcast
+tags: knowledge, frontend, english
 ---
 
 # Perfectly centering pixels is tricky

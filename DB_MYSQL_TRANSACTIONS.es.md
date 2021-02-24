@@ -1,4 +1,6 @@
-[//]: # "Ctrl+K,V o Ctrl+Shift+V - Para ver vista previa en VSCode"
+---
+tags: database, potsgresql, sql, spanish
+---
 
 # Comandos principales
 

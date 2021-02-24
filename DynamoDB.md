@@ -1,5 +1,5 @@
 ---
-tags: knowledge, database, nosql
+tags: knowledge, database, nosql, english
 ---
 
 # DynamoDB

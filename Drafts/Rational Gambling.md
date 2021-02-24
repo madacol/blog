@@ -1,5 +1,5 @@
 ---
-tags: probability, expected value, math, blog, investment, gambling, draft
+tags: probability, expected value, math, blog, investment, gambling, draft, english
 ---
 
 *WARNING: this is work-in-progress, and has many disconnected trains of thought*

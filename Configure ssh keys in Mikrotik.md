@@ -1,5 +1,5 @@
 ---
-tags: tutorial, network, mikrotik, ssh, security
+tags: tutorial, network, mikrotik, ssh, security, english
 ---
 
 # Configure ssh keys in Mikrotik

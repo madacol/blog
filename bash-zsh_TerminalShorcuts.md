@@ -1,3 +1,7 @@
+---
+tags: cheatsheet, terminal, bash, zsh, shortcuts, english
+---
+
 # Terminal Shortcuts
 
 ## Default shortcuts

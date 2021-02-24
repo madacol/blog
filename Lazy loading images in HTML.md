@@ -1,5 +1,5 @@
 ---
-tags: knowledge, frontend
+tags: knowledge, frontend, lazy-load, english
 ---
 
 # Lazy loading images in HTML

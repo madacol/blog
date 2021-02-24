@@ -1,5 +1,5 @@
 ---
-tags: tutorial, ipfs
+tags: tutorial, ipfs, file-sharing, nat, english
 ---
 
 # Share file with ipfs

@@ -1,3 +1,7 @@
+---
+tags: tutorial, ubuntu, ubuntu 20, install, setup, english
+---
+
 # Ubuntu fresh setup guide
 
 ## Update & Upgrade

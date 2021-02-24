@@ -1,5 +1,5 @@
 ---
-tags: tutorial, android, ssh, firefox, termux, proxy
+tags: tutorial, android, ssh, firefox, termux, proxy, english
 ---
 
 # Ssh poor-man's-vpn on android

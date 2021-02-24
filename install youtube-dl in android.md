@@ -1,4 +1,6 @@
-[//]: # "Ctrl+K,V o Ctrl+Shift+V - Para ver vista previa en VSCode"
+---
+tags: tutorial, android, ssh, youtube-dl, termux, download, english
+---
 
 # Tutorial to install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) in android
 

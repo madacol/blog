@@ -1,3 +1,7 @@
+---
+tags: tutorial, tor, ssh, nat, firewall, english
+---
+
 # Configure an onion service
 
 *Shamelessly copied from <https://www.techrepublic.com/article/how-to-run-an-ssh-connection-through-tor/>*

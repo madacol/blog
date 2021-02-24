@@ -1,5 +1,5 @@
 ---
-tags: me, values, draft
+tags: me, values, draft, english
 ---
 
 *WARNING: this is work-in-progress, and has many disconnected trains of thought*

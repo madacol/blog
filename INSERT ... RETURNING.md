@@ -1,5 +1,5 @@
 ---
-tags: database, potsgresql, sql
+tags: database, potsgresql, sql, english
 ---
 
 # INSERT ... RETURNING

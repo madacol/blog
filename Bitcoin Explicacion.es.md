@@ -1,3 +1,7 @@
+---
+tags: bitcoin, introduction, spanish
+---
+
 # Bitcoin
 
 ## Como funcionan los fees
