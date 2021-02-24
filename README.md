@@ -6,7 +6,7 @@ I have more tutorials / explanations here https://github.com/madacol/docs. I wil
 
 # Usage
 
-To read notes properly use Vscode with this extension [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
+You can read this in github in the meantime, but wiki-links will only render properly while editing in Vscode with this extension [Markdown Memo](https://marketplace.visualstudio.com/items?itemName=svsool.markdown-memo) `ext install svsool.markdown-memo`
 
 ## Vscode extensions for editing
 
