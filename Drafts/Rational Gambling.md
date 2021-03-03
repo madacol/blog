@@ -29,4 +29,9 @@ asdadasd
 
 ## Expected value
 
-<https://bestbet.data36.com>
+https://bestbet.data36.com
+
+## Other articles
+
+https://news.ycombinator.com/item?id=26283650
+https://en.wikipedia.org/wiki/Kelly_criterion
