@@ -10,11 +10,13 @@ Theoretically, these values do not depend on any truth about the world we live i
 
 - Preserve **my identity** as much as possible
 
-    **My Identity** breaks the boundaries of my own physical body, my family is also part of who I am but in a lesser extent. The same goes for friends, strangers, living beings, and non-living things too. But also the things that made us.
+    **My Identity** are all the things that I like about me that makes me who I am (My idealized self), and it breaks the boundaries of my own physical body. My family is also part of who I am but in a lesser extent. The same goes for friends, strangers, living beings, and non-living things too. But also the things that made us.
 
     I think as things get emotionally farther, the less I consider them to be **me**.
 
     This is probably a reaction to the fear of dying.
+
+- Reduce suffering
 
 # Sub-Values
 
