@@ -42,7 +42,7 @@ otherwise `signature verification failed`
 
 ## Caveat
 
-If the sender's provider's DKIM-private-key is leaked or made public, then anyone in possesion of it could make a valid signature of any email, so then it becomes impossible to verify.
+If the sender's provider's DKIM-private-key is leaked or made public, then anyone in possesion of it could make a valid signature of any email, so the verification result becomes meaningless.
 
 A way to avoid this and preserve its provability, is to timestamp the `.eml` file with a service like <https://opentimestamps.org/>.\
 But it **MUST** be stamped before the private-key went public, so you can prove the email's signature existed before it became forgeable
