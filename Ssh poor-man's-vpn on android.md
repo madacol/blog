@@ -6,7 +6,7 @@ tags: tutorial, android, ssh, firefox, termux, proxy, english
 
 ## TL;DR
 
- 1. Install [Termux](https://play.google.com/store/apps/details?id=com.termux) app on android
+ 1. Install [Termux](https://termux.com/) app on android
  2. In termux install openssh `pkg i -y openssh`
  3. ssh into server using *dynamic port forwarding* `ssh user@server -D12345`
  4. Install [Firefox Beta](https://play.google.com/store/apps/details?id=org.mozilla.firefox_beta) on android (as of now, plain Firefox doesn't support configuring with `about:config`)
