@@ -23,6 +23,7 @@ Una vez que estos organismos mueren, sus partes que mas perduran, como la madera
 
 Pero esta proporción de carbono va variando de una forma predecible con el tiempo, debido a que los átomos de carbono-14 van decayendo a nitrógeno, y es precisamente ésta proporción lo que se mide para estimar la fecha de una madera o de un hueso antiguo
 
-## What led to learning this
+## Mas informacion
 
 - <https://es.wikipedia.org/wiki/Dataci%C3%B3n_por_radiocarbono>
+- Como y porqué decaen algunos atomos (en inglés) <https://rootsofprogress.org/nuclear-physics>
