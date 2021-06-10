@@ -39,7 +39,7 @@ tags: tutorial, android, ssh, firefox, termux, proxy, english
 
 #### Termux
 
-1. Install [Termux](https://play.google.com/store/apps/details?id=com.termux)
+1. Install [Termux](https://termux.com/)
 2. Configure ssh client by running the following commands:
 
     ```bash
