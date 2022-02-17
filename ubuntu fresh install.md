@@ -186,3 +186,19 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ## StartUp
 
 - Cmus `gnome-terminal -- cmus`
+
+## Nautilus
+
+Add context menu to convert to MP4 using ffmpeg
+
+```bash
+nano ~/.local/share/nautilus/scripts/Convert\ to\ MP4
+```
+
+```bash
+#!/bin/bash
+ffmpeg -i ${NAUTILUS_SCRIPT_SELECTED_FILE_PATHS}\
+        -y -vf "scale='bitand(oh*dar,65534)':'min(720,ih)'"\
+        /dev/shm/video.mp4\
+        2> /dev/shm/convertToMP4.log
+```
