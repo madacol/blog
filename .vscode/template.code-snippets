@@ -4,7 +4,7 @@
 		"prefix": "note",
 		"body": [
 			"---",
-			"tags: english, $1",
+			"tags: english, tutorial, til$1",
 			"---",
 			"",
 			"# ${TM_FILENAME_BASE}",
