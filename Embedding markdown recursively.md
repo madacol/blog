@@ -8,7 +8,7 @@ Remixing [@Oliver Matthews' answer][1]. I made it work recursively but instead u
 
 ## Setup
 
-Create the script **parseMd.sh**
+Create the script **parseMd**
 
 ```bash
 #!/usr/bin/env bash
@@ -16,7 +16,7 @@ perl -ne 's#^!\[\[(.+?)\]\].*#`'$0' "$1.md"`#e;print' "$@"
 ```
 
 ```bash
-chmod +x parseMd.sh
+chmod +x parseMd
 ```
 
 ## Using it
@@ -26,13 +26,13 @@ To embed `path/filename.md` use the syntax `![[path/filename]]`
 Now parse the main file
 
 ```bash
-./parseMd.sh main.md > result.md
+./parseMd main.md > result.md
 ```
 
 To export directly to pdf, using pandoc
 
 ```bash
-pandoc <(./parseMd.sh main.md) -o result.pdf --pdf-engine wkhtmltopdf \
+pandoc <(./parseMd main.md) -o result.pdf --pdf-engine wkhtmltopdf \
   --css styles.css \
   -V margin-top=11mm \
   -V margin-bottom=11mm \
