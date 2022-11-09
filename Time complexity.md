@@ -6,13 +6,11 @@ tags: english, til, knowledge
 
 This is how scaling ability of algorithms are measured.
 
-Let's assume we are dealing with algorithms that take a list of `n` items.
-
-Now let's imagine an algorithm that just iterates the list and returns the greatest item.
-
+Let's assume we are dealing with algorithms that take a list of `n` items.\
+For example, an algorithm that just iterates the list and returns the greatest item.\
 This algorithm only needs to do a simple iteration to know the results, and if we double `n`, the  **execution time** also doubles.
 
-If we tried to describe the mathematical function `ExecutionTime(n)`, the equation should look something like this:
+If we tried to describe the mathematical function `ExecutionTime(n)` of that algorithm, the equation should look something like this:
 
 <details style="margin-left: 1em;">
 <summary>
@@ -21,10 +19,16 @@ If we tried to describe the mathematical function `ExecutionTime(n)`, the equati
 where <code>constant</code> includes any computation in the algorithm that doesn't change when increasing the size of the list (<code>n</code>).
 </details>
 
-We only care about how `n` directly affects the `execution_time`, so to simplify it we use the `O()` notation, in this example, its **time complexity** is `O(n)`,
+We only care about how `n` directly affects the `execution_time`, so to simplify it we use the `O()` notation.\
+In this example, its **time complexity** is `O(n)`, and it tells us that the **execution time** will change proportionally to (`n`).
 
-Another way to think about it, if we increase the size of `n` by 10x, the `O()` notation tells us how the **execution time** will increase in comparison.\
-If the algorithm has a **time complexity** of `O(n)`, we should expect the **execution time** to also increase by 10x, but if it is `O(n²)`, we should expect the **execution time** to increase by 100x instead, because `10² = 100`
+## Example
+
+If an algorithm has a **time complexity** of `O(n)`, and we increase the size of `n` by 10x, we should expect the **execution time** to also increase by 10x. But if the algorithm is `O(n²)`, we should expect the **execution time** to increase by 100x instead, because `10² = 100`
+
+An example of an `O(n²)` algorithm:\
+Produce all the ordered combinations of pairs from a list of `n` items. E.g.: input = `[A,B,C]`, which is size: 3\
+output = `[[A,A], [A,B], [A,C], [B,A], [B,B], [B,C], [C,A], [C,B], [C,C]]`, which is size: 9 (3²)
 
 ## Other **time complexities**
 
