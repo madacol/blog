@@ -21,9 +21,12 @@ asdadasd
 <details>
 <summary>How <strong>expected value</strong> power <strong>investments</strong>?</summary>
 
-- When expected value is below target, increasing variance increases the chance of reaching the target
 - Subjective value of money does not correlate linearly with its quantity
-- A gambling's expected value is less than the betting quantity, i.e. on itself is a bad investment. But things can change if you mix it with the expected value of a profitable investment that is normally beyond your budget, hence out of your reach. In other words, betting increases variance, and since budget is below the investment required, it increases chance of making that investment
+- When expected value is below a target, increasing its variance increases also the chance of reaching that target
+- A gambling's expected value is less than the betting quantity, so by itself, it is a bad investment\
+But things can change if you mix it with the expected value of a very profitable investment that requires a minimum-invest-amount of Y, but you don't have enough money to invest in it, so you have no chance to make that investment and take advantage of its high expected value, so if you have X, you have an expected value of X with 100% certainty.\
+Unless you bet your capital X, because betting allows you to have the possibility of reaching the minimum amount to make that investment
+In other words, betting increases variance, and since budget is below the investment required, it allows to exist the possibility of making that investment, intertwining the expected value of the bet with that of the investment, and if the investment has a high enough expected value, it can compensate the negative value of the bet and result in a net positive change in expected value, thus getting a expected value bigger than the initially X, but with uncertainty, less than 100% chance.
 
 </details>
 
