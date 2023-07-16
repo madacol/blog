@@ -1,8 +1,12 @@
 ---
-tags: tutorial, android, ssh, youtube-dl, termux, download, english
+tags: tutorial, android, ssh, yt-dlp, termux, download, english
 ---
 
-# Tutorial to install [youtube-dl](https://github.com/ytdl-org/youtube-dl/) in android
+# Tutorial to install [yt-dlp](https://github.com/yt-dlp/yt-dlp) in android
+
+*This tutorial was originally written for the famous [youtube-dl](https://github.com/ytdl-org/youtube-dl/) (R.I.P) and later adapted to its successor [yt-dlp](https://github.com/yt-dlp/yt-dlp), the adaptation hasn't been well tested*
+
+---
 
 Based on <https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/>
 
@@ -17,24 +21,24 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
 ## Open Termux and run one of these
 
 <!-- no toc -->
-1. [Youtube-dl + sharing + dialog **(Recommended)**](#youtube-dl--sharing--dialog-recommended)
-2. [Youtube-dl + sharing](#youtube-dl--sharing)
-3. [Youtube-dl](#youtube-dl)
+1. [Yt-dlp + sharing + dialog **(Recommended)**](#yt-dlp--sharing--dialog-recommended)
+2. [Yt-dlp + sharing](#yt-dlp--sharing)
+3. [Yt-dlp](#yt-dlp)
 4. [Termux extras](#termux-extras)
 5. [All-In-One](#all-in-one)
 
-### Youtube-dl + sharing + dialog **(Recommended)**
+### Yt-dlp + sharing + dialog **(Recommended)**
 
 ```bash
     # Ask for storage permission
     termux-setup-storage &&
-    # Install youtube-dl
-    apt update && apt upgrade -y && apt install -y python ffmpeg dialog && pip install youtube-dl &&
+    # Install yt-dlp
+    apt update && apt upgrade -y && apt install -y python ffmpeg dialog && pip install yt-dlp &&
     # Configure to download videos in `Download/{URL's provider (e.g. Youtube)}/{filename}`
-    mkdir -p ~/.config/youtube-dl &&
+    mkdir -p ~/.config/yt-dlp &&
     echo "# Default Output Directory and Pattern
-    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
-    # Configure to open shared URLs with `youtube-dl {url}`
+    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/yt-dlp/config &&
+    # Configure to open shared URLs with `yt-dlp {url}`
     mkdir -p ~/bin &&
     echo '#!/bin/bash
         URL=$1
@@ -52,11 +56,11 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
         case $CHOICE in
             Video)
                 echo "Downloading video from $URL"
-                youtube-dl $URL
+                yt-dlp $URL
                 ;;
             Audio)
                 echo "Downloading audio from $URL"
-                youtube-dl -x $URL
+                yt-dlp -x $URL
                 ;;
         esac' > ~/bin/termux-url-opener &&
     chmod +x ~/bin/termux-url-opener
@@ -70,40 +74,40 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
 
 Share an URL to termux, a dialog will ask you to choose if download **video** or just **audio**
 
-### Youtube-dl + sharing
+### Yt-dlp + sharing
 
 #### Usage
 
 Share URL to termux, this will automatically download the video.
 
-But if you always want to download just audio, replace `youtube-dl $url` with `youtube-dl -x $url` in the script below 🖣
+But if you always want to download just audio, replace `yt-dlp $url` with `yt-dlp -x $url` in the script below 🖣
 
 ```bash
     # Ask for storage permission
     termux-setup-storage &&
-    # Install youtube-dl
-    apt update && apt upgrade -y && apt install -y python ffmpeg && pip install youtube-dl &&
+    # Install yt-dlp
+    apt update && apt upgrade -y && apt install -y python ffmpeg && pip install yt-dlp &&
     # Configure to download videos in `Download/{URL's provider (e.g. Youtube)}/{filename}`
-    mkdir -p ~/.config/youtube-dl &&
+    mkdir -p ~/.config/yt-dlp &&
     echo "# Default Output Directory and Pattern
-    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
-    # Configure to open shared URLs with `youtube-dl {url}`
+    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/yt-dlp/config &&
+    # Configure to open shared URLs with `yt-dlp {url}`
     mkdir -p ~/bin &&
     echo "#!/bin/bash
     url=$1
-    youtube-dl $url" > ~/bin/termux-url-opener &&
+    yt-dlp $url" > ~/bin/termux-url-opener &&
     chmod +x ~/bin/termux-url-opener
 ```
 
-### Youtube-dl
+### Yt-dlp
 
-This will only install youtube-dl in termux, sharing a URL to Termux will not work, you'll need to run the command manually from the terminal, e.g `youtube-dl https://youtu.be/blahblahblah`
+This will only install yt-dlp in termux, sharing a URL to Termux will not work, you'll need to run the command manually from the terminal, e.g `yt-dlp https://youtu.be/blahblahblah`
 
 ```bash
     # Ask for storage permission
     termux-setup-storage &&
-    # Install youtube-dl
-    apt update && apt upgrade -y && apt install -y python ffmpeg && pip install youtube-dl
+    # Install yt-dlp
+    apt update && apt upgrade -y && apt install -y python ffmpeg && pip install yt-dlp
 ```
 
 ### Termux extras
@@ -113,7 +117,7 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
     # source: https://wiki.termux.com/wiki/Touch_Keyboard#Extra_Keys_Row(s)
     mkdir -p ~/.termux
     echo "extra-keys = [ \
-        ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', '-'], \
+        ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', 'ENTER'], \
         ['TAB','CTRL', 'ALT', 'LEFT', 'DOWN', 'RIGHT', 'PGDN', '~'] \
     ]" > ~/.termux/termux.properties
     # Install nano
@@ -122,14 +126,14 @@ This will only install youtube-dl in termux, sharing a URL to Termux will not wo
 
 ### All-In-One
 
-Youtube-dl + sharing + dialog + Termux extras
+Yt-dlp + sharing + dialog + Termux extras
 
 ```bash
     termux-setup-storage &&
-    apt update && apt upgrade -y && apt install -y nano python ffmpeg dialog && pip install youtube-dl &&
-    mkdir -p ~/.config/youtube-dl &&
+    apt update && apt upgrade -y && apt install -y nano python ffmpeg dialog && pip install yt-dlp &&
+    mkdir -p ~/.config/yt-dlp &&
     echo "# Default Output Directory and Pattern
-    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/youtube-dl/config &&
+    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/yt-dlp/config &&
     mkdir -p ~/bin &&
     echo '#!/bin/bash
         URL=$1
@@ -146,16 +150,16 @@ Youtube-dl + sharing + dialog + Termux extras
 
         case $CHOICE in
             Video)
-                youtube-dl $URL
+                yt-dlp $URL
                 ;;
             Audio)
-                youtube-dl -x $URL
+                yt-dlp -x $URL
                 ;;
         esac' > ~/bin/termux-url-opener &&
     chmod +x ~/bin/termux-url-opener &&
     mkdir -p ~/.termux &&
     echo "extra-keys = [ \
-        ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', '-'], \
+        ['ESC', '/', '|', 'HOME', 'UP', 'END', 'PGUP', 'ENTER'], \
         ['TAB','CTRL', 'ALT', 'LEFT', 'DOWN', 'RIGHT', 'PGDN', '~'] \
     ]" > ~/.termux/termux.properties
 ```
