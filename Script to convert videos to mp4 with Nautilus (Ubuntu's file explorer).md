@@ -17,16 +17,10 @@ To create a script that converts videos to mp4, create a file in that folder wit
 
 for file in "$@"
 do
-    filepath=$(dirname "$file")
-    filename=$(basename "$file")
-    extension="${filename##*.}"
-    basefilename="${filename%.*}"
-
-    if [ "$extension" == "mp4" ]; then
-        output="$filepath/${basefilename}_converted.mp4"
-    else
-        output="$filepath/${basefilename}.mp4"
-    fi
+	outputpath="/dev/shm"
+	filename=$(basename "$file")
+	basefilename="${filename%.*}"
+	output="$outputpath/${basefilename}.mp4"
 
 	ffmpeg -i "$file" -y \
 		-vf "scale='bitand(oh*dar,65534)':'min(720,ih)'" \
