@@ -30,11 +30,11 @@ do
 
 	ffmpeg -i "$file" -y \
 		-vf "scale='bitand(oh*dar,65534)':'min(720,ih)'" \
+		-vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" \
 		-c:v libx264 -pix_fmt yuv420p \
 		-profile:v baseline -level 3.0 \
 		"$output"\
 		2> /dev/shm/convertToMP4.log
-		# -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" -vb 1024k \
 
 		# -acodec aac -ar 44100 -ac 2\
 		# -movflags +faststart \
