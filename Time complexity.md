@@ -4,7 +4,7 @@ tags: english, til, knowledge
 
 # Time complexity
 
-This is how scaling ability of algorithms are measured.
+This is how scaling ability of algorithms are described.
 
 Let's assume we are dealing with algorithms that take a list of `n` items.\
 For example, an algorithm that just iterates the list and returns the greatest item.\
@@ -43,8 +43,24 @@ output = `[[A,A], [A,B], [A,C], [B,A], [B,B], [B,C], [C,A], [C,B], [C,C]]`, whic
 
 - [More examples, with common algorithms](https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities)
 
+
+## Other notations
+
+Big O notation describes the upper bound of the **time complexity**.\
+There are other notations that describe the lower bound, or both bounds:
+
+- `Ω(n)`, describes the lower bound of the **time complexity**.\
+    E.g.: an algorithm that iterates a list of `n` items, and returns the first item that matches a condition.\
+    If the first item matches the condition, the **execution time** will be `O(1)`, but if the first item doesn't match the condition, the **execution time** will be `O(n)`.\
+    In this case, the **time complexity** is `Ω(1)`, because it will never be slower than `O(1)`
+- `Θ(n)`, describes both the upper and lower bounds of the **time complexity**.
+
+In general, these notations are called [Asymptotic Notations](https://learnxinyminutes.com/docs/asymptotic-notation/)
+
+
 ## Further reading
 
 - [A more detailed explanation, but simpler than Wikipedia'](https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation/487278#487278)
 - [Wikipedia article](https://en.wikipedia.org/wiki/Time_complexity)
 - [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation)
+- [Asymptotic Notations](https://learnxinyminutes.com/docs/asymptotic-notation/)
