@@ -25,3 +25,9 @@ If an agent makes public an operation that forks its own history, mark agent as 
 Any operation becomes fully settled if you have proof that all agents of your system have referenced it directly or indirectly through newer operations.
 
 Timestamps can be upgraded by using @opentimestamps to get proof that an operation existed at time X (prevents creation of operations in hindsight). Though this does not prove operation has been made public
+
+## More Up-to-date ideas
+
+- [Local-first software](https://www.inkandswitch.com/local-first.html)
+- [Riffle](https://riffle.systems/)
+- [ElectricSQL](https://electric-sql.com/)
