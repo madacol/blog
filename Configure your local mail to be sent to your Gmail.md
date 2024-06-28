@@ -135,7 +135,7 @@ Other related commands
 
 ## Sources
 
-- https://wiki.debian.org/Exim4Gmail
-- https://linuxcommando.blogspot.com/2014/04/how-to-setup-exim4-on-debian-to-use.html
-- https://stackoverflow.com/questions/72626410/how-do-i-send-email-from-nodemailer-in-nodejs-using-gmail
-- https://unix.stackexchange.com/questions/65013/understanding-etc-aliases-and-what-it-does
+- <https://wiki.debian.org/Exim4Gmail>
+- <https://linuxcommando.blogspot.com/2014/04/how-to-setup-exim4-on-debian-to-use.html>
+- <https://stackoverflow.com/questions/72626410/how-do-i-send-email-from-nodemailer-in-nodejs-using-gmail>
+- <https://unix.stackexchange.com/questions/65013/understanding-etc-aliases-and-what-it-does>
