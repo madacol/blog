@@ -1,6 +1,7 @@
 baseURL = 'http://madacol.com/'
 languageCode = 'en-us'
 title = 'Madacol Blog'
+uglyURLs = true
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
