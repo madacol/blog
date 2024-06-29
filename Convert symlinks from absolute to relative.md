@@ -1,8 +1,8 @@
 ---
+title: Convert symlinks from absolute to relative
 tags: english, tutorial, til, linux, shell, symlink
+date: 2023-07-17
 ---
-
-# Convert symlinks from absolute to relative
 
 ## Install symlinks
 

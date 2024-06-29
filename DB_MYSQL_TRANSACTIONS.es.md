@@ -1,5 +1,7 @@
 ---
+titl: Transacciones en MySQL
 tags: database, potsgresql, sql, spanish
+date: 2020-02-15
 ---
 
 # Comandos principales

@@ -1,8 +1,8 @@
 ---
+title: How to verify email DKIM signatures
 tags: english, tutorial, tool, digital signature, email
+date: 2021-04-02
 ---
-
-# How to verify email DKIM signatures
 
 Keep in mind that some providers change the original source and the email you receive becomes impossible to verify without guessing how to undo the changes they made.\
 Hotmail, outlook, among others, are known to do this, [source](https://github.com/lieser/dkim_verifier/wiki/FAQ#all-or-almost-all-e-mails-with-dkim-signature-are-failing-with-the-same-error)

@@ -1,5 +1,7 @@
 ---
+title: Ubuntu Network Troubleshoot
 tags: tutorial, ubuntu, ubuntu 18, ubuntu 20, network, troubleshoot, english
+date: 2021-02-24
 ---
 
 # NetworkManager

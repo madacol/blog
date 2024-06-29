@@ -1,8 +1,8 @@
 ---
+title: Ssh poor-man's-vpn on android
 tags: tutorial, android, ssh, firefox, termux, proxy, english
+date: 2020-10-19
 ---
-
-# Ssh poor-man's-vpn on android
 
 ## TL;DR
 

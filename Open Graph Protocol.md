@@ -1,8 +1,8 @@
 ---
+title: Open Graph Protocol
 tags: knowledge, web, protocol, english
+date: 2020-07-27
 ---
-
-# Open Graph Protocol
 
 This is a standard that uses websites to tell external websites how a link preview should look
 

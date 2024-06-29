@@ -1,8 +1,8 @@
 ---
+title: Descentralized database (social consensus)
 tags: english, idea
+date: 2022-05-17
 ---
-
-# Descentralized database (social consensus)
 
 1- Append-only?, full history of operations. Deletes / edits do not remove data, they only modify the "active state"
 

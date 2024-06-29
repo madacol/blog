@@ -1,8 +1,8 @@
 ---
+title: AIs taking-over-the-world dynamics
 tags: english, opinion, AI
+date: 2023-08-12
 ---
-
-# AIs taking-over-the-world dynamics
 
 ## The problem
 

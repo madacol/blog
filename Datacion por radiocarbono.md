@@ -1,8 +1,8 @@
 ---
+title: Datacion por radiocarbono
 tags: spanish, physics, history
+date: 2021-05-24
 ---
-
-# Datacion por radiocarbono
 
 Existe una variante del atomo de carbono, carbono-14 (atomo con 6 protones y 8 neutrones), que es "inestable" y tiene un 50% de probabilidad de decaer hacia un atomo de nitrógeno luego de 5730 años
 

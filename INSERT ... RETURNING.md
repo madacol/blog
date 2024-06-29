@@ -1,8 +1,8 @@
 ---
+title: INSERT ... RETURNING
 tags: database, potsgresql, sql, english
+date: 2020-11-13
 ---
-
-# INSERT ... RETURNING
 
 You can return any information about any inserted element in the `INSERT` statement by using the `RETURNING ...` clause
 

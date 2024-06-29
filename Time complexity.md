@@ -1,8 +1,8 @@
 ---
+title: Time complexity
 tags: english, til, knowledge
+date: 2022-11-07
 ---
-
-# Time complexity
 
 This is how scaling ability of algorithms are described.
 

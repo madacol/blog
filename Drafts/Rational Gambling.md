@@ -1,5 +1,7 @@
 ---
+title: Rational Gambling
 tags: probability, expected value, math, blog, investment, gambling, draft, english
+date: 2021-02-17
 ---
 
 *WARNING: this is work-in-progress, and has many disconnected trains of thought*

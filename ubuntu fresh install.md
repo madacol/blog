@@ -1,8 +1,8 @@
 ---
+title: Ubuntu fresh setup guide
 tags: tutorial, ubuntu, ubuntu 20, install, setup, english
+date: 2020-09-17
 ---
-
-# Ubuntu fresh setup guide
 
 ## Update & Upgrade
 

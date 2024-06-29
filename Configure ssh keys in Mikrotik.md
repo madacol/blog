@@ -1,8 +1,8 @@
 ---
+title: Configure ssh keys in Mikrotik
 tags: tutorial, network, mikrotik, ssh, security, english
+date: 2020-10-01
 ---
-
-# Configure ssh keys in Mikrotik
 
 ```mikrotik
 # Create a dummy file

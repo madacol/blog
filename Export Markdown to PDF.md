@@ -1,8 +1,8 @@
 ---
+title: Export Markdown to PDF
 tags: english, tutorial, markdown
+date: 2022-07-26
 ---
-
-# Export Markdown to PDF
 
 ## Install dependencies
 

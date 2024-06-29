@@ -1,5 +1,7 @@
 ---
+title: My values
 tags: me, values, draft, english
+date: 2021-02-17
 ---
 
 *WARNING: this is work-in-progress, and has many disconnected trains of thought*

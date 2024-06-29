@@ -1,8 +1,8 @@
 ---
+title: Share file with ipfs
 tags: tutorial, ipfs, file-sharing, nat, english
+date: 2020-09-25
 ---
-
-# Share file with ipfs
 
 **Warning:** Only tested serving the file, not downloading it
 
