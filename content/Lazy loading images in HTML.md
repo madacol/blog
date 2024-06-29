@@ -4,7 +4,7 @@ tags: knowledge, frontend, lazy-load, english
 date: 2020-08-04
 ---
 
-To implement [[Lazy Loading]] to an `<img ... >` tag, add the attribute `loading=lazy`
+To implement Lazy Loading to an `<img ... >` tag, add the attribute `loading=lazy`
 
 ```html
 <img loading=lazy ... >

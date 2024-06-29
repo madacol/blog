@@ -16,7 +16,7 @@ RETURNING role_id
 
 So after `RETURNING` you choose all the columns you want to get
 
-Very useful along [[The WITH statement]] to chain a bunch of insertions atomically without using transactions
+Very useful along [The WITH statement](The%20WITH%20statement.md) to chain a bunch of insertions atomically without using transactions
 
 ---
 

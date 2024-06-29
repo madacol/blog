@@ -4,7 +4,7 @@ tags: database, potsgresql, transaction, sql, english
 date: 2020-11-13
 ---
 
-Allows to save into variables tables results returned from a `SELECT` or [[INSERT ... RETURNING]] statement, and use them in following querys.
+Allows to save into variables tables results returned from a `SELECT` or [INSERT ... RETURNING](INSERT%20...%20RETURNING.md) statement, and use them in following querys.
 
 Also allows to chain multiple `INSERTS`, and if any of them fails, all previous `INSERTS` are rolledback.\
 *Note: autoincrements still increase on failures, hence skipped.*

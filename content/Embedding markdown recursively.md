@@ -40,7 +40,7 @@ pandoc <(./parseMd main.md) -o result.pdf --pdf-engine wkhtmltopdf \
   -V margin-right=11mm
 ```
 
-More info on using pandoc to [[Export Markdown to PDF]]
+More info on using pandoc to [Export Markdown to PDF](Export%20Markdown%20to%20PDF.md)
 
 ## Resources
 

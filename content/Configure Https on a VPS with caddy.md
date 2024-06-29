@@ -34,7 +34,7 @@ We are going to use caddy because it manages SSL certificates automatically 😍
 
     ![configuration made in Namecheap](2022-07-27-14-09-15.png)
 
-    More info about how to [[Point a domain to an IP in a DNS provider]]
+    More info about how to [Point a domain to an IP in a DNS provider](Point%20a%20domain%20to%20an%20IP%20in%20a%20DNS%20provider.md)
 
 2. [Install caddy](https://caddyserver.com/docs/install)
 
