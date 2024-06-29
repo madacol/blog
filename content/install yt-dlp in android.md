@@ -30,40 +30,40 @@ Click **Share**, select **Termux**, choose video or audio, and that's it!, it wi
 ### Yt-dlp + sharing + dialog **(Recommended)**
 
 ```bash
-    # Ask for storage permission
-    termux-setup-storage &&
-    # Install yt-dlp
-    apt update && apt upgrade -y && apt install -y python ffmpeg dialog && pip install yt-dlp &&
-    # Configure to download videos in `Download/{URL's provider (e.g. Youtube)}/{filename}`
-    mkdir -p ~/.config/yt-dlp &&
-    echo "# Default Output Directory and Pattern
-    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/yt-dlp/config &&
-    # Configure to open shared URLs with `yt-dlp {url}`
-    mkdir -p ~/bin &&
-    echo '#!/bin/bash
-        URL=$1
-        HEIGHT=15
-        WIDTH=40
-        CHOICE_HEIGHT=4
+# Ask for storage permission
+termux-setup-storage &&
+# Install yt-dlp
+apt update && apt upgrade -y && apt install -y python ffmpeg dialog && pip install yt-dlp &&
+# Configure to download videos in `Download/{URL's provider (e.g. Youtube)}/{filename}`
+mkdir -p ~/.config/yt-dlp &&
+echo "# Default Output Directory and Pattern
+-o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s" > ~/.config/yt-dlp/config &&
+# Configure to open shared URLs with `yt-dlp {url}`
+mkdir -p ~/bin &&
+echo '#!/bin/bash
+    URL=$1
+    HEIGHT=15
+    WIDTH=40
+    CHOICE_HEIGHT=4
 
-        CHOICE=$(dialog \
-            --menu "What would you like to download?" \
-            $HEIGHT $WIDTH $CHOICE_HEIGHT \
-            Video "" \
-            Audio "" \
-            2>&1 >/dev/tty)
+    CHOICE=$(dialog \
+        --menu "What would you like to download?" \
+        $HEIGHT $WIDTH $CHOICE_HEIGHT \
+        Video "" \
+        Audio "" \
+        2>&1 >/dev/tty)
 
-        case $CHOICE in
-            Video)
-                echo "Downloading video from $URL"
-                yt-dlp $URL
-                ;;
-            Audio)
-                echo "Downloading audio from $URL"
-                yt-dlp -x $URL
-                ;;
-        esac' > ~/bin/termux-url-opener &&
-    chmod +x ~/bin/termux-url-opener
+    case $CHOICE in
+        Video)
+            echo "Downloading video from $URL"
+            yt-dlp $URL
+            ;;
+        Audio)
+            echo "Downloading audio from $URL"
+            yt-dlp -x $URL
+            ;;
+    esac' > ~/bin/termux-url-opener &&
+chmod +x ~/bin/termux-url-opener
 ```
 
 - Paste the script above 🖢 in the Termux console and press <kbd>Enter</kbd>
