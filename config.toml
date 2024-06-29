@@ -1,0 +1,7 @@
+baseURL = 'http://madacol.com/'
+languageCode = 'en-us'
+title = 'Madacol Blog'
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
