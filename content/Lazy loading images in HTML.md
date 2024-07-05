@@ -1,8 +1,9 @@
 ---
-title: Lazy loading images in HTML
 tags: knowledge, frontend, lazy-load, english
 date: 2020-08-04
 ---
+
+# Lazy loading images in HTML
 
 To implement Lazy Loading to an `<img ... >` tag, add the attribute `loading=lazy`
 

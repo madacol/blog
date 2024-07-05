@@ -1,8 +1,9 @@
 ---
-title: Script to send WOL magic packet using netcat
 tags: english, tutorial, til, linux, networks, packet, netcat, script
 date: 2023-07-14
 ---
+
+# Script to send WOL magic packet using netcat
 
 WOL stands for Wake On Lan, and it's a feature that allows you to turn on a computer remotely by sending a magic packet to its network interface
 

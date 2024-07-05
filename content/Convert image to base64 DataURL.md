@@ -1,8 +1,9 @@
 ---
-title: Convert image to base64 DataURL
 tags: english, tutorial, til, javascript, base64, scrapping, markdown
 date: 2023-07-14
 ---
+
+# Convert image to base64 DataURL
 
 This function loads the image in a canvas and uses `canvas.ToDataURL(...)` to convert it to base64. But it doesn't work in all cases, for example, if the image is loaded from a different domain, it will throw a security error.
 

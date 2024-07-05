@@ -1,8 +1,9 @@
 ---
-title: Configurar un servicio onion
 tags: tutorial, tor, ssh, nat, firewall, spanish
 date: 2020-07-16
 ---
+
+# Configurar un servicio onion
 
 *copiado sin verguenza alguna de <https://www.techrepublic.com/article/how-to-run-an-ssh-connection-through-tor/>*
 

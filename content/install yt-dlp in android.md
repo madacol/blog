@@ -1,8 +1,9 @@
 ---
-title: Install yt-dlp in Android
 tags: tutorial, android, ssh, yt-dlp, termux, download, english
 date: 2023-07-16
 ---
+
+# Install yt-dlp in Android
 
 *This tutorial was originally written for the famous [youtube-dl](https://github.com/ytdl-org/youtube-dl/) (R.I.P) and later adapted to its successor [yt-dlp](https://github.com/yt-dlp/yt-dlp), the adaptation hasn't been well tested*
 

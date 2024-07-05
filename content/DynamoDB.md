@@ -1,8 +1,9 @@
 ---
-title: DynamoDB
 tags: knowledge, database, nosql, english
 date: 2020-07-29
 ---
+
+# DynamoDB
 
 It's a NoSQL Database from AWS
 

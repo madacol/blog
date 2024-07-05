@@ -1,8 +1,9 @@
 ---
-title: Configure Build tasks in vscode
 tags: english, tutorial, vscode
 date: 2022-07-27
 ---
+
+# Configure Build tasks in vscode
 
 **Menu > Terminal > Configure Tasks...**
 

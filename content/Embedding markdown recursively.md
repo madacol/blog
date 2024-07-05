@@ -1,8 +1,9 @@
 ---
-title: Embedding markdown recursively
 tags: english, tutorial, markdown
 date: 2022-07-27
 ---
+
+# Embedding markdown recursively
 
 Remixing [@Oliver Matthews' answer][1]. I made it work recursively but instead using a wikilink-like syntax `![[filepath]]` that gets replaced with `filepath.md` content
 

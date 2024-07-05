@@ -1,8 +1,9 @@
 ---
-title: The WITH statement
 tags: database, potsgresql, transaction, sql, english
 date: 2020-11-13
 ---
+
+# The WITH statement
 
 Allows to save into variables tables results returned from a `SELECT` or [INSERT ... RETURNING](INSERT%20...%20RETURNING.md) statement, and use them in following querys.
 

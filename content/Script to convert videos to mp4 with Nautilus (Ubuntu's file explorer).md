@@ -1,8 +1,9 @@
 ---
-title: Script to convert videos to mp4 with Nautilus (Ubuntu's file explorer)
 tags: english, tutorial, til, ubuntu, nautilus, ffmpeg, video, mp4
 date: 2023-08-15
 ---
+
+# Script to convert videos to mp4 with Nautilus (Ubuntu's file explorer)
 
 In Ubuntu, nautilus has a folder where it stores scripts that can be executed from the context menu of the file explorer. This is the path to that folder:
 

@@ -1,8 +1,9 @@
 ---
-title: Use UPnP to forward ports in Linux
 tags: english, tutorial, til
 date: 2022-11-06
 ---
+
+# Use UPnP to forward ports in Linux
 
 Install [MiniUPnP](https://miniupnp.tuxfamily.org/)
 

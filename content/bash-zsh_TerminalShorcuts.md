@@ -1,8 +1,9 @@
 ---
-title: Terminal Shortcuts
 tags: cheatsheet, terminal, bash, zsh, shortcuts, english
 date: 2019-11-06
 ---
+
+# Terminal Shortcuts
 
 ## Default shortcuts
 

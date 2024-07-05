@@ -1,8 +1,9 @@
 ---
-title: Configure your local mail to be sent to your Gmail
 tags: english, tutorial, til, mail, exim4, gmail, linux
 date: 2023-07-09
 ---
+
+# Configure your local mail to be sent to your Gmail
 
 ## Install exim4
 

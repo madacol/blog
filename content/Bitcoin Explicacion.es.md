@@ -1,8 +1,9 @@
 ---
-title: Bitcoin
 tags: bitcoin, introduction, spanish
 date: 2020-06-10
 ---
+
+# Bitcoin
 
 ## Como funcionan los fees
 

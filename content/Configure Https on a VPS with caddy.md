@@ -1,8 +1,9 @@
 ---
-title: Configure Https on a VPS with caddy
 tags: english, tutorial
 date: 2022-07-27
 ---
+
+# Configure Https on a VPS with caddy
 
 We are going to use caddy because it manages SSL certificates automatically 😍, seriously! it's magic!
 
