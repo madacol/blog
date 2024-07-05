@@ -20,7 +20,7 @@ p code {
   border-radius: 0.3em;
 }
 pre {
-  background-color: #272822;
+  background-color: black;
   color: white;
   padding: 1em;
   border-radius: 1em;
@@ -36,4 +36,22 @@ kbd {
 img {
   max-width: 100%;
   height: auto;
+}
+
+details {
+  & > summary {
+    &.source::before {
+        content: "View ";
+    }
+    &.hidden {
+        display: none;
+    }
+    &:not(.hidden) + * {
+        margin-top: 1rem;
+    }
+  }
+
+  &[open] > summary.source::before {
+      content: "Hide ";
+  }
 }
