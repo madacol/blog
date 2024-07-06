@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Construct the index.html file
 
 echo "Generating index.html"
@@ -35,10 +37,22 @@ htmlDoc="<!DOCTYPE html>
 </head>
 <body>
 "
+# Initialize an empty array to store the files
+date_files=()
 
-mapfile -t files < <(git ls-files -z "$@" | xargs -0 -I{} sh -c 'git log --follow --format="%ad {}" --date=short -- "{}" | tail -n 1' | sort -r | cut -d' ' -f2-)
+# Iterate over the arguments passed to the script
+for file in "$@"
+do
+  date=$(sed -n '/^---$/,/^---$/p' "$file" | sed -n 's/^date: //p')
 
-for inputFile in "${files[@]}";
+  # Append the file and its latest commit date to the files array
+  date_files+=("$date $file")
+done
+
+# Sort the files array in reverse order based on the commit date
+mapfile -t sorted_files < <(printf '%s\n' "${date_files[@]}" | sort -r | cut -d ' ' -f 2-)
+
+for inputFile in "${sorted_files[@]}"
 do
     echo "Parsing \"$inputFile\""
 
