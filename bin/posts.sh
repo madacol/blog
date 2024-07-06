@@ -13,6 +13,7 @@ do
   sed -E 's#\[(.*?)\]\((.+?)\.md\)#[\1](\2.html)#g' "$file" > /dev/shm/parsedContent.md
 
   outputFile=${file%.*}.html
+  title=$(sed -n 's/^# //p' "$file" | head -n 1)
 
   pandoc <(./bin/parseImport.sh /dev/shm/parsedContent.md) \
     -o "$outputFile" \
@@ -22,6 +23,6 @@ do
     --resource-path=$(dirname "$file") \
     --css $runFolder/content/style.css \
     --self-contained \
-    --metadata pagetitle="`sed -n 's/^# //p' "$inputFile" | head -n 1`" \
+    --metadata pagetitle="$title" \
     
 done
