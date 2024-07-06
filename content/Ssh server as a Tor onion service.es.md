@@ -1,6 +1,6 @@
 ---
 tags: tutorial, tor, ssh, nat, firewall, spanish
-date: 2020-07-16
+date: 2020-07-07
 ---
 
 # Configurar un servicio onion

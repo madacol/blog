@@ -1,6 +1,6 @@
 ---
 tags: tutorial, ipfs, file-sharing, nat, english
-date: 2020-09-25
+date: 2020-09-24
 ---
 
 # Share file with ipfs

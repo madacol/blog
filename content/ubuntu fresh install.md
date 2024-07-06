@@ -1,6 +1,6 @@
 ---
 tags: tutorial, ubuntu, ubuntu 20, install, setup, english
-date: 2020-09-17
+date: 2019-02-12
 ---
 
 # Ubuntu fresh setup guide

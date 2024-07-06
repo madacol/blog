@@ -1,6 +1,6 @@
 ---
 tags: tutorial, android, ssh, yt-dlp, termux, download, english
-date: 2023-07-16
+date: 2020-04-16
 ---
 
 # Install yt-dlp in Android

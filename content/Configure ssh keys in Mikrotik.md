@@ -1,6 +1,6 @@
 ---
 tags: tutorial, network, mikrotik, ssh, security, english
-date: 2020-10-01
+date: 2020-09-30
 ---
 
 # Configure ssh keys in Mikrotik

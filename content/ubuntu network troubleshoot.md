@@ -1,6 +1,6 @@
 ---
 tags: tutorial, ubuntu, ubuntu 18, ubuntu 20, network, troubleshoot, english
-date: 2021-02-24
+date: 2020-02-07
 ---
 
 # Ubuntu Network Troubleshoot

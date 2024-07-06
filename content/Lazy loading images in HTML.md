@@ -1,6 +1,6 @@
 ---
 tags: knowledge, frontend, lazy-load, english
-date: 2020-08-04
+date: 2020-07-27
 ---
 
 # Lazy loading images in HTML

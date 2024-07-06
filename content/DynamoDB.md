@@ -1,6 +1,6 @@
 ---
 tags: knowledge, database, nosql, english
-date: 2020-07-29
+date: 2020-07-28
 ---
 
 # DynamoDB

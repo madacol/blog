@@ -1,6 +1,6 @@
 ---
 tags: english, tutorial
-date: 2023-01-13
+date: 2023-01-12
 ---
 
 # Cmus setup and shortcuts
