@@ -32,3 +32,7 @@ Timestamps can be upgraded by using @opentimestamps to get proof that an operati
 - [Local-first software](https://www.inkandswitch.com/local-first.html)
 - [Riffle](https://riffle.systems/)
 - [ElectricSQL](https://electric-sql.com/)
+- localfirst.fm: #10 – Matt Wonlaw: cr-sqlite, syncing strategies and incremental view maintenance \
+    Starting from: 00:53:20 \
+    Episode webpage: https://localfirst.fm/10 \
+    Media file: https://media.transistor.fm/dce148a6/f3921284.mp3#t=3200
