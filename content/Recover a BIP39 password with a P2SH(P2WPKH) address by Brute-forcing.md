@@ -5,7 +5,7 @@ date: 2018-10-30
 
 # Recover a BIP39 password with a P2SH(P2WPKH) address by Brute-forcing
 
-***There's an up-to-date fork of this tool here https://github.com/3rdIteration/btcrecover .*** \
+***There's an up-to-date fork of this tool here https://github.com/3rdIteration/btcrecover ***\
 ***Use it skeptically, just as you should with this post***
 
 ---
