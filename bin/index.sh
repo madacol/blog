@@ -58,10 +58,10 @@ do
 
     title=$(sed -n 's/^# //p' "$inputFile" | head -n 1)
     date=$(sed -n 's/^date: //p' "$inputFile" | head -n 1)
-    content=$(sed '1,/^# /d' "$inputFile" | pandoc -f markdown -t html)
-    summary=$(sed '1,/^# /d' "$inputFile" | head -c +500 | pandoc -f markdown-tex_math_dollars -t html)
-    filename=$(basename "$inputFile")
-    href=${filename%.*}.html
+    content=$(./bin/parseImport.sh "$inputFile" | sed '1,/^# /d' | pandoc -f markdown -t html)
+    summary=$(./bin/parseImport.sh "$inputFile" | sed '1,/^# /d' | head -c +500 | pandoc -f markdown-tex_math_dollars -t html)
+    relativePath=$(echo "$inputFile" | sed 's#content/##')
+    href=${relativePath%.*}.html
     htmlDoc+="
       <article>
         <h1><a href=\"$href\">$title</a></h1>
