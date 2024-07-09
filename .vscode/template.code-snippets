@@ -5,6 +5,7 @@
 		"body": [
 			"---",
 			"tags: english, tutorial, til$1",
+			"date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
 			"---",
 			"",
 			"# ${TM_FILENAME_BASE}",
