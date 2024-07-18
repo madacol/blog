@@ -60,8 +60,8 @@ Ok, so `3` seems to be the sweet spot, but I found it strange I've never come ac
 
 And then I realized that this calculation is equivalent to calculating combinations in number bases. Let me explain:
 
-- the **base** is analogous to the **average number of items in a group**
-- the **number of digits** is analogous to the **number of groups**
+- the **number of groups** is analogous to the **number of digits**
+- the **average number of items in each group** is analogous to the **base number**
 - And the **total number of items** is analogous to __________ I have no idea, but I am going to call it *"units of information"*. **Edit**: the technical term seems to be [*"radix economy"*](https://en.wikipedia.org/wiki/Non-integer_base_of_numeration#:~:text=radix%20economy) (which is the `base number * number of digits`)
 
 For example, How many ~~items~~ *"units of information"* do we need in base 2 to represent the number `654987`?.\
@@ -91,9 +91,9 @@ Ok, back to the question, to calculate the *"units of information"* we are missi
 19.321106747160712
 ```
 
-So we need `20` bits, and the number of *"units of information"* is `20*2 = 40`.
+So we got `20` bits, and now the number of *"units of information"* is `20*2 = 40`.
 
-Since 3 seems to be the most efficient one, let's find out what we can accomplish with 40 *"units of information"*.
+Since 3 seems to be the most efficient one, let's find out what we can accomplish with the same 40 *"units of information"*.
 
 First, how many trigits (base-3-digits) can we get with 40 *"units of information"*?.\
 `40 / 3 = 13.333`, that means we can fully represent `13` trigits using less than `40` *"units of information"*.
@@ -118,7 +118,8 @@ Yayy!, using base-3 we got ~50% more combinations, that means, we can represent 
 
 ## Conclusion
 
-So folks, if you want to maximize the combinations of a *cartesian product*, arrange your items in groups of 3.
+So folks, if you want to maximize the combinations of a *cartesian product*, arrange your items in groups of 3.\
+Or conversely, if you want to minimize the number of combinations, stay away from groups of 3.
 
 *Weeell*, it turns out 3 is not really the most optimal number, but it's close enough, it's still the king among integers, and of many practical applications.\
 But the *king of kings* is in fact `e`, the base of the natural logarithm.\
