@@ -6,5 +6,4 @@
 # Inspired by https://stackoverflow.com/a/18517316/3163120
 
 perl -ne 's#^!\[\[(.+?)\]\]#`'$0' "$1.md"`#e;print' "$@" | \
-sed -E 's#(^|\s|[^\]\()(https?://[^ )]+)#\1<\2>#g' "$@"
-# sed command to parse raw URLs in markdown files and then wrap them in `<...>` tags
+sed -E 's#(^|\s|[^\]\()(https?://[^ )\\]+)#\1<\2>#g' "$@" # sed command to parse raw URLs in markdown files and then wrap them in `<...>` tags
