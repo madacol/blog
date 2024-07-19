@@ -13,11 +13,9 @@ blockquote > *{
   background-color: rgb(235, 235, 235);
   border-radius: 0.5em;
 }
-td code,
-p code {
-  background-color: #272822;
-  color: white;
-  padding: 0.2em 0.4em;
+:not(pre) > code {
+  background-color: #c7c7c7;
+  padding: 0.1em 0.4em;
   border-radius: 0.3em;
 }
 pre {
@@ -31,7 +29,7 @@ kbd {
   background-color: #f7f7f7;
   color: black;
   box-shadow: 0 0 0.2em black;
-  padding: 0.2em 0.4em;
+  padding: 0.1em 0.4em;
   border-radius: 0.5em;
 }
 img {
