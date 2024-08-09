@@ -142,3 +142,17 @@ And don't ask me how a base-e number system would even look like, nor how would 
 ---
 
 BTW *"Entropy"* may be a related concept to this. I've seen people [measuring entropy in bits, in this fascinating take of Death Note's Light Yagami's anonimity](https://gwern.net/death-note-anonymity)
+
+## Extra ridiculous example
+
+Imagine an enemy is following you and you want to lose them.
+
+Lucky for you, you live in a multiverse where people can jump through universes, and you have a unique ability that no one else can, you can jump to multiple universes at the same time, like creating clones of you, or more like *forking yourself*.
+
+You may jump to a single universe, but that's useless because the enemy can detect when and to which universe you jumped, and they can easily keep tracking you.
+
+So you cannot really lose track of your enemy, **what you can do is to overwhelm them!**. If you jump to multiple universes at the same time, on each universe a different version of you will continue your journey, so even if your enemy tracks you, they will have to follow you on each universe, and each version of you can keep jumping deeper into the multiverse, you can see how this grows exponentially
+
+**So what's the catch?** Well, you can only jump 20 times. So how should you arrange those jumps in order to maximize the number of *"versions of you"* your enemy would have to keep track of?
+
+Obviously, you should arrange them in jumps to ~3 universes. To be more precise, 6 jumps of 3 universes + 1 jump of 2 universes = 20 jumps, and that will give you `3*3*3*3*3*3*2 = 1458` *"versions of you"*
