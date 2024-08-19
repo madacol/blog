@@ -24,5 +24,6 @@ do
     --css $runFolder/content/style.css \
     --self-contained \
     --metadata pagetitle="$title" \
+    --mathml
     
 done
