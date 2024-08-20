@@ -7,8 +7,6 @@ html, body {
 blockquote {
   margin: 0;
   color: black !important;
-}
-blockquote > *{
   padding: 0.3em 0.7em;
   background-color: rgb(235, 235, 235);
   border-radius: 0.5em;
