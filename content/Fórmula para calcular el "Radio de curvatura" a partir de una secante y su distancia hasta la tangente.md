@@ -13,7 +13,7 @@ Primero vayamos al grano.
 <figcaption>
 
 $$
-R = \frac{c^2 + b^2}{2b}, \quad \text{donde:} \quad c = \frac{a}{2}
+r = \frac{c^2 + b^2}{2b}, \quad \text{donde:} \quad c = \frac{a}{2}
 $$
 
 </figcaption>
@@ -23,7 +23,7 @@ $$
 <figcaption>
 
 $$
-R = \frac{a^2}{8b} + \frac{b}{2}
+r = \frac{a^2}{8b} + \frac{b}{2}
 $$
 
 </figcaption>
