@@ -7,27 +7,12 @@ date: 2014-07-03
 
 Primero vayamos al grano.
 
-<div style="display: flex; justify-content: space-between;">
-<figure>
-<img src="formula_1.png"/>
-<figcaption>
+<div style="display: flex;">
 
-$$
-r = \frac{c^2 + b^2}{2b}, \quad \text{donde:} \quad c = \frac{a}{2}
-$$
+![$$ r = \frac{c^2 + b^2}{2b}, \quad \text{donde:} \quad c = \frac{a}{2} $$](formula_1.png "Fórmula 1")
 
-</figcaption>
-</figure>
-<figure>
-<img src="formula_2.png"/>
-<figcaption>
+![$$ r = \frac{a^2}{8b} + \frac{b}{2} $$](formula_2.png "Fórmula 2")
 
-$$
-r = \frac{a^2}{8b} + \frac{b}{2}
-$$
-
-</figcaption>
-</figure>
 </div>
 
 
