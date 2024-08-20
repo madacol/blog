@@ -60,7 +60,7 @@ do
     date=$(sed -n 's/^date: //p' "$inputFile" | head -n 1)
     content=$(./bin/parseImport.sh "$inputFile" | sed '1,/^# /d' | pandoc -f markdown -t html)
     summary=$(./bin/parseImport.sh "$inputFile" | sed '1,/^# /d' | head -c +500 | pandoc -f markdown-tex_math_dollars -t html)
-    relativePath=$(echo "$inputFile" | sed 's#content/##')
+    relativePath=$(echo "$inputFile" | sed 's#content/##' | sed 's/"/%22/g')
     href=${relativePath%.*}.html
     htmlDoc+="
       <article>
