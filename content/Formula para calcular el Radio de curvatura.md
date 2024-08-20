@@ -3,7 +3,7 @@ tags: spanish, math
 date: 2014-07-03
 ---
 
-# Fórmula para calcular el "Radio de curvatura" a partir de una secante y su distancia hasta la tangente
+# Formula para calcular el Radio de curvatura
 
 Primero vayamos al grano.
 
@@ -14,7 +14,6 @@ Primero vayamos al grano.
 ![$$ r = \frac{a^2}{8b} + \frac{b}{2} $$](formula_2.png "Fórmula 2")
 
 </div>
-
 
 `a` es la distancia entre cada [intersección](https://es.wikipedia.org/wiki/Interseccion) que hay entre la circunferencia y la [secante](https://es.wikipedia.org/wiki/Secante).
 
