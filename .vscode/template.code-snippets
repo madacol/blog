@@ -1,7 +1,7 @@
 {
 	"note": {
 		"scope": "markdown",
-		"prefix": "note",
+		"prefix": "template note",
 		"body": [
 			"---",
 			"tags: english, tutorial, til$1",
