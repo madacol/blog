@@ -1,8 +1,11 @@
 {
-    "autoSnippet.snippets": [
-        {
-            "pattern": "**/*.md",
-            "snippet": "note"
-        }
-    ]
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "/content/.*\\.md",
+                "isAsync": false,
+                "cmd": "bin/posts.sh '${file}'"
+            }
+        ]
+    }
 }
