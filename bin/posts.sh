@@ -22,7 +22,7 @@ do
     --pdf-engine-opt=--enable-local-file-access \
     --resource-path=$(dirname "$file") \
     --css $runFolder/content/style.css \
-    --self-contained \
+    --standalone \
     --metadata pagetitle="$title" \
     --mathml
     
