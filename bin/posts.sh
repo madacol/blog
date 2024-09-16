@@ -24,6 +24,7 @@ do
     --css $runFolder/content/style.css \
     --standalone \
     --metadata pagetitle="$title" \
+    --highlight-style espresso \
     --mathml
     
 done
