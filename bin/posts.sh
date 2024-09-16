@@ -2,8 +2,6 @@
 
 # Convert markdown files to HTML
 
-runFolder=$(pwd)
-
 for file in "$@";
 do
 
@@ -21,7 +19,7 @@ do
     --pdf-engine wkhtmltopdf \
     --pdf-engine-opt=--enable-local-file-access \
     --resource-path=$(dirname "$file") \
-    --css $runFolder/content/style.css \
+    --css style.css \
     --standalone \
     --metadata pagetitle="$title" \
     --highlight-style espresso \
