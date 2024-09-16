@@ -5,7 +5,7 @@ date: 2018-10-30
 
 # Recover a BIP39 password with a P2SH(P2WPKH) address by Brute-forcing
 
-***There's an up-to-date fork of this tool here https://github.com/3rdIteration/btcrecover ***\
+***There's an up-to-date fork of this tool here <https://github.com/3rdIteration/btcrecover> ***\
 ***Use it skeptically, just as you should with this post***
 
 ---
@@ -14,11 +14,11 @@ This will allow you to brute-force wallets supported by [**btcrecover**](https:/
 
 If my changes have been merged [here](https://github.com/gurnec/btcrecover/pull/302), then get out of here, download [**btcrecover**](https://github.com/gurnec/btcrecover) and follow it's instruction.
 
-If not, then download my version of the tool https://github.com/madacol/btcrecover/tree/p2wpkh-p2sh and follow original instructions [**btcrecover**](https://github.com/gurnec/btcrecover)
+If not, then download my version of the tool <https://github.com/madacol/btcrecover/tree/p2wpkh-p2sh> and follow original instructions [**btcrecover**](https://github.com/gurnec/btcrecover)
 
 ### You can get the modified version in 2 ways
 
-- download the zip file from https://github.com/madacol/btcrecover/tree/p2wpkh-p2sh
+- download the zip file from <https://github.com/madacol/btcrecover/tree/p2wpkh-p2sh>
 - clone my repo, and checkout the branch **`p2wpkh-p2sh`**
   ```
   git clone https://github.com/madacol/btcrecover/
@@ -52,4 +52,4 @@ This should give you the following result:
 
 ![console screenshot showing the recovered password "12345"](image-9.png)
 
-You can customize LOTS of things, go and read the full instructions https://github.com/gurnec/btcrecover/blob/master/TUTORIAL.md#btcrecover-tutorial
+You can customize LOTS of things, go and read the full instructions <https://github.com/gurnec/btcrecover/blob/master/TUTORIAL.md#btcrecover-tutorial>

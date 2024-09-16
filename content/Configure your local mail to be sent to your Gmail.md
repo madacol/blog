@@ -94,11 +94,11 @@ date: 2023-07-09
 
 1. **Enable 2-step verification to your Google account**
 
-    https://myaccount.google.com/signinoptions/two-step-verification
+    <https://myaccount.google.com/signinoptions/two-step-verification>
 
 2. **Create an app password**
 
-    https://myaccount.google.com/apppasswords
+    <https://myaccount.google.com/apppasswords>
 
 3. **Configure exim4 to use your Google credentials**
 

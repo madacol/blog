@@ -5,7 +5,7 @@ date: 2018-03-22
 
 # How to ignore monitoring a disk from the smartd daemon
 
-Source: https://unix.stackexchange.com/a/111407/77354
+Source: <https://unix.stackexchange.com/a/111407/77354>
 
 `-d ignore` is a new directive which allows ignoring a device from DEVICESCAN.
 
