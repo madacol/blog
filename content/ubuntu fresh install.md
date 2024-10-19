@@ -15,9 +15,10 @@ sudo apt update && sudo apt upgrade -y
 
 ```bash
 sudo apt-get install python3-pip zsh curl wget git dconf-editor
-sudo apt-get install p7zip-full smplayer cmus speedtest-cli git-gui filezilla pavucontrol paprefs ufw servefile nmap fail2ban gimp most colordiff mosh ncdu qalculate-gtk jq tor fonts-noto nautilus-actions filemanager-actions thunderbird chrome-gnome-shell gnome-tweaks smartmontools &
+sudo apt-get install p7zip-full smplayer speedtest-cli git-gui pavucontrol paprefs ufw nmap fail2ban gimp most colordiff ncdu qalculate-gtk jq tor fonts-noto thunderbird chrome-gnome-shell gnome-tweaks smartmontools &
 
-pip3 install youtube-dl tldr
+pip install pipx
+pipx install yt-dlp tldr llm pipenv
 ```
 
 ## External Repositories
@@ -43,6 +44,48 @@ Put config file <https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6
 
 <https://github.com/madacol/sinkSwitcher>
 
+### llm - ??
+
+config `llm`
+
+```bash
+llm install llm-claude-3
+llm keys set claude # Insert Claude API key generated in https://console.anthropic.com/settings/keys
+```
+
+script: <https://gist.github.com/madacol/2e8e2f5e22b03bfe4f22fbe30dd9c978>
+
+```bash
+#!/bin/zsh
+
+# This script needs to be sourced in a zsh shell instead of being executed
+# To do so, set an alias in your shell:
+#    alias '??'='source $HOME/.local/bin/nlsh.zsh'
+# Then you can use the `??` command from any zsh shell like this:
+#    ?? extract the content of ./file.zip in the current directory
+
+echo "$@" \
+| llm -s 'Your task is to output oneliner shell commands.
+Always answer with a single line shell command, or a multiline using code blocks' \
+| tee /dev/shm/nlsh_stdout
+
+extracted_command=$(sed -n '/^[ \t]*```/,/^[ \t]*```/{//!p}' /dev/shm/nlsh_stdout)
+
+# If the command is empty, get the last line of the output
+if [ -z "$extracted_command" ]; then
+    extracted_command=$(tail -n 1 /dev/shm/nlsh_stdout)
+fi
+
+print -rz $extracted_command
+
+```
+
+add alias `??` in `~/.zshrc`
+
+```bash
+alias ??='source $HOME/.local/bin/nlsh.zsh'
+```
+
 ## Web installs
 
 - docker: <https://download.docker.com>
@@ -50,6 +93,7 @@ Put config file <https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6
 - chrome: <https://www.chrome.com/>
 - syncthing: <https://apt.syncthing.net/>
 - Zsh-syntax-highlighting: <https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md>
+- Zsh-autosuggestions: <https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md>
 
 ## Shells
 
@@ -125,10 +169,8 @@ bindkey "^[:" copy-earlier-word
 #### Aliases
 
 ```bash
-alias lr="ls -hartl"
-alias youtube-dl720='youtube-dl -f "bestvideo[height<=720]+bestaudio/best[height<=720]"'
-alias python=python3
-alias ipython=ipython3
+alias youtube-dl=yt-dlp
+alias youtube-dl720='yt-dlp -f "bestvideo[height<=720]+bestaudio/best[height<=720]"'
 function mkcd () { mkdir -p "$@" && cd "$@"; }
 ```
 
@@ -181,7 +223,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 ## Custom shortcuts
 
 - `systemctl suspend`
-- Cmus <https://medium.com/@madacol/configure-cmus-music-player-on-the-terminal-in-ubuntu-3c513d2d2cd0>
+- [Cmus setup and shortcuts](./Cmus%20setup%20and%20shortcuts.md)
 - `qalculate`
 
 ## StartUp
