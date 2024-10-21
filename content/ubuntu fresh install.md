@@ -236,6 +236,7 @@ Add context menu to convert to MP4 using ffmpeg
 
 ```bash
 nano ~/.local/share/nautilus/scripts/Convert\ to\ MP4
+chmod +x ~/.local/share/nautilus/scripts/Convert\ to\ MP4
 ```
 
 ```bash
