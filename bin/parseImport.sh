@@ -5,4 +5,4 @@
 # And it does that recursively
 # Inspired by https://stackoverflow.com/a/18517316/3163120
 
-perl -ne 's#^!\[\[(.+?)\]\]#`'$0' "$1.md"`#e;print' "$@"
+perl -ne 's#^!\[\]\((.+?)\)#my $path = $1; $path =~ s/%20/ /g; `'"$0"' "$path"`#e;print' "$@"
