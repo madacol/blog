@@ -16,11 +16,17 @@ blockquote {
   padding: 0.1em 0.4em;
   border-radius: 0.3em;
 }
-pre {
-  background-color: black;
-  color: white;
-  padding: 1em;
-  border-radius: 1em;
+div:has(> pre) {
+  border-radius: 0.5em;
+  & > pre {
+    background-color: black;
+    color: white;
+    overflow-x: auto !important;
+    padding: 1em;
+    & + * {
+      margin: 0.5em;
+    }
+  }
 }
 kbd {
   /* button-like */
