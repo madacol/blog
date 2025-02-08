@@ -4,7 +4,7 @@
             {
                 "match": "/content/.*\\.md",
                 "isAsync": false,
-                "cmd": "bin/posts.sh '${file}'"
+                "cmd": "bin/posts.sh \"${file}\""
             }
         ]
     }
