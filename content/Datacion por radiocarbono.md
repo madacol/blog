@@ -12,7 +12,8 @@ Esto quiere decir que luego de 5730 años, de unos 1000 átomos de carbono-14, ~
 El origen principal del carbono-14 viene de la interacción de rayos cósmicos con la atmósfera de la tierra, especialmente con sus átomos de nitrógeno que son convertidos en carbono-14, esto hace que en el aire de la tierra haya una proporcion estable entre atomos de carbono-14 y carbono-12
 
 Algunos organismos vivos como las plantas hacen fotosíntesis, lo que implica, extraer átomos de carbono del aire y usarlos para crecer, osea guardarlos como parte del tayo o ramas, etc.
->Si, la madera de los árboles viene más del aire que de la tierra.
+
+> Si, la madera de los árboles viene más del aire que de la tierra.
 
 A estos organismos les da igual si el átomo es de carbono-12 "estable" o el carbono-14 "inestable", por lo tanto, van extrayendo la misma proporción de carbono-14/12 que haya en el aire
 
