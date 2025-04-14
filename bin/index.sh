@@ -16,24 +16,32 @@ htmlDoc="<!DOCTYPE html>
     article {
       margin-bottom: 5em;
 
-      .content {
-        & > .summary {
-          display: block;
+      & > iframe {
+        min-height: 200px;
+        border: none;
+        width: 100%;
+        padding-left: 1em;
+
+        &:not(:has(+ details[open])) {
+          height: 30vh;
+          overflow: hidden;
         }
-        & > details > summary {
-          cursor: pointer;
-        }
-        &:has(> details[open]) {
-          & > .summary {
-            display: none;
-          }
-          & > details > summary {
-            display: none;
-          }
-        }
+      }
+      & > details > summary {
+        cursor: pointer;
+      }
+      & > details[open] > summary {
+        display: none;
       }
     }
   </style>
+  <script>
+    function resizeIframe(iframe) {
+      iframe.contentDocument.getElementsByTagName('h1')[0].remove();
+      iframe.contentDocument.body.style.padding = '0';
+      iframe.height = iframe.contentDocument.body.scrollHeight;
+    }
+  </script>
 </head>
 <body>
 "
@@ -56,23 +64,23 @@ for inputFile in "${sorted_files[@]}"
 do
     echo "Parsing \"$inputFile\""
 
-    title=$(sed -n 's/^# //p' "$inputFile" | head -n 1)
+    titleHtml=$(sed -n '/^# /p' "$inputFile" | head -n 1 | pandoc -f markdown -t html)
     date=$(sed -n 's/^date: //p' "$inputFile" | head -n 1)
-    content=$(./bin/parseImport.sh "$inputFile" | sed '1,/^# /d' | pandoc -f markdown -t html)
-    summary=$(./bin/parseImport.sh "$inputFile" | sed '1,/^# /d' | head -c +500 | pandoc -f markdown-tex_math_dollars -t html)
     relativePath=$(echo "$inputFile" | sed 's#content/##' | sed 's/"/%22/g')
     href=${relativePath%.*}.html
     htmlDoc+="
       <article>
-        <h1><a href=\"$href\">$title</a></h1>
+        <a href=\"$href\">$titleHtml</a>
         <time datetime=\"$date\">$date</time>
-        <div class=\"content\">
-          <div class=\"summary\">$summary ...</div>
-          <details>
-            <summary>Read more</summary>
-            $content
-          </details>
-        </div>
+        <iframe
+          src=\"$href\"
+          onload=\"resizeIframe(this)\"
+          scrolling=\"no\"
+          loading=\"lazy\"
+        ></iframe>
+        <details>
+          <summary>Read more</summary>
+        </details>
       </article>"
 done
 
