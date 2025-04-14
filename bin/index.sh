@@ -22,7 +22,7 @@ htmlDoc="<!DOCTYPE html>
         width: 100%;
         padding-left: 1em;
 
-        &:not(:has(+ details[open])) {
+        &:not(.expanded) {
           height: 30vh;
           overflow: hidden;
         }
@@ -30,16 +30,20 @@ htmlDoc="<!DOCTYPE html>
       & > details > summary {
         cursor: pointer;
       }
-      & > details[open] > summary {
-        display: none;
-      }
     }
   </style>
   <script>
     function resizeIframe(iframe) {
       iframe.contentDocument.getElementsByTagName('h1')[0].remove();
       iframe.contentDocument.body.style.padding = '0';
-      iframe.height = iframe.contentDocument.body.scrollHeight;
+    }
+    function expandPost(summary) {
+      const details = summary.parentElement;
+      const iframe = details.parentElement.querySelector('iframe');
+      details.remove();
+      iframe.classList.add('expanded');
+      iframe.height = iframe.contentDocument.documentElement.scrollHeight;
+      iframe.scrolling = 'auto';
     }
   </script>
 </head>
@@ -79,7 +83,7 @@ do
           loading=\"lazy\"
         ></iframe>
         <details>
-          <summary>Read more</summary>
+          <summary onclick=\"expandPost(this)\">Read more</summary>
         </details>
       </article>"
 done
