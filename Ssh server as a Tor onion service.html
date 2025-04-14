@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-07-03" />
+  <title>Configure an onion service</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="configure-an-onion-service">Configure an onion service</h1>
+<p><em>Shamelessly copied from <a
+href="https://www.techrepublic.com/article/how-to-run-an-ssh-connection-through-tor/"
+class="uri">https://www.techrepublic.com/article/how-to-run-an-ssh-connection-through-tor/</a></em></p>
+<hr />
+<h2 id="install-tor">Install Tor</h2>
+<p>Install Tor on both client and server:</p>
+<pre><code>sudo apt-get install tor -y</code></pre>
+<h2 id="configure-tor">Configure Tor</h2>
+<ol type="1">
+<li><p>In the server let’s edit tor’s config file
+<code>/etc/tor/torrc</code>:</p>
+<pre><code> sudo nano /etc/tor/torrc</code></pre></li>
+<li><p>At the bottom of that file, add this:</p>
+<pre><code> HiddenServiceDir /var/lib/tor/ssh/
+ HiddenServicePort 22</code></pre>
+<p>Optional extra configurations (trade-off anonimity for better
+performance)</p>
+<pre><code> SocksPort 0
+ HiddenServiceNonAnonymousMode 1
+ HiddenServiceSingleHopMode 1</code></pre>
+<p><kbd>Ctrl</kbd>+<kbd>x</kbd> to save and close file.</p></li>
+<li><p>Restart Tor:</p>
+<pre><code> sudo systemctl restart tor</code></pre></li>
+</ol>
+<h2 id="get-.onion-address">Get .onion address</h2>
+<p>It will be in the file <code>hostname</code> in the previously
+configured folder <code>/var/lib/tor/ssh</code></p>
+<pre><code>sudo cat /var/lib/tor/ssh/hostname</code></pre>
+<p>You should get something like <code>riludi2kstjwmlzn.onion</code></p>
+<h2 id="connect-to-the-tor-hidden-ssh-server">Connect to the Tor hidden
+ssh server</h2>
+<pre><code>torify ssh ... # replace the domain/ip with the .onion address</code></pre>
+<p>For example:</p>
+<pre><code>torify ssh jack@riludi2kstjwmlzn.onion</code></pre>
+<h3 id="optional">Optional</h3>
+<p>You don’t need to remember the <strong>.onion</strong> address, you
+can write an entry to your user’s ssh config file
+<code>~/.ssh/config</code>:</p>
+<pre><code>nano ~/.ssh/config</code></pre>
+<p>Set configuration:</p>
+<pre><code>Host serverTor
+    User jack
+    HostName riludi2kstjwmlzn.onion
+    Port 22</code></pre>
+<p>Now you can simply connect with:</p>
+<pre><code>torify ssh serverTor</code></pre>
+<h2 id="more-info">More info</h2>
+<p><a href="https://community.torproject.org/onion-services/setup/"
+class="uri">https://community.torproject.org/onion-services/setup/</a></p>
+</body>
+</html>

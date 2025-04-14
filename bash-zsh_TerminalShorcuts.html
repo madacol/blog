@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2019-11-06" />
+  <title>Terminal Shortcuts</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="terminal-shortcuts">Terminal Shortcuts</h1>
+<h2 id="default-shortcuts">Default shortcuts</h2>
+<p>For Ubuntu’s default keybinding settings (i.e Emacs keybindings)</p>
+<h3 id="insert-previous-arguments">Insert previous arguments</h3>
+<ul>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>: insert last argument from last
+command.</li>
+<li><kbd>Alt</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth last
+argument from last command.</li>
+<li><kbd>Alt</kbd>+<kbd>-</kbd> , <kbd>number</kbd> ,
+<kbd>Alt</kbd>+<kbd>.</kbd>, <strong>zsh:</strong>
+<kbd>Alt</kbd>+<kbd>-</kbd>+<kbd>number</kbd>+<kbd>.</kbd>: insert #nth
+first argument from last command.</li>
+</ul>
+<p>In Linux you can repeat commands to go back in history</p>
+<h4 id="example">Example</h4>
+<p>Last command is:</p>
+<pre><code>mv foo bar</code></pre>
+<ul>
+<li><kbd>Alt</kbd>+<kbd>0</kbd>+<kbd>.</kbd>: insert first argument of
+last command = <code>mv</code></li>
+<li><kbd>Alt</kbd>+<kbd>2</kbd>+<kbd>.</kbd>: insert last 2nd argument
+of last command = <code>foo</code></li>
+<li><kbd>up</kbd> , <kbd>Ctrl</kbd>+<kbd>w</kbd>: last command without
+the last word = <code>mv foo</code></li>
+</ul>
+<h3 id="cutpaste-commands">Cut/Paste commands</h3>
+<p>(relative to cursor’s position)</p>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>w</kbd>: cuts last word</li>
+<li><kbd>Alt</kbd>+<kbd>d</kbd>: cuts next word</li>
+<li><kbd>Ctrl</kbd>+<kbd>k</kbd>: cuts everything after</li>
+<li><kbd>Ctrl</kbd>+<kbd>u</kbd>, <strong>zsh:</strong>
+<kbd>Alt</kbd>+<kbd>w</kbd>: cuts everything before</li>
+<li><strong>zsh:</strong> <kbd>Ctrl</kbd>+<kbd>u</kbd>: cuts the entire
+command <em>(In bash you can combine <kbd>Ctrl</kbd>+<kbd>u</kbd> ,
+<kbd>Ctrl</kbd>+<kbd>k</kbd>)</em></li>
+<li><kbd>Ctrl</kbd>+<kbd>y</kbd>: paste characters previously cut with
+any <strong>Cut command</strong>. <em>In bash you can chain <strong>cut
+commands</strong>, and <kbd>Ctrl</kbd>+<kbd>y</kbd> will paste them
+all.</em></li>
+</ul>
+<h3 id="move-cursor">Move cursor</h3>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>left</kbd>: move to last word</li>
+<li><kbd>Ctrl</kbd>+<kbd>right</kbd>: move to next word</li>
+<li><kbd>home</kbd> or <kbd>Ctrl</kbd>+<kbd>a</kbd>: move to start of
+command</li>
+<li><kbd>end</kbd> or <kbd>Ctrl</kbd>+<kbd>e</kbd>: move to end of
+command</li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>_</kbd>: undo last edit <em>(very useful when
+exceeding <kbd>Ctrl</kbd>+<kbd>w</kbd>)</em></li>
+</ul>
+<h3 id="to-see-all-shortcuts-available">To see all shortcuts
+available</h3>
+<ul>
+<li><strong>bash:</strong> <code>bind -lp</code></li>
+<li><strong>zsh:</strong> <code>bindkey -L</code></li>
+</ul>
+<h2 id="custom-shortcuts">Custom shortcuts</h2>
+<h3 id="iterate-through-arguments">Iterate through arguments</h3>
+<p>only works in zsh, and probably only Linux</p>
+<h4 id="description">Description</h4>
+<p>Insert any argument of a previous command by iterating one by one
+until selection</p>
+<h4 id="setup-instructions">Setup Instructions</h4>
+<p>run this:</p>
+<pre><code>autoload -Uz copy-earlier-word
+zle -N copy-earlier-word
+bindkey &quot;^[:&quot; copy-earlier-word</code></pre>
+<p><em>(to make this permanent, add it to your <code>~/.zshrc</code> and
+restart shell)</em></p>
+<p>Now use <kbd>Alt</kbd>+<kbd>.</kbd> to go as back as you want, then
+use <kbd>Alt</kbd>+<kbd>:</kbd> to iterate through the arguments</p>
+<h4 id="example-1">Example</h4>
+<p>Last command is</p>
+<pre><code>echo 1 2 3 4 5</code></pre>
+<ul>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>: <code>5</code></li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>: <code>4</code></li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>:
+<code>3</code></li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>:
+<code>2</code></li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>:
+<code>1</code></li>
+<li><kbd>Alt</kbd>+<kbd>.</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>+<kbd>:</kbd>:
+<code>echo</code></li>
+</ul>
+<p>source: <a href="https://stackoverflow.com/a/34861762/3163120"
+class="uri">https://stackoverflow.com/a/34861762/3163120</a></p>
+<h2 id="other-examples">Other examples</h2>
+<h3 id="common-usecases">Common usecases</h3>
+<p>Let’s consider the last command to be:</p>
+<pre><code>mv foo bar</code></pre>
+<p><kbd>up</kbd> , <kbd>Ctrl</kbd>+<kbd>w</kbd>: last command without
+the last word = <code>mv foo</code></p>
+<p><kbd>Alt</kbd>+<kbd>0</kbd>+<kbd>.</kbd>: first argument of last
+command = <code>mv</code></p>
+<h2 id="limitations">Limitations</h2>
+<p>“words” only includes <code>a-zA-Z</code> characters, so any symbol
+character will stop word-shortcuts.</p>
+<p>So if last argument was a url and you want to erase it with
+<kbd>Ctrl</kbd>+<kbd>w</kbd> it will be a pain.</p>
+<p>E.g:
+<code>curl -I --header "Connection: Keep-Alive" https://stackoverflow.com/questions/38176514/re-run-previous-command-with-different-arguments</code></p>
+<p>To erase that <strong>url</strong> using
+<kbd>Ctrl</kbd>+<kbd>w</kbd>, you’d have to repeat it 12 times.</p>
+<hr />
+<p>It would be great to have similar shortcuts that only stops at the
+<strong>space character</strong></p>
+</body>
+</html>

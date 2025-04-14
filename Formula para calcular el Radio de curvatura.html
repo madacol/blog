@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2014-07-03" />
+  <title>Formula para calcular el Radio de curvatura</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="formula-para-calcular-el-radio-de-curvatura">Formula para
+calcular el Radio de curvatura</h1>
+<p>Primero vayamos al grano.</p>
+<div style="display: flex;">
+<figure>
+<img src="formula_1.png" title="Fórmula 1"
+alt=" r = \frac{c^2 + b^2}{2b}, \quad \text{donde:} \quad c = \frac{a}{2} " />
+<figcaption
+aria-hidden="true"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><msup><mi>c</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>b</mi></mrow></mfrac><mo>,</mo><mspace width="1.0em"></mspace><mtext mathvariant="normal">donde:</mtext><mspace width="1.0em"></mspace><mi>c</mi><mo>=</mo><mfrac><mi>a</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex"> r = \frac{c^2 + b^2}{2b}, \quad \text{donde:} \quad c = \frac{a}{2} </annotation></semantics></math></figcaption>
+</figure>
+<figure>
+<img src="formula_2.png" title="Fórmula 2"
+alt=" r = \frac{a^2}{8b} + \frac{b}{2} " />
+<figcaption
+aria-hidden="true"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mfrac><msup><mi>a</mi><mn>2</mn></msup><mrow><mn>8</mn><mi>b</mi></mrow></mfrac><mo>+</mo><mfrac><mi>b</mi><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex"> r = \frac{a^2}{8b} + \frac{b}{2} </annotation></semantics></math></figcaption>
+</figure>
+</div>
+<p><code>a</code> es la distancia entre cada <a
+href="https://es.wikipedia.org/wiki/Interseccion">intersección</a> que
+hay entre la circunferencia y la <a
+href="https://es.wikipedia.org/wiki/Secante">secante</a>.</p>
+<p>Y <code>b</code> es la distancia perpendicular de la secante hasta
+una <a href="https://es.wikipedia.org/wiki/Tangente">tangente</a>
+paralela a ella. <em>(hay varias formas de definir a
+<code>b</code>)</em></p>
+<p>Hace mucho tiempo me tocó deducir esta formula porque nunca la logré
+conseguir por internet <em>(aunque a la final nunca hizo falta
+jeje)</em>.</p>
+<p>Lo que me motivó a deducirla era que hacia falta fabricar unos álabes
+de un impulsor que tenian una ligera curvatura cóncava, y debido a la
+falta de planos, tocaba copiar la muestra y necesitaba calcular ese
+radio de curvatura, y asi es que se me ocurrió esta idea de medir la
+longitud de una regla o un palo recto <strong>(a)</strong>, ponerlo
+paralelo a la direccion de la curvatura, para luego medir desde el
+centro del palo perpendicularmente hasta el fondo de la pieza
+<strong>(b)</strong>, y así con solo esos dos datos poder calcular el
+radio de curvatura.</p>
+<p>Este es el borrador en donde hice las deducciones, pero les advierto
+que está muy desorganizado y con tachaduras.</p>
+<figure>
+<img src="calculations.png" alt="Borrador donde hice los cálculos" />
+<figcaption aria-hidden="true">Borrador donde hice los
+cálculos</figcaption>
+</figure>
+</body>
+</html>

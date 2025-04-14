@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2021-04-02" />
+  <title>How to verify email DKIM signatures</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="how-to-verify-email-dkim-signatures">How to verify email DKIM
+signatures</h1>
+<p>Keep in mind that some providers change the original source and the
+email you receive becomes impossible to verify without guessing how to
+undo the changes they made.<br />
+Hotmail, outlook, among others, are known to do this, <a
+href="https://github.com/lieser/dkim_verifier/wiki/FAQ#all-or-almost-all-e-mails-with-dkim-signature-are-failing-with-the-same-error">source</a></p>
+<h2
+id="the-simple-method-you-need-credentials-to-access-the-account">The
+simple method (you need credentials to access the account)</h2>
+<ul>
+<li><p>Donwload and install <strong>thunderbird</strong></p></li>
+<li><p>Connect you email account with it</p></li>
+<li><p>Install the Add-on <a
+href="https://addons.thunderbird.net/en-US/thunderbird/addon/dkim-verifier/">Dkim
+verifier</a></p></li>
+<li><p>Done!, you’ll see the validation on each email</p>
+<p><strong>Valid example</strong><br />
+<img src="2021-04-02-17-47-04.png" alt="valid signature" /><br />
+Look the last line ↑</p>
+<p><strong>Invalid example</strong><br />
+<img src="2021-04-02-17-53-48.png" alt="invalid signature" /><br />
+This happens on almost all emails I receive in hotmail =(</p></li>
+</ul>
+<h2 id="the-manual-method-you-only-need-the-emails-source">The manual
+method (you only need the email’s source)</h2>
+<ul>
+<li>Download email, usually an <code>.eml</code> file</li>
+<li>Make sure you have <code>python</code> installed</li>
+<li><code>pip install dkimpy</code></li>
+<li><code>dkimverify &lt; email_file.eml</code><br />
+Alternatively you can
+<ul>
+<li><code>dkimverify</code></li>
+<li>paste email’s source</li>
+<li><kbd>Ctrl</kbd>+<kbd>D</kbd></li>
+</ul></li>
+</ul>
+<p>If it succeeds, it returns <code>signature ok</code><br />
+otherwise <code>signature verification failed</code></p>
+<h2 id="massively-verify-an-mbox-archive">Massively verify an mbox
+archive</h2>
+<p><a href="https://github.com/associatedpress/verify-dkim"
+class="uri">https://github.com/associatedpress/verify-dkim</a></p>
+<h2 id="caveat">Caveat</h2>
+<p>If the sender’s provider’s DKIM-private-key is leaked or made public,
+then anyone in possession of it could make a valid signature of any
+email, so the verification result becomes meaningless.</p>
+<p>A way to avoid this and preserve its provability, is to timestamp the
+<code>.eml</code> file with a service like <a
+href="https://opentimestamps.org/"
+class="uri">https://opentimestamps.org/</a>.<br />
+But it <strong>MUST</strong> be stamped before the private-key went
+public, so you can prove the email’s signature existed before it became
+forgeable</p>
+</body>
+</html>

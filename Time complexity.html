@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2022-11-07" />
+  <title>Time complexity</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="time-complexity">Time complexity</h1>
+<p>This is how scaling ability of algorithms are described.</p>
+<p>Let’s assume we are dealing with algorithms that take a list of
+<code>n</code> items.<br />
+For example, an algorithm that just iterates the list and returns the
+greatest item.<br />
+This algorithm only needs to do a simple iteration to know the results,
+and if we double <code>n</code>, the <strong>execution time</strong>
+also doubles.</p>
+<p>If we tried to describe the mathematical function
+<code>ExecutionTime(n)</code> of that algorithm, the equation should
+look something like this:</p>
+<details style="margin-left: 1em;">
+<summary>
+<code>execution_time = n * constant</code>
+</summary>
+where <code>constant</code> includes any computation in the algorithm
+that doesn’t change when increasing the size of the list
+(<code>n</code>).
+</details>
+<p>We only care about how <code>n</code> directly affects the
+<code>execution_time</code></p>
+<p>The scalability of this equation depends proportionally on
+<code>n</code>, so to describe its complexity we use the <a
+href="https://en.wikipedia.org/wiki/Big_O_notation">Big O notation</a>.
+In this example, its <strong>time complexity</strong> is
+<code>O(n)</code>, and it tells us that the <strong>execution
+time</strong> will change proportionally to (<code>n</code>).</p>
+<p>If the <code>execution_time</code> equation had multiple
+complexities, e.g. <code>= 2n + n²</code>, we would only describe the
+biggest complexity (the one that increases faster), in this example it
+would be <code>z²</code> since it dominates more and more as
+<code>n</code> increases, so in <a
+href="https://en.wikipedia.org/wiki/Big_O_notation">Big O notation</a>
+it would be <code>O(n²)</code></p>
+<h2 id="example">Example</h2>
+<p>If an algorithm has a <strong>time complexity</strong> of
+<code>O(n)</code>, and we increase the size of <code>n</code> by 10x, we
+should expect the <strong>execution time</strong> to also increase by
+10x. But if the algorithm is <code>O(n²)</code>, we should expect the
+<strong>execution time</strong> to increase by 100x instead, because
+<code>10² = 100</code></p>
+<p>An example of an <code>O(n²)</code> algorithm:<br />
+Produce all the ordered combinations of pairs from a list of
+<code>n</code> items. E.g.: input = <code>[A,B,C]</code>, which is size:
+3<br />
+output =
+<code>[[A,A], [A,B], [A,C], [B,A], [B,B], [B,C], [C,A], [C,B], [C,C]]</code>,
+which is size: 9 (3²)</p>
+<h2 id="other-time-complexities">Other <strong>time
+complexities</strong></h2>
+<ul>
+<li><p><code>O(1)</code>, its equation looks like this:
+<code>execution_time = constant</code>, because no matter how many more
+items you add, it will always take the same amount
+(<code>constant</code>) to run</p></li>
+<li><p><code>O(log n)</code>, its equation looks like this:
+<code>execution_time = log(n) * constant</code>, if you increase
+<code>n</code> by 1024x, the <strong>execution time</strong> increases
+by just 10x (<code>log₂(1024) = 10</code>)</p></li>
+<li><p><code>O(n²)</code>, its equation looks like this:
+<code>execution_time = n² * constant</code>, if you increase
+<code>n</code> by 3x, the <strong>execution time</strong> increases by
+9x (<code>3² = 9</code>).</p></li>
+<li><p><a
+href="https://en.wikipedia.org/wiki/Time_complexity#Table_of_common_time_complexities">More
+examples, with common algorithms</a></p></li>
+</ul>
+<h2 id="other-notations">Other notations</h2>
+<p>Big O notation describes the upper bound of the <strong>time
+complexity</strong>.<br />
+There are other notations that describe the lower bound, or both
+bounds:</p>
+<ul>
+<li><code>Ω(n)</code>, describes the lower bound of the <strong>time
+complexity</strong>.<br />
+E.g.: an algorithm that iterates a list of <code>n</code> items, and
+returns the first item that matches a condition.<br />
+If the first item matches the condition, the <strong>execution
+time</strong> will be <code>O(1)</code>, but if the first item doesn’t
+match the condition, the <strong>execution time</strong> will be
+<code>O(n)</code>.<br />
+In this case, the <strong>time complexity</strong> is <code>Ω(1)</code>,
+because it will never be slower than <code>O(1)</code></li>
+<li><code>Θ(n)</code>, describes both the upper and lower bounds of the
+<strong>time complexity</strong>.</li>
+</ul>
+<p>In general, these notations are called <a
+href="https://learnxinyminutes.com/docs/asymptotic-notation/">Asymptotic
+Notations</a></p>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li><a
+href="https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation/487278#487278">A
+more detailed explanation, but simpler than Wikipedia’</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Time_complexity">Wikipedia
+article</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Big_O_notation">Big O
+notation</a></li>
+<li><a
+href="https://learnxinyminutes.com/docs/asymptotic-notation/">Asymptotic
+Notations</a></li>
+</ul>
+</body>
+</html>

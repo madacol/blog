@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2019-02-12" />
+  <title>Ubuntu fresh setup guide</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #2a211c;
+        color: #bdae9d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #bdae9d; background-color: #2a211c; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffff00; } /* Alert */
+    code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #44aa43; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #049b0a; } /* Char */
+    code span.cn { } /* Constant */
+    code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+    code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+    code span.dt { text-decoration: underline; } /* DataType */
+    code span.dv { color: #44aa43; } /* DecVal */
+    code span.er { color: #ffff00; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #44aa43; } /* Float */
+    code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+    code span.op { } /* Operator */
+    code span.pp { font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #049b0a; } /* SpecialChar */
+    code span.ss { color: #049b0a; } /* SpecialString */
+    code span.st { color: #049b0a; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #049b0a; } /* VerbatimString */
+    code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="ubuntu-fresh-setup-guide">Ubuntu fresh setup guide</h1>
+<h2 id="update-upgrade">Update &amp; Upgrade</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update <span class="kw">&amp;&amp;</span> <span class="fu">sudo</span> apt upgrade <span class="at">-y</span></span></code></pre></div>
+<h2 id="install-packages">Install Packages</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install python3-pip zsh curl wget git dconf-editor</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install p7zip-full smplayer speedtest-cli git-gui pavucontrol paprefs ufw nmap fail2ban gimp most colordiff ncdu qalculate-gtk jq tor thunderbird chrome-gnome-shell gnome-tweaks smartmontools <span class="kw">&amp;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Probably not needed anymore</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fonts-noto</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pipx</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pipx</span> install yt-dlp tldr llm pipenv</span></code></pre></div>
+<h2 id="external-repositories">External Repositories</h2>
+<h3 id="llm-and"><code>llm</code> and <code>??</code></h3>
+<p>config <code>llm</code></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">llm</span> install llm-claude-3</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">llm</span> keys set claude <span class="co"># Insert Claude API key generated in https://console.anthropic.com/settings/keys</span></span></code></pre></div>
+<p>script: <a
+href="https://gist.github.com/madacol/2e8e2f5e22b03bfe4f22fbe30dd9c978"
+class="uri">https://gist.github.com/madacol/2e8e2f5e22b03bfe4f22fbe30dd9c978</a></p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/zsh</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This script needs to be sourced in a zsh shell instead of being executed</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># To do so, set an alias in your shell:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#    alias &#39;??&#39;=&#39;source $HOME/.local/bin/nlsh.zsh&#39;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Then you can use the `??` command from any zsh shell like this:</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#    ?? extract the content of ./file.zip in the current directory</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span> <span class="dt">\</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="ex">llm</span> <span class="at">-s</span> <span class="st">&#39;Your task is to output oneliner shell commands.</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">Always answer with a single line shell command, or a multiline using code blocks&#39;</span> <span class="dt">\</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span> <span class="fu">tee</span> /dev/shm/nlsh_stdout</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="va">extracted_command</span><span class="op">=</span><span class="va">$(</span><span class="fu">sed</span> <span class="at">-n</span> <span class="st">&#39;/^[ \t]*```/,/^[ \t]*```/{//!p}&#39;</span> /dev/shm/nlsh_stdout<span class="va">)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># If the command is empty, get the last line of the output</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">[</span> <span class="ot">-z</span> <span class="st">&quot;</span><span class="va">$extracted_command</span><span class="st">&quot;</span> <span class="bu">]</span><span class="kw">;</span> <span class="cf">then</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="va">extracted_command</span><span class="op">=</span><span class="va">$(</span><span class="fu">tail</span> <span class="at">-n</span> 1 /dev/shm/nlsh_stdout<span class="va">)</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">fi</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ex">print</span> <span class="at">-rz</span> <span class="va">$extracted_command</span></span></code></pre></div>
+<p>add alias <code>??</code> in <code>~/.zshrc</code></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> <span class="pp">??</span>=<span class="st">&#39;source $HOME/.local/bin/nlsh.zsh&#39;</span></span></code></pre></div>
+<h2 id="web-installs">Web installs</h2>
+<ul>
+<li>docker: <a href="https://download.docker.com"
+class="uri">https://download.docker.com</a></li>
+<li>VSCode: <a href="https://code.visualstudio.com/"
+class="uri">https://code.visualstudio.com/</a></li>
+<li>chrome: <a href="https://www.chrome.com/"
+class="uri">https://www.chrome.com/</a></li>
+<li>syncthing: <a href="https://apt.syncthing.net/"
+class="uri">https://apt.syncthing.net/</a></li>
+<li>Zsh-syntax-highlighting: <a
+href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md"
+class="uri">https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md</a></li>
+<li>Zsh-autosuggestions: <a
+href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md"
+class="uri">https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md</a></li>
+</ul>
+<h2 id="shells">Shells</h2>
+<h3 id="zsh---edit-.zshrc">Zsh - Edit ~/.zshrc</h3>
+<h4 id="add-.localbin-to-path">Add <code>~/.local/bin</code> to
+PATH</h4>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$HOME</span>/.local/bin:<span class="va">$PATH</span></span></code></pre></div>
+<h4 id="add-shortcut-alt-to-iterate-through-arguments">Add shortcut
+“Alt+:” <a
+href="https://stackoverflow.com/questions/4009412/how-to-use-arguments-from-previous-command/55069846#55069846">to
+iterate through arguments</a></h4>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">autoload</span> <span class="at">-Uz</span> copy-earlier-word</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">zle</span> <span class="at">-N</span> copy-earlier-word</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">bindkey</span> <span class="st">&quot;^[:&quot;</span> copy-earlier-word</span></code></pre></div>
+<h4 id="aliases">Aliases</h4>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> youtube-dl=yt-dlp</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> youtube-dl720=<span class="st">&#39;yt-dlp -f &quot;bestvideo[height&lt;=720]+bestaudio/best[height&lt;=720]&quot;&#39;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> mkcd ()</span> <span class="kw">{</span> <span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span> <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">&quot;</span><span class="va">$@</span><span class="st">&quot;</span><span class="kw">;</span> <span class="kw">}</span></span></code></pre></div>
+<h4 id="enable-most">Enable most</h4>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PAGER</span><span class="op">=</span>most</span></code></pre></div>
+<h4 id="enable-zsh-plugins">Enable zsh plugins</h4>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="va">plugins</span><span class="op">=</span><span class="va">(</span>git zsh-syntax-highlighting zsh-autosuggestions<span class="va">)</span></span></code></pre></div>
+<p><strong>Note:</strong> Probably need to install them first</p>
+<h2 id="gnome-extensions">Gnome extensions</h2>
+<ul>
+<li>Caffeine <a
+href="https://extensions.gnome.org/extension/517/caffeine/"
+class="uri">https://extensions.gnome.org/extension/517/caffeine/</a></li>
+<li>NetSpeed <a
+href="https://extensions.gnome.org/extension/104/netspeed/"
+class="uri">https://extensions.gnome.org/extension/104/netspeed/</a></li>
+<li>EasyScreenCast <a
+href="https://extensions.gnome.org/extension/690/easyscreencast/"
+class="uri">https://extensions.gnome.org/extension/690/easyscreencast/</a></li>
+</ul>
+<h2 id="dconf">Dconf</h2>
+<h2 id="custom-shortcuts">Custom shortcuts</h2>
+<ul>
+<li><code>systemctl suspend</code></li>
+<li><a href="./Cmus%20setup%20and%20shortcuts.html">Cmus setup and
+shortcuts</a></li>
+<li><code>qalculate</code></li>
+</ul>
+<h2 id="startup">StartUp</h2>
+<ul>
+<li>Cmus <code>gnome-terminal -- cmus</code></li>
+</ul>
+<h2 id="nautilus">Nautilus</h2>
+<p>Add context menu to convert to MP4 using ffmpeg</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.local/share/nautilus/scripts/Convert\ to\ MP4</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ~/.local/share/nautilus/scripts/Convert\ to\ MP4</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">ffmpeg</span> <span class="at">-i</span> <span class="va">${NAUTILUS_SCRIPT_SELECTED_FILE_PATHS}</span><span class="dt">\</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">-y</span> <span class="at">-vf</span> <span class="st">&quot;scale=&#39;bitand(oh*dar,65534)&#39;:&#39;min(720,ih)&#39;&quot;</span><span class="dt">\</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        /dev/shm/video.mp4<span class="dt">\</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2</span><span class="op">&gt;</span> /dev/shm/convertToMP4.log</span></code></pre></div>
+<h2 id="old-stuffs">Old stuffs</h2>
+<h3 id="built-in-dash-to-dock-extension">Built-in dash-to-dock
+extension</h3>
+<ul>
+<li><code>org.gnome.shell.extensions.dash-to-dock.click-action</code> =
+<strong><code>cycle-windows</code></strong></li>
+<li><code>org.gnome.shell.extensions.dash-to-dock.scroll-action</code> =
+<strong><code>cycle-windows</code></strong></li>
+<li><code>org.gnome.shell.extensions.dash-to-dock.show-windows-preview</code>
+= <strong><code>false</code></strong></li>
+</ul>
+<h2 id="zsh">Zsh</h2>
+<h4 id="lazy-load-nvm">Lazy-load nvm</h4>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">NVM_DIR</span><span class="op">=</span><span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/.nvm&quot;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">[</span> <span class="ot">-s</span> <span class="st">&quot;</span><span class="va">$NVM_DIR</span><span class="st">/nvm.sh&quot;</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">.</span> <span class="va">$NVM_DIR</span>/nvm.sh <span class="at">--no-use</span><span class="kw">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">[</span> <span class="ot">-s</span> <span class="st">&quot;</span><span class="va">$NVM_DIR</span><span class="st">/bash_completion&quot;</span> <span class="bu">]</span> <span class="kw">&amp;&amp;</span> <span class="bu">.</span> <span class="va">$NVM_DIR</span>/bash_completion<span class="kw">;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="fu"> __nvm_load_node ()</span> <span class="kw">{</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">unalias</span> node npm npx<span class="kw">;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="ex">nvm</span> use <span class="dv">2</span><span class="op">&gt;</span> /dev/null <span class="kw">||</span> <span class="ex">nvm</span> use default<span class="kw">;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">command</span><span class="op">=</span><span class="va">$1</span><span class="kw">;</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">shift</span> 1<span class="kw">;</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="va">$command</span> <span class="va">$@</span><span class="kw">;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="kw">}</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> node=<span class="st">&#39;__nvm_load_node node $@&#39;</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> npm=<span class="st">&#39;__nvm_load_node npm $@&#39;</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> npx=<span class="st">&#39;__nvm_load_node npx $@&#39;</span></span></code></pre></div>
+<h3 id="fish">Fish</h3>
+<h4 id="functions">Functions</h4>
+<ul>
+<li><p>nvm</p>
+<p>Install bass, then configure these functions</p>
+<ul>
+<li><p>**__nvm_load.fish**</p>
+<pre class="fish"><code>function __nvm_load
+  functions -e __nvm_load node npm npx
+  bass source ~/.nvm/nvm.sh --no-use &#39;;&#39; nvm use 2&gt; /dev/null &#39;||&#39; nvm use default
+end</code></pre></li>
+<li><p><strong>nvm.fish</strong></p></li>
+</ul>
+<pre class="fish"><code>function nvm
+  functions -e __nvm_load node npm npx
+  bass source ~/.nvm/nvm.sh --no-use &#39;;&#39; source ~/.nvm/bash_completion &#39;;&#39; nvm $argv
+end</code></pre>
+<ul>
+<li><strong>npx.fish</strong></li>
+</ul>
+<pre class="fish"><code>function npx
+  __nvm_load
+  npx $argv
+end</code></pre>
+<ul>
+<li><strong>npm.fish</strong></li>
+</ul>
+<pre class="fish"><code>function npm
+  __nvm_load
+  npm $argv
+end</code></pre>
+<ul>
+<li><strong>node.fish</strong></li>
+</ul>
+<pre class="fish"><code>function node
+  __nvm_load
+  node $argv
+end</code></pre></li>
+</ul>
+<h3 id="antimicro">Antimicro</h3>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> add-apt-repository ppa:mdeguzis/libregeek</span></code></pre></div>
+<p>As of today, a bionic package is still not available, but the artful
+works!. <a href="https://github.com/AntiMicro/antimicro/issues"
+class="uri">https://github.com/AntiMicro/antimicro/issues</a></p>
+<p><code>sudo nano /etc/apt/sources.list.d/mdeguzis-ubuntu-libregeek-bionic.list</code>
+Replace <code>bionic</code> with <code>artful</code></p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install antimicro</span></code></pre></div>
+<p>Put config file <a
+href="https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6e"
+class="uri">https://gist.github.com/madacol/19f8c71ba98f484a4294ccfe90e88e6e</a>
+in <code>~/.config/antimicro</code></p>
+<h3 id="sinkswitcher">SinkSwitcher</h3>
+<p><a href="https://github.com/madacol/sinkSwitcher"
+class="uri">https://github.com/madacol/sinkSwitcher</a></p>
+</body>
+</html>

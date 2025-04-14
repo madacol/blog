@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-09-30" />
+  <title>Configure ssh keys in Mikrotik</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="configure-ssh-keys-in-mikrotik">Configure ssh keys in
+Mikrotik</h1>
+<pre class="mikrotik"><code># Create a dummy file
+/file print file=dummyFile
+# Set its content to the public key
+/file set dummyFile.txt contents=&quot;ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA7QEcjRkbBWpwE7zIShobue9aEGyVObVHDLhK&quot;
+# Assign public key to user
+/user ssh-keys import public-key-file=dummyFile.txt user=admin</code></pre>
+<p>Change the <em>public key</em>, and <em>user</em> accordingly</p>
+<h2 id="what-led-to-learning-this">What led to learning this</h2>
+<p>After having troubles with a mikrotik router I had to reconfigure it
+from scratch (didn’t have a backup :sad:), and in the process the router
+got hacked, which pushed me to improve security measures</p>
+</body>
+</html>

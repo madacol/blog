@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-04-16" />
+  <title>Install yt-dlp in Android</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #2a211c;
+        color: #bdae9d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #bdae9d; background-color: #2a211c; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffff00; } /* Alert */
+    code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #44aa43; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #049b0a; } /* Char */
+    code span.cn { } /* Constant */
+    code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+    code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+    code span.dt { text-decoration: underline; } /* DataType */
+    code span.dv { color: #44aa43; } /* DecVal */
+    code span.er { color: #ffff00; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #44aa43; } /* Float */
+    code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+    code span.op { } /* Operator */
+    code span.pp { font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #049b0a; } /* SpecialChar */
+    code span.ss { color: #049b0a; } /* SpecialString */
+    code span.st { color: #049b0a; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #049b0a; } /* VerbatimString */
+    code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="install-yt-dlp-in-android">Install yt-dlp in Android</h1>
+<p><em>This tutorial was originally written for the famous <a
+href="https://github.com/ytdl-org/youtube-dl/">youtube-dl</a> (R.I.P)
+and later adapted to its successor <a
+href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>, the adaptation
+hasn’t been well tested</em></p>
+<hr />
+<p>Based on <a
+href="https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/"
+class="uri">https://www.reddit.com/r/Piracy/comments/baufql/youtubedl_the_easy_way_on_android/</a></p>
+<h2 id="usage">Usage</h2>
+<p>Click <strong>Share</strong>, select <strong>Termux</strong>, choose
+video or audio, and that’s it!, it will be saved to
+<code>Downloads/{Provider}/</code> e.g
+<code>Downloads/Youtube/</code></p>
+<h2 id="install-termux">Install Termux</h2>
+<p><a href="https://termux.com/" class="uri">https://termux.com/</a></p>
+<h2 id="open-termux-and-run-one-of-these">Open Termux and run one of
+these</h2>
+<!-- no toc -->
+<ol type="1">
+<li><a href="#yt-dlp--sharing--dialog-recommended">Yt-dlp + sharing +
+dialog <strong>(Recommended)</strong></a></li>
+<li><a href="#yt-dlp--sharing">Yt-dlp + sharing</a></li>
+<li><a href="#yt-dlp">Yt-dlp</a></li>
+<li><a href="#termux-extras">Termux extras</a></li>
+<li><a href="#all-in-one">All-In-One</a></li>
+</ol>
+<h3 id="yt-dlp-sharing-dialog-recommended">Yt-dlp + sharing + dialog
+<strong>(Recommended)</strong></h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ask for storage permission</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">termux-setup-storage</span> <span class="kw">&amp;&amp;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install yt-dlp</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">apt</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> upgrade <span class="at">-y</span> <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> install <span class="at">-y</span> python ffmpeg dialog <span class="kw">&amp;&amp;</span> <span class="ex">pip</span> install yt-dlp <span class="kw">&amp;&amp;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Configure to download videos in `Download/{URL&#39;s provider (e.g. Youtube)}/{filename}`</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/.config/yt-dlp <span class="kw">&amp;&amp;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;# Default Output Directory and Pattern</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">-o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s&quot;</span> <span class="op">&gt;</span> ~/.config/yt-dlp/config <span class="kw">&amp;&amp;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Configure to open shared URLs with `yt-dlp {url}`</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> ~/bin <span class="kw">&amp;&amp;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;#!/bin/bash</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">    URL=$1</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="st">    HEIGHT=15</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="st">    WIDTH=40</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="st">    CHOICE_HEIGHT=4</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">    CHOICE=$(dialog \</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">        --menu &quot;What would you like to download?&quot; \</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">        $HEIGHT $WIDTH $CHOICE_HEIGHT \</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">        Video &quot;&quot; \</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">        Audio &quot;&quot; \</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">        2&gt;&amp;1 &gt;/dev/tty)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">    case $CHOICE in</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">        Video)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">            echo &quot;Downloading video from $URL&quot;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">            yt-dlp $URL</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="st">            ;;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="st">        Audio)</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">            echo &quot;Downloading audio from $URL&quot;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="st">            yt-dlp -x $URL</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">            ;;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="st">    esac&#39;</span> <span class="op">&gt;</span> ~/bin/termux-url-opener <span class="kw">&amp;&amp;</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> +x ~/bin/termux-url-opener</span></code></pre></div>
+<ul>
+<li>Paste the script above 🖢 in the Termux console and press
+<kbd>Enter</kbd></li>
+<li>A prompt to enable storage will appear, press <kbd>y</kbd> then
+<kbd>Enter</kbd></li>
+<li>That’s all!, just wait for it to finish upgrading/installing</li>
+</ul>
+<h4 id="usage-1">Usage</h4>
+<p>Share an URL to termux, a dialog will ask you to choose if download
+<strong>video</strong> or just <strong>audio</strong></p>
+<h3 id="yt-dlp-sharing">Yt-dlp + sharing</h3>
+<h4 id="usage-2">Usage</h4>
+<p>Share URL to termux, this will automatically download the video.</p>
+<p>But if you always want to download just audio, replace
+<code>yt-dlp $url</code> with <code>yt-dlp -x $url</code> in the script
+below 🖣</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ask for storage permission</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">termux-setup-storage</span> <span class="kw">&amp;&amp;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Install yt-dlp</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> upgrade <span class="at">-y</span> <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> install <span class="at">-y</span> python ffmpeg <span class="kw">&amp;&amp;</span> <span class="ex">pip</span> install yt-dlp <span class="kw">&amp;&amp;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Configure to download videos in `Download/{URL&#39;s provider (e.g. Youtube)}/{filename}`</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> ~/.config/yt-dlp <span class="kw">&amp;&amp;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;# Default Output Directory and Pattern</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s&quot;</span> <span class="op">&gt;</span> ~/.config/yt-dlp/config <span class="kw">&amp;&amp;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Configure to open shared URLs with `yt-dlp {url}`</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> ~/bin <span class="kw">&amp;&amp;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;#!/bin/bash</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">    url=</span><span class="va">$1</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">    yt-dlp </span><span class="va">$url</span><span class="st">&quot;</span> <span class="op">&gt;</span> ~/bin/termux-url-opener <span class="kw">&amp;&amp;</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">chmod</span> +x ~/bin/termux-url-opener</span></code></pre></div>
+<h3 id="yt-dlp">Yt-dlp</h3>
+<p>This will only install yt-dlp in termux, sharing a URL to Termux will
+not work, you’ll need to run the command manually from the terminal, e.g
+<code>yt-dlp https://youtu.be/blahblahblah</code></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ask for storage permission</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">termux-setup-storage</span> <span class="kw">&amp;&amp;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Install yt-dlp</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> upgrade <span class="at">-y</span> <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> install <span class="at">-y</span> python ffmpeg <span class="kw">&amp;&amp;</span> <span class="ex">pip</span> install yt-dlp</span></code></pre></div>
+<h3 id="termux-extras">Termux extras</h3>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Add special keys to keyboard</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># source: https://wiki.termux.com/wiki/Touch_Keyboard#Extra_Keys_Row(s)</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> ~/.termux</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;extra-keys = [ </span><span class="dt">\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">        [&#39;ESC&#39;, &#39;/&#39;, &#39;|&#39;, &#39;HOME&#39;, &#39;UP&#39;, &#39;END&#39;, &#39;PGUP&#39;, &#39;ENTER&#39;], </span><span class="dt">\</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">        [&#39;TAB&#39;,&#39;CTRL&#39;, &#39;ALT&#39;, &#39;LEFT&#39;, &#39;DOWN&#39;, &#39;RIGHT&#39;, &#39;PGDN&#39;, &#39;~&#39;] </span><span class="dt">\</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    ]&quot;</span> <span class="op">&gt;</span> ~/.termux/termux.properties</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Install nano</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> install <span class="at">-y</span> nano</span></code></pre></div>
+<h3 id="all-in-one">All-In-One</h3>
+<p>Yt-dlp + sharing + dialog + Termux extras</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="ex">termux-setup-storage</span> <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">apt</span> update <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> upgrade <span class="at">-y</span> <span class="kw">&amp;&amp;</span> <span class="ex">apt</span> install <span class="at">-y</span> nano python ffmpeg dialog <span class="kw">&amp;&amp;</span> <span class="ex">pip</span> install yt-dlp <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> ~/.config/yt-dlp <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;# Default Output Directory and Pattern</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">    -o /data/data/com.termux/files/home/storage/downloads/%(extractor_key)s/%(title).150s-%(id)s.%(ext)s&quot;</span> <span class="op">&gt;</span> ~/.config/yt-dlp/config <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> ~/bin <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&#39;#!/bin/bash</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">        URL=$1</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">        HEIGHT=15</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">        WIDTH=40</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">        CHOICE_HEIGHT=4</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st">        CHOICE=$(dialog \</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="st">            --menu &quot;Que desea descargar?&quot; \</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="st">            $HEIGHT $WIDTH $CHOICE_HEIGHT \</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="st">            Video &quot;&quot; \</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="st">            Audio &quot;&quot; \</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="st">            2&gt;&amp;1 &gt;/dev/tty)</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="st">        case $CHOICE in</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="st">            Video)</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="st">                yt-dlp $URL</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="st">                ;;</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="st">            Audio)</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="st">                yt-dlp -x $URL</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="st">                ;;</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="st">        esac&#39;</span> <span class="op">&gt;</span> ~/bin/termux-url-opener <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">chmod</span> +x ~/bin/termux-url-opener <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mkdir</span> <span class="at">-p</span> ~/.termux <span class="kw">&amp;&amp;</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;extra-keys = [ </span><span class="dt">\</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="st">        [&#39;ESC&#39;, &#39;/&#39;, &#39;|&#39;, &#39;HOME&#39;, &#39;UP&#39;, &#39;END&#39;, &#39;PGUP&#39;, &#39;ENTER&#39;], </span><span class="dt">\</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="st">        [&#39;TAB&#39;,&#39;CTRL&#39;, &#39;ALT&#39;, &#39;LEFT&#39;, &#39;DOWN&#39;, &#39;RIGHT&#39;, &#39;PGDN&#39;, &#39;~&#39;] </span><span class="dt">\</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="st">    ]&quot;</span> <span class="op">&gt;</span> ~/.termux/termux.properties</span></code></pre></div>
+</body>
+</html>

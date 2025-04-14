@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2018-05-17" />
+  <title>Configuring Age Of Empires 2: Forgotten Empires on
+Ubuntu</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1
+id="configuring-age-of-empires-2-forgotten-empires-on-ubuntu">Configuring
+Age Of Empires 2: Forgotten Empires on Ubuntu</h1>
+<p>We’re going to need the official Installers for Age of Empires: Age
+of Kings and The Conquerors.</p>
+<ol type="1">
+<li>Install PlayOnLinux (POL)</li>
+<li>Run POL’s Age of Kings script (Here you’ll need Age of Kings
+Installer)</li>
+<li>Run POL’s The Conquerors script (Here you’ll need The Conquerors
+Installer)</li>
+<li>Run POL’s Forgotten Empires script (This will download and install
+automatically this installer: <a
+href="https://www.forgottenempires.net/install">https://forgottenempires.net/AoFE_Launcher.exe</a>)</li>
+<li>If sound does not work, change wine version to a newer one</li>
+</ol>
+<p>It works!, but it has some annoying bugs with resolution and
+fullscreen, so the solution I got was to make it windowed, almost
+borderless and filled the screen with it. So let’s do it.</p>
+<ol type="1">
+<li><p>Run <code>FixAoFE.exe</code> in the Forgotten virtual drive</p>
+<ol type="1">
+<li>Open POL and select Forgotten</li>
+<li>Click Configure</li>
+<li>Tab Miscellaneous</li>
+<li>Click “Run a .exe …”</li>
+<li>Locate FixAoFE.exe in
+<code>~/PlayOnLinux's virtual drives/AOE2_forg/drive_c/Program Files/Microsoft Games/Age of Empires II/age2_x1/FixAoFE.exe</code></li>
+</ol></li>
+<li><p>Enable Windowed mode</p>
+<figure>
+<img src="aoe2_enable_windowed_mode.png" alt="Windowed mode" />
+<figcaption aria-hidden="true">Windowed mode</figcaption>
+</figure></li>
+<li><p>Open Configure Wine</p>
+<figure>
+<img src="aoe2_configure_wine_screenshot.png" alt="Configure Wine" />
+<figcaption aria-hidden="true">Configure Wine</figcaption>
+</figure></li>
+<li><p>Open <strong>Graphics</strong> tab, and make exactly these
+selections:</p>
+<figure>
+<img src="aoe2_graphics-settings-screenshot.png"
+alt="Graphics settings" />
+<figcaption aria-hidden="true">Graphics settings</figcaption>
+</figure></li>
+<li><p>Open the game and choose your desired resolution in options. This
+resolution will only affect in-game, it won’t affect the menu.</p></li>
+</ol>
+<p>It still has some bugs, but it’s now playable, the inner game is
+mostly free of bugs, and with the new 60 FPS feature of the Forgotten
+Empires, is a net improvement.</p>
+<p>There are two bugs that still bother me:</p>
+<ol type="1">
+<li><p>For some really strange reason, enemies’ Castles do not start
+firing until you get really close to them, or maybe attack them. I’ve
+seen this happen in the first chapter of barbarossa campaign.</p></li>
+<li><p>Multiplayer does not work. Right now, if you try to create a
+multiplayer game it will go back to the menu immediately. We can
+overcome this bug by installing directplay:</p>
+<figure>
+<img src="aoe2_install_directplay_screenshot.png"
+alt="Install directplay" />
+<figcaption aria-hidden="true">Install directplay</figcaption>
+</figure>
+<p>It now Creates a multiplayer game</p>
+<figure>
+<img src="aoe2_multiplayer-game-screenshot.png"
+alt="Multiplayer game" />
+<figcaption aria-hidden="true">Multiplayer game</figcaption>
+</figure>
+<p>But still, I haven’t been able to join a multiplayer game between two
+computers using the same setup, I’ve tried with LAN, with IP, disabling
+firewalls, but no luck :(</p></li>
+</ol>
+</body>
+</html>

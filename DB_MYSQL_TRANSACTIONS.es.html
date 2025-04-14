@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-02-15" />
+  <title>Transacciones en MySQL</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #2a211c;
+        color: #bdae9d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #bdae9d; background-color: #2a211c; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffff00; } /* Alert */
+    code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #44aa43; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #049b0a; } /* Char */
+    code span.cn { } /* Constant */
+    code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+    code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+    code span.dt { text-decoration: underline; } /* DataType */
+    code span.dv { color: #44aa43; } /* DecVal */
+    code span.er { color: #ffff00; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #44aa43; } /* Float */
+    code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+    code span.op { } /* Operator */
+    code span.pp { font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #049b0a; } /* SpecialChar */
+    code span.ss { color: #049b0a; } /* SpecialString */
+    code span.st { color: #049b0a; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #049b0a; } /* VerbatimString */
+    code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="transacciones-en-mysql">Transacciones en MySQL</h1>
+<h1 id="comandos-principales">Comandos principales</h1>
+<ul>
+<li><code>START TRANSACTION</code> se utiliza para abrir una transacción
+(desactiva temporalmente el modo <code>autocommit</code>).</li>
+<li><code>COMMIT</code> se utiliza para que los cambios que están
+pendientes de la transacción actual, se vuelvan permanentes en la BD y
+cierra la transacción.</li>
+<li><code>ROLLBACK</code> para deshechar cualquier cambio pendiente que
+se haya hecho en la transacción actual y cierra la transacción.</li>
+</ul>
+<p>MYSQL por defecto funciona con el modo <code>autocommit</code>
+activado, eso quiere decir que cualquier consulta es una transacción
+implicitamente, osea, si hacen un <code>UPDATE ...</code> en el fondo
+InnoDB ejecuta algo parecido a esto:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">START</span> <span class="kw">TRANSACTION</span>;</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">UPDATE</span> <span class="op">..</span>.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">COMMIT</span>;</span></code></pre></div>
+<p>Si ese <code>UPDATE ...</code> falla estando el modo
+<code>autocommit</code> activado, entonces automáticamente se ejecuta un
+<code>ROLLBACK</code></p>
+<h1 id="usos">Usos</h1>
+<h2 id="ejecutar-todo-o-nada">Ejecutar todo o nada</h2>
+<p>Supongamos que queremos ejecutar una serie de consultas que modifican
+la BD, pero queremos que se ejecuten todas, y que si cualquiera falla
+que se deshagan los cambios.</p>
+<p>Podemos hacer algo así:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">START</span> <span class="kw">TRANSACTION</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> Consulta <span class="dv">1</span> <span class="op">..</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> Consulta <span class="dv">2</span> <span class="op">..</span>    # Esta consulta siempre falla</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> Consulta <span class="dv">3</span> <span class="op">..</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">COMMIT</span>;</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span></span></code></pre></div>
+<p>Al ejecutar ese procedimiento almacenado, se abre una transacción, se
+ejecuta la <strong>Consulta 1</strong>, y al intentar la
+<strong>Consulta 2</strong> falla.</p>
+<p>Hay un problema aquí, la transacción no se deshace, sino que queda
+abierta, osea, tiene cambios hechos de la <strong>Consulta 1</strong>,
+pero no se han hecho permanentes en la BD (<code>COMMIT</code>), ni
+tampoco se han devuelto los cambios (<code>ROLLBACK</code>). Y puede
+ocurrir cualquiera de los dos escenarios. Por ejemplo si se cierra la
+conexión, la BD ejecuta un <code>ROLLBACK</code> y si se ejecuta
+cualquiera de estas consultas <a
+href="https://dev.mysql.com/doc/refman/8.0/en/implicit-commit.html"
+class="uri">https://dev.mysql.com/doc/refman/8.0/en/implicit-commit.html</a>
+se genera un <code>COMMIT</code> implicitamente.</p>
+<p>Si en este estado de la BD se hace un <code>SELECT</code> para
+verificar si en la BD se hicieron los cambios de la <strong>Consulta
+1</strong>, se va a obtener distintas respuestas dependiendo de si el
+<code>SELECT</code> se ejecuta desde la misma conexión/sesión o no.</p>
+<p>Cuando se abre una transacción y se hace un cambio, ese cambio
+solamente es visible para esa misma sesión que abrió la transacción.</p>
+<h3 id="solución">Solución</h3>
+<p>Explicitamente hacer <code>ROLLBACK</code> cuando ocurra un
+error.</p>
+<p>Para eso definimos un <em>HANDLER</em> para los errores, es como el
+equivalente a un <code>try ... catch</code> pero afecta a todo el
+procedimeinto almacenado</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">BEGIN</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">DECLARE</span> EXIT HANDLER <span class="cf">FOR</span> SQLEXCEPTION</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">BEGIN</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="kw">ROLLBACK</span>;</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            RESIGNAL;</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">END</span>;</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">START</span> <span class="kw">TRANSACTION</span>;</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> Consulta <span class="dv">1</span> <span class="op">..</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> Consulta <span class="dv">2</span> <span class="op">..</span>    # Esta consulta siempre falla</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="op">..</span> Consulta <span class="dv">3</span> <span class="op">..</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">COMMIT</span>;</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span></span></code></pre></div>
+<p>Ahora cuando la <strong>Consulta 2</strong> falle, se dispara el
+handler, y se ejecutan los comandos <code>ROLLBACK</code> y
+<code>RESIGNAL</code>. <em>RESIGNAL</em> sirve para que se vuelva a
+lanzar el error, ya que de lo contrario el procedimiento almacenado
+termina <em>“exitosamente”</em> a pesar de que hubo un error.</p>
+<h2 id="bloquear-tablas">Bloquear tablas</h2>
+<p>Luego de abrir una transaccion con <code>START TRANSACTION</code> las
+consultas como el <code>INSERT</code>, <code>UPDATE</code> o
+<code>DELETE</code> bloquean las tablas, registros o índices que
+afecten, hasta que dicha transacción se cierre ya sea con un
+<code>COMMIT</code> o un <code>ROLLBACK</code>.</p>
+<p>Esto sirve para que cualquier otra consulta que quiera leer o
+modificar los elementos bloqueados, deban esperar hasta que la
+transacción que los bloquea se cierre y los libere.</p>
+<p>Los <code>SELECT</code> normales no generan ningun bloqueo, para eso
+existen el <code>SELECT ... FOR SHARE</code> y el
+<code>SELECT ... FOR UPDATE</code>.</p>
+<p>En términos simples el <strong>FOR SHARE</strong> bloquea los
+elementos seleccionados para que otra consulta no pueda escribir sobre
+ellos hasta que se cierre la transacción, y el <strong>FOR
+UPDATE</strong> adicionalmente impide que tampoco puedan leerlos (igual
+que los <code>INSERT</code>, <code>UPDATE</code> o <code>DELETE</code>).
+Mas información <a
+href="https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html"
+class="uri">https://dev.mysql.com/doc/refman/8.0/en/innodb-locking-reads.html</a></p>
+<h3 id="recomendaciones">Recomendaciones</h3>
+<p>Hay que analizar detalladamente todo lo que se mete dentro de una
+transacción, y reducirlo a lo mas mínimo posible, para evitar <a
+href="https://dev.mysql.com/doc/refman/5.7/en/innodb-deadlocks.html">Deadlocks</a>
+o retrasos debido a bloqueos innecesarios.</p>
+<p>Usar índices en todos los <code>WHERE</code> de las consultas que
+bloquean, para que dichos bloqueos sean lo mas óptimos posibles, y se
+bloquee solo lo que hace falta bloquear.</p>
+</body>
+</html>

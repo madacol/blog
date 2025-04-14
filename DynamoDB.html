@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-07-28" />
+  <title>DynamoDB</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="dynamodb">DynamoDB</h1>
+<p>It’s a NoSQL Database from AWS</p>
+<h2 id="differences-from-sql-database">Differences from SQL
+Database</h2>
+<ul>
+<li>Records of a table can have different fields</li>
+<li>Tables can be partitioned using <strong>partition keys</strong>, I
+think you cannot query <em>fast</em> across different partitions. I
+think an analogy to <strong>partition keys</strong> would be like having
+a table across multiple databases in SQL Databases</li>
+<li>Tables also have <strong>sort keys</strong>, this determines how
+records are ordered, and you can only query contiguous records, I think
+you cannot filter nor change the order (maybe only reverse the default
+order)</li>
+<li>So basically <strong>partition keys</strong> and <strong>sort
+keys</strong> determines how the table can be queried. This limitations
+is the tradeoff that makes DynamoDB fast.</li>
+<li>There are some advantages with the connection management, I think it
+allows a lot more concurrent connections, but I don’t know the
+details.</li>
+</ul>
+<h2 id="use-cases">Use cases</h2>
+<ul>
+<li>High scalability</li>
+<li>Better integration with serverless architecture, because of better
+connection management</li>
+</ul>
+<h2 id="what-led-to-learning-this">What led to learning this</h2>
+<p>Podcast: <a
+href="https://fullstackradio.com/episodes/139-20f6bb42">Full Stack
+Radio: 139: Alex DeBrie - DynamoDB for Relational Database
+Diehards</a></p>
+</body>
+</html>

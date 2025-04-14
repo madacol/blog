@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2023-07-09" />
+  <title>Configure your local mail to be sent to your Gmail</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="configure-your-local-mail-to-be-sent-to-your-gmail">Configure
+your local mail to be sent to your Gmail</h1>
+<h2 id="install-exim4">Install exim4</h2>
+<pre><code>sudo apt install exim4</code></pre>
+<h2 id="configure-exim4">Configure exim4</h2>
+<pre><code>sudo dpkg-reconfigure exim4-config</code></pre>
+<ol type="1">
+<li><p><strong>General type of mail configuration</strong></p>
+<pre><code> mail sent by smarthost; received via SMTP or fetchmail</code></pre>
+<figure>
+<img src="image.png" alt="Alt text" />
+<figcaption aria-hidden="true">Alt text</figcaption>
+</figure></li>
+<li><p><strong>System mail name</strong></p>
+<p>Leave default</p>
+<figure>
+<img src="image-1.png" alt="Alt text" />
+<figcaption aria-hidden="true">Alt text</figcaption>
+</figure>
+<p>This is the name that will appear in the <code>To:</code> field of
+the email you receive. E.g. <code>root@home-pc</code></p></li>
+<li><p><strong>IP-addresses to listen on for incoming SMTP
+connections</strong></p>
+<p>Leave default</p>
+<pre><code> 127.0.0.1 ; ::1</code></pre>
+<figure>
+<img src="image-2.png" alt="Alt text" />
+<figcaption aria-hidden="true">Alt text</figcaption>
+</figure></li>
+<li><p><strong>Other destinations for which mail is
+accepted</strong></p>
+<p>Leave default (Same as “System mail name”)</p>
+<pre><code> home-pc</code></pre>
+<figure>
+<img src="image-5.png" alt="Alt text" />
+<figcaption aria-hidden="true">Alt text</figcaption>
+</figure></li>
+<li><p><strong>Machines to relay mail for</strong></p>
+<p>Leave empty.</p></li>
+<li><p><strong>IP address or host name of the outgoing
+smarthost</strong></p>
+<pre><code> smtp.gmail.com::587</code></pre>
+<figure>
+<img src="image-4.png" alt="Alt text" />
+<figcaption aria-hidden="true">Alt text</figcaption>
+</figure></li>
+<li><p><strong>Hide local mail name in outgoing mail?</strong></p>
+<p>Leave default</p>
+<pre><code> No</code></pre></li>
+<li><p><strong>Keep number of DNS-queries minimal
+(Dial-on-Demand)?</strong></p>
+<p>Leave default</p>
+<pre><code> No</code></pre></li>
+<li><p><strong>Delivery method for local mail</strong></p>
+<p>Leave default</p>
+<pre><code> mbox format in /var/mail/</code></pre></li>
+<li><p><strong>Split configuration into small files?</strong></p>
+<p>Leave default</p>
+<pre><code>No</code></pre></li>
+<li><p><strong>Root and postmaster mail recipient</strong></p>
+<p>Put your OS’ user here</p>
+<pre><code>your_user</code></pre>
+<figure>
+<img src="image-6.png" alt="Alt text" />
+<figcaption aria-hidden="true">Alt text</figcaption>
+</figure>
+<p>This will add the alias <code>root: your_user</code> to
+<code>/etc/aliases</code></p>
+<p><em><strong>Note:</strong> this config only appears if you don’t yet
+have an alias for root in <code>/etc/aliases</code>.</em><br />
+<em>If you set this config, it will not appear again when re-running
+<code>sudo dpkg-reconfigure exim4-config</code></em></p></li>
+</ol>
+<h2 id="configure-your-gmail-credentials">Configure your Gmail
+credentials</h2>
+<ol type="1">
+<li><p><strong>Enable 2-step verification to your Google
+account</strong></p>
+<p><a
+href="https://myaccount.google.com/signinoptions/two-step-verification"
+class="uri">https://myaccount.google.com/signinoptions/two-step-verification</a></p></li>
+<li><p><strong>Create an app password</strong></p>
+<p><a href="https://myaccount.google.com/apppasswords"
+class="uri">https://myaccount.google.com/apppasswords</a></p></li>
+<li><p><strong>Configure exim4 to use your Google
+credentials</strong></p>
+<pre><code> sudo nano /etc/exim4/passwd.client</code></pre>
+<p>Add the following line</p>
+<pre><code> smtp.gmail.com:{your_email_user}@gmail.com:{app_password}</code></pre></li>
+</ol>
+<h2 id="redirect-root-mail-to-your-user">Redirect root mail to your
+user</h2>
+<pre><code>sudo nano /etc/aliases</code></pre>
+<p>Add the following line</p>
+<pre><code>{your_os_user}: {your_email}</code></pre>
+<h2 id="restart-exim4">Restart exim4</h2>
+<pre><code>sudo systemctl restart exim4</code></pre>
+<h2 id="test">Test</h2>
+<pre><code>echo &quot;This is the body of the email&quot; | mail -s &quot;This is the subject line&quot; root</code></pre>
+<h2 id="debug-see-logs">Debug, see logs</h2>
+<pre><code>tail -f /var/log/exim4/mainlog</code></pre>
+<p>Other related commands</p>
+<pre><code>sudo service exim4 restart
+sudo update-exim4.conf
+sudo exim4 -qff</code></pre>
+<h2 id="sources">Sources</h2>
+<ul>
+<li><a href="https://wiki.debian.org/Exim4Gmail"
+class="uri">https://wiki.debian.org/Exim4Gmail</a></li>
+<li><a
+href="https://linuxcommando.blogspot.com/2014/04/how-to-setup-exim4-on-debian-to-use.html"
+class="uri">https://linuxcommando.blogspot.com/2014/04/how-to-setup-exim4-on-debian-to-use.html</a></li>
+<li><a
+href="https://stackoverflow.com/questions/72626410/how-do-i-send-email-from-nodemailer-in-nodejs-using-gmail"
+class="uri">https://stackoverflow.com/questions/72626410/how-do-i-send-email-from-nodemailer-in-nodejs-using-gmail</a></li>
+<li><a
+href="https://unix.stackexchange.com/questions/65013/understanding-etc-aliases-and-what-it-does"
+class="uri">https://unix.stackexchange.com/questions/65013/understanding-etc-aliases-and-what-it-does</a></li>
+</ul>
+</body>
+</html>

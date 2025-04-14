@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2em;
+}
+blockquote {
+  margin: 0;
+  color: black !important;
+  padding: 0.3em 0.7em;
+  background-color: rgb(235, 235, 235);
+  border-radius: 0.5em;
+}
+:not(pre) > code {
+  background-color: #c7c7c7;
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+}
+div:has(> pre) {
+  border-radius: 0.5em;
+  & > pre {
+    background-color: black;
+    color: white;
+    overflow-x: auto !important;
+    padding: 1em;
+    & + * {
+      margin: 0.5em;
+    }
+  }
+}
+kbd {
+  /* button-like */
+  background-color: #f7f7f7;
+  color: black;
+  box-shadow: 0 0 0.2em black;
+  padding: 0.1em 0.4em;
+  border-radius: 0.5em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+details {
+  & > summary {
+    &.source::before {
+        content: "View ";
+    }
+    &.hidden {
+        display: none;
+    }
+    &:not(.hidden) + * {
+        margin-top: 1rem;
+    }
+  }
+
+  &[open] > summary.source::before {
+      content: "Hide ";
+  }
+}

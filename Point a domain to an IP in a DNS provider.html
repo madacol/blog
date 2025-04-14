@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2022-07-27" />
+  <title>Point a domain to an IP in a DNS provider</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="point-a-domain-to-an-ip-in-a-dns-provider">Point a domain to an
+IP in a DNS provider</h1>
+<p>I used an <strong>A Record</strong> to point a domain (e.g. <a
+href="example.com">example.com</a>) to an IPv4, and a <strong>CNAME
+Record</strong> to point a subdomain (e.g. <a
+href="www.example.com">www.example.com</a>) to the same IPv4 as the root
+domain</p>
+<p>This is how it looks in Namecheap’s interface</p>
+<figure>
+<img src="2022-07-27-14-09-15.png"
+alt="configuration made in Namecheap" />
+<figcaption aria-hidden="true">configuration made in
+Namecheap</figcaption>
+</figure>
+</body>
+</html>

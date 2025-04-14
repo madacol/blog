@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2023-01-12" />
+  <title>Cmus setup and shortcuts</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="cmus-setup-and-shortcuts">Cmus setup and shortcuts</h1>
+<h1 id="install">Install</h1>
+<pre><code>sudo apt install cmus</code></pre>
+<h1 id="add-music-to-library">Add music to Library</h1>
+<p>Press <code>5</code> to see the filesystem and <code>a</code> to add
+any selected file or folder to the <em>Library</em> ( Views
+<code>1</code> and <code>2</code>)</p>
+<h1 id="shortcuts-to-setup">Shortcuts to setup</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Actions</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Open</td>
+<td><code>gnome-terminal -e cmus</code></td>
+</tr>
+<tr class="even">
+<td>Play/Pause</td>
+<td><code>cmus-remote --pause</code></td>
+</tr>
+<tr class="odd">
+<td>Next song</td>
+<td><code>cmus-remote --next</code></td>
+</tr>
+<tr class="even">
+<td>Previous song</td>
+<td><code>cmus-remote --prev</code></td>
+</tr>
+<tr class="odd">
+<td>Stop</td>
+<td><code>cmus-remote --stop</code></td>
+</tr>
+<tr class="even">
+<td>Rewind</td>
+<td><code>cmus-remote --seek -5</code></td>
+</tr>
+<tr class="odd">
+<td>Forward</td>
+<td><code>cmus-remote --seek +5</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="common-key-bindings">Common key-bindings:</h1>
+<table>
+<colgroup>
+<col style="width: 92%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Actions</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repeat</td>
+<td><code>r</code></td>
+</tr>
+<tr class="even">
+<td>Shuffle</td>
+<td><code>s</code></td>
+</tr>
+<tr class="odd">
+<td>Follow</td>
+<td><code>f</code></td>
+</tr>
+<tr class="even">
+<td>Continue</td>
+<td><code>C</code></td>
+</tr>
+<tr class="odd">
+<td>toggle play mode [ all, artist, album ]</td>
+<td><code>m</code></td>
+</tr>
+<tr class="even">
+<td>Repeat current</td>
+<td><code>^R</code> (<kbd>Ctrl</kbd>+<kbd>r</kbd>)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Views</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tree</td>
+<td><code>1</code></td>
+</tr>
+<tr class="even">
+<td>sorted</td>
+<td><code>2</code></td>
+</tr>
+<tr class="odd">
+<td>playlist</td>
+<td><code>3</code></td>
+</tr>
+<tr class="even">
+<td>queue</td>
+<td><code>4</code></td>
+</tr>
+<tr class="odd">
+<td>browser</td>
+<td><code>5</code></td>
+</tr>
+<tr class="even">
+<td>filters</td>
+<td><code>6</code></td>
+</tr>
+<tr class="odd">
+<td>settings</td>
+<td><code>7</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="search">Search</h1>
+<pre><code>/{text} #/foo</code></pre>
+</body>
+</html>

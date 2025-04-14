@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-08-04" />
+  <title>Perfectly centering pixels is tricky</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h1 id="perfectly-centering-pixels-is-tricky">Perfectly centering pixels
+is tricky</h1>
+<p>To perfectly center a container (like a <code>&lt;div&gt;</code>)
+inside another container, both containers’ sizes must have the same
+parity, in other words, both sizes must be either even or odd, in the
+direction of centering.</p>
+<p>Same thing happens if many containers are nested, and each of them
+need to be centered across its parent, they all need to be even or
+odd.</p>
+<p>Font makes things trickier. Let’s suppose you want to center
+vertically a text inside an even container, and you may think that
+choosing an even <code>font-size</code> will do the trick, but if you
+choose a size like <code>14px</code> and a <code>line height</code>
+different than <code>1</code> or <code>2</code> (both options are
+unpleasant in most cases), then text’s effective height will be odd, and
+text <code>height</code> parity will mismatch with its parent and will
+be impossible to center.</p>
+<h2 id="what-led-to-learning-this">What led to learning this</h2>
+<p>Podcast: <a
+href="https://fullstackradio.com/episodes/135-e8c69ea6">Full Stack
+Radio: 135: Lessons Learned Building Tailwind UI</a></p>
+</body>
+</html>
