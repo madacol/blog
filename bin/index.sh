@@ -20,7 +20,6 @@ htmlDoc="<!DOCTYPE html>
         min-height: 200px;
         border: none;
         width: 100%;
-        padding-left: 1em;
 
         &:not(.expanded) {
           height: 30vh;
