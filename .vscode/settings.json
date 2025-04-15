@@ -5,6 +5,11 @@
                 "match": "/content/.*\\.md",
                 "isAsync": false,
                 "cmd": "bin/posts.sh \"${file}\""
+            },
+            {
+                "match": "bin/index.sh",
+                "isAsync": false,
+                "cmd": "bin/index.sh content/*.md"
             }
         ]
     }
