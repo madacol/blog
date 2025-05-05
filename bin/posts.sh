@@ -13,16 +13,26 @@ do
 
   title=$(sed -n 's/^# //p' "$file" | head -n 1)
 
+  # style.css is always in `content/style.css` directory
+  # echo "$file"
+  if [[ "$(basename "$(dirname "$file")")" == "content" ]]; then
+    # Post is in the content directory, `style.css` should be in the same directory
+    stylePath="style.css"
+  else
+    # Post is in a subfolder, `style.css` should be in its parent directory
+    stylePath="../style.css"
+  fi
+
   pandoc <(./bin/parseImport.sh /dev/shm/parsedContent.md) \
     -o "$outputFile" \
     -f markdown \
     --pdf-engine wkhtmltopdf \
     --pdf-engine-opt=--enable-local-file-access \
     --resource-path="$(dirname "$file")" \
-    --css style.css \
+    --css "$stylePath" \
     --standalone \
     --metadata pagetitle="$title" \
     --highlight-style espresso \
     --mathml
-    
+
 done

@@ -2,8 +2,8 @@
 
 set -e
 
-./bin/posts.sh content/*.md
-./bin/index.sh content/*.md
+./bin/posts.sh content/**/*.md
+./bin/index.sh content/**/*.md
 
 touch package.json # Stupid gh-pages fails if there's no package.json ¬¬
 

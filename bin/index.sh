@@ -66,6 +66,12 @@ mapfile -t sorted_files < <(printf '%s\n' "${date_files[@]}" | sort -r | cut -d 
 
 for inputFile in "${sorted_files[@]}"
 do
+    # Ignore drafts
+    if [[ "$(basename "$(dirname "$inputFile")")" == "drafts" ]]; then
+      echo "Skipping draft file: $inputFile"
+      continue
+    fi
+
     echo "Parsing \"$inputFile\""
 
     titleHtml=$(sed -n '/^# /p' "$inputFile" | head -n 1 | pandoc -f markdown -t html)
