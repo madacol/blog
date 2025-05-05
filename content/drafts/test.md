@@ -147,17 +147,6 @@ Now let's see how information spreads in all directions from a central source.
 }
 ```
 
-Would you like me to continue with more complex simulations? We could add:
-1. Random network connections
-2. Different probabilities of information acceptance
-3. Information decay over time
-4. Competing information sources
-5. Network clusters and communities
-
-Let me know which aspect you'd like to explore next!
-
-
-
 <script>
     const runCanvases = [...document.querySelectorAll('div > pre > code')].filter(code => code.children[0].innerText === '// run-canvas');
     runCanvases.forEach(code => {
