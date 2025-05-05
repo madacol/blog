@@ -9,9 +9,9 @@ date: 2021-02-17
 
 # How to gamble rationally
 
-Gambling is essentially an investment, and almost surely a bad one in lotteries and casinos, and a negative-sum-game in the betting industry.
+Gambling is like an investment, and almost surely a bad one in lotteries and casinos, and a zero-sum-game in the gambling and betting industries.
 
-But gambling can be a good investment and a positive-sum-game if we use it to bring investment opportunities, that are too expensive for our budget, into our possibilities with an X% chance of happening, and thus increase the **expected value** of the same budget.
+But gambling can be a good investment and a positive-sum-game if we use it to access investment opportunities, that are too expensive for our budget, and convert them into a X% chance of happening, and thus increase the **expected value** for the same budget.
 
 ## Pre-required readings
 
