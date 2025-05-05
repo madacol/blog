@@ -18,7 +18,7 @@ do
     -f markdown \
     --pdf-engine wkhtmltopdf \
     --pdf-engine-opt=--enable-local-file-access \
-    --resource-path=$(dirname "$file") \
+    --resource-path="$(dirname "$file")" \
     --css style.css \
     --standalone \
     --metadata pagetitle="$title" \
