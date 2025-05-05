@@ -39,4 +39,4 @@ done
 
 The name of the file will be the name of the script in the context menu. In this case, I named it `Convert to MP4`.
 
-![Context menu showing the "Convert to MP4" option](image-7.png)
+![Context menu showing the "Convert to MP4" option](image.png)

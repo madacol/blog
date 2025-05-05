@@ -41,7 +41,7 @@ date: 2023-07-09
 
         home-pc
 
-    ![Alt text](image-5.png)
+    ![Alt text](image-3.png)
 
 5. **Machines to relay mail for**
 
@@ -83,7 +83,7 @@ date: 2023-07-09
 
         your_user
 
-    ![Alt text](image-6.png)
+    ![Alt text](image-5.png)
 
     This will add the alias `root: your_user` to `/etc/aliases`
 

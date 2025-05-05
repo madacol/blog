@@ -23,15 +23,15 @@ It works!, but it has some annoying bugs with resolution and fullscreen, so the 
    5. Locate FixAoFE.exe in `~/PlayOnLinux's virtual drives/AOE2_forg/drive_c/Program Files/Microsoft Games/Age of Empires II/age2_x1/FixAoFE.exe`
 2. Enable Windowed mode
    
-   ![Windowed mode](aoe2_enable_windowed_mode.png)
+   ![Windowed mode](enable_windowed_mode.png)
 
 3. Open Configure Wine
    
-   ![Configure Wine](aoe2_configure_wine_screenshot.png)
+   ![Configure Wine](configure_wine_screenshot.png)
 
 4. Open **Graphics** tab, and make exactly these selections:
 
-   ![Graphics settings](aoe2_graphics-settings-screenshot.png)
+   ![Graphics settings](graphics-settings-screenshot.png)
 
 5. Open the game and choose your desired resolution in options. This resolution will only affect in-game, it won't affect the menu.
 
@@ -42,10 +42,10 @@ There are two bugs that still bother me:
 1. For some really strange reason, enemies' Castles do not start firing until you get really close to them, or maybe attack them. I've seen this happen in the first chapter of barbarossa campaign.
 2. Multiplayer does not work. Right now, if you try to create a multiplayer game it will go back to the menu immediately. We can overcome this bug by installing directplay:
 
-   ![Install directplay](aoe2_install_directplay_screenshot.png)
+   ![Install directplay](install_directplay_screenshot.png)
    
    It now Creates a multiplayer game
 
-   ![Multiplayer game](aoe2_multiplayer-game-screenshot.png)
+   ![Multiplayer game](multiplayer-game-screenshot.png)
    
    But still, I haven't been able to join a multiplayer game between two computers using the same setup, I've tried with LAN, with IP, disabling firewalls, but no luck :(

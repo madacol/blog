@@ -50,6 +50,6 @@ You will be asked for the mnemonic:
 
 This should give you the following result:
 
-![console screenshot showing the recovered password "12345"](image-9.png)
+![console screenshot showing the recovered password "12345"](image.png)
 
 You can customize LOTS of things, go and read the full instructions <https://github.com/gurnec/btcrecover/blob/master/TUTORIAL.md#btcrecover-tutorial>
